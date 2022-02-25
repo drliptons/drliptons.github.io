@@ -1,0 +1,1961 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/dl-logo-big-512x512.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.5">
+    
+    
+      
+        <title>Part 2 - Desktop App - DrLiptons</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a617204b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9204c3b2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link rel="stylesheet" href="../../../overrides/assets/stylesheets/main.d9227bb8.min.css">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plant-disease-detection-part-2-build-a-desktop-application" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DrLiptons" class="md-header__button md-logo" aria-label="DrLiptons" data-md-component="logo">
+      
+  <img src="../../../assets/dl-logo-big-512x512.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DrLiptons
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part 2 - Desktop App
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../wip/" class="md-tabs__link">
+      In Progress
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../reference-list/" class="md-tabs__link md-tabs__link--active">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../blog/" class="md-tabs__link">
+      Blog
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DrLiptons" class="md-nav__button md-logo" aria-label="DrLiptons" data-md-component="logo">
+      
+  <img src="../../../assets/dl-logo-big-512x512.png" alt="logo">
+
+    </a>
+    DrLiptons
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wip/" class="md-nav__link">
+        In Progress
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-list/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alien-invaders/" class="md-nav__link">
+        Alien Invaders
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../password-manager/" class="md-nav__link">
+        Password Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flight-deals/" class="md-nav__link">
+        Flight Deals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../auto-job-app/" class="md-nav__link">
+        Automated Job Application
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../text-2-morse-code/" class="md-nav__link">
+        Text2MorseCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stock-news-alerts/" class="md-nav__link">
+        Stock News Alert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tetris/" class="md-nav__link">
+        Tetris Clone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../price-tracker/" class="md-nav__link">
+        Price Tracker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          TensorFlow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TensorFlow" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          TensorFlow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1" type="checkbox" id="__nav_4_3_1" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_1">
+          Plant Disease Detection
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plant Disease Detection" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Plant Disease Detection
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plant-disease-detection/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part-1-create-ml-model/" class="md-nav__link">
+        Part 1 - Create ML Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Part 2 - Desktop App
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Part 2 - Desktop App
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plant-disease-detection-part-2-build-a-desktop-application" class="md-nav__link">
+     Plant Disease Detection: Part 2 Build a desktop application
+  </a>
+  
+    <nav class="md-nav" aria-label=" Plant Disease Detection: Part 2 Build a desktop application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-expect" class="md-nav__link">
+    What to expect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-the-application-layout-and-functionalities" class="md-nav__link">
+    Design the application layout and functionalities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-start-coding" class="md-nav__link">
+    Let's start coding
+  </a>
+  
+    <nav class="md-nav" aria-label="Let's start coding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    Project structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-main-script" class="md-nav__link">
+    The main script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-first-run-with-rootpy" class="md-nav__link">
+    Application first run with root.py
+  </a>
+  
+    <nav class="md-nav" aria-label="Application first run with root.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-the-libraries" class="md-nav__link">
+    Import the libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    Import Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-root-class" class="md-nav__link">
+    Create Root class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-function" class="md-nav__link">
+    init function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close_delay-function" class="md-nav__link">
+    close_delay function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-test-run-the-application" class="md-nav__link">
+    (Optional) Test run the application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-a-user-interface" class="md-nav__link">
+    Build a User Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Build a User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-libraries_1" class="md-nav__link">
+    Import libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-user-interface-class" class="md-nav__link">
+    Create a User Interface Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-function_1" class="md-nav__link">
+    init function
+  </a>
+  
+    <nav class="md-nav" aria-label="init function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ui-elements" class="md-nav__link">
+    ui elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialize-backend-class" class="md-nav__link">
+    initialize Backend class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_image-function" class="md-nav__link">
+    show_image function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browse_image-function" class="md-nav__link">
+    browse_image function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect_image-function" class="md-nav__link">
+    detect_image function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lets-run-and-see-how-the-application-look-like" class="md-nav__link">
+    Let's run and see how the application look like
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-backend-algorithm-that-runs-the-program" class="md-nav__link">
+    Create the backend algorithm that runs the program
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the backend algorithm that runs the program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-libraries_2" class="md-nav__link">
+    Import Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-backend-class" class="md-nav__link">
+    Create a Backend Class
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Backend Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class_name" class="md-nav__link">
+    CLASS_NAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-function_2" class="md-nav__link">
+    init function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_load_model-function" class="md-nav__link">
+    _load_model function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict_image-function" class="md-nav__link">
+    predict_image function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-image-function" class="md-nav__link">
+    Prepare image function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-run-the-app-and-see-the-outcome" class="md-nav__link">
+    Let's run the app and see the outcome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's next
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part-3-make-exe/" class="md-nav__link">
+        Part 3 - Make Executable
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tensorflow/tensorflow-resources/" class="md-nav__link">
+        TensorFlow Exam Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tensorflow/pass-tensorflow-cert/" class="md-nav__link">
+        How I past TensorFlow Exam
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        Blog
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plant-disease-detection-part-2-build-a-desktop-application" class="md-nav__link">
+     Plant Disease Detection: Part 2 Build a desktop application
+  </a>
+  
+    <nav class="md-nav" aria-label=" Plant Disease Detection: Part 2 Build a desktop application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-expect" class="md-nav__link">
+    What to expect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-the-application-layout-and-functionalities" class="md-nav__link">
+    Design the application layout and functionalities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-start-coding" class="md-nav__link">
+    Let's start coding
+  </a>
+  
+    <nav class="md-nav" aria-label="Let's start coding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    Project structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-main-script" class="md-nav__link">
+    The main script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-first-run-with-rootpy" class="md-nav__link">
+    Application first run with root.py
+  </a>
+  
+    <nav class="md-nav" aria-label="Application first run with root.py">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-the-libraries" class="md-nav__link">
+    Import the libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    Import Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-root-class" class="md-nav__link">
+    Create Root class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-function" class="md-nav__link">
+    init function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close_delay-function" class="md-nav__link">
+    close_delay function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-test-run-the-application" class="md-nav__link">
+    (Optional) Test run the application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-a-user-interface" class="md-nav__link">
+    Build a User Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Build a User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-libraries_1" class="md-nav__link">
+    Import libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-user-interface-class" class="md-nav__link">
+    Create a User Interface Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-function_1" class="md-nav__link">
+    init function
+  </a>
+  
+    <nav class="md-nav" aria-label="init function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ui-elements" class="md-nav__link">
+    ui elements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialize-backend-class" class="md-nav__link">
+    initialize Backend class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_image-function" class="md-nav__link">
+    show_image function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browse_image-function" class="md-nav__link">
+    browse_image function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect_image-function" class="md-nav__link">
+    detect_image function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lets-run-and-see-how-the-application-look-like" class="md-nav__link">
+    Let's run and see how the application look like
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-backend-algorithm-that-runs-the-program" class="md-nav__link">
+    Create the backend algorithm that runs the program
+  </a>
+  
+    <nav class="md-nav" aria-label="Create the backend algorithm that runs the program">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import-libraries_2" class="md-nav__link">
+    Import Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-backend-class" class="md-nav__link">
+    Create a Backend Class
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a Backend Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class_name" class="md-nav__link">
+    CLASS_NAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-function_2" class="md-nav__link">
+    init function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_load_model-function" class="md-nav__link">
+    _load_model function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict_image-function" class="md-nav__link">
+    predict_image function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-image-function" class="md-nav__link">
+    Prepare image function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-run-the-app-and-see-the-outcome" class="md-nav__link">
+    Let's run the app and see the outcome
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's next
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>Part 2 - Desktop App</h1>
+
+<h2 id="plant-disease-detection-part-2-build-a-desktop-application"><b> Plant Disease Detection: Part 2 Build a desktop application</b></h2>
+<p><img alt="Header" src="../images/index_header.png" /></p>
+<p>In this part we will create a working desktop application to browse an image and use a machine learning 
+model <a href="../part-1-create-ml-model/">(from part 1)</a> detect what disease the plant has.</p>
+<h3 id="what-to-expect">What to expect</h3>
+<ul>
+<li>Create a GUI with tkinter</li>
+<li>Browser image from a folder on your computer</li>
+<li>Show image preview</li>
+<li>Use a trained TensorFlow model <a href="../part-1-create-ml-model/">(from part 1)</a> predict what disease the plant is infected with</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The project is running on a macOS. Some features may not work properly on other os.</p>
+</div>
+<h2 id="design-the-application-layout-and-functionalities"><b>Design the application layout and functionalities</b></h2>
+<p>In <a href="../part-1-create-ml-model/">part 1</a> we have done everything through code.
+Now it is time to do it through a user interface.</p>
+<p>To get our application finished as fast as possible, we will only focus on the necessary
+functions such as:
+- Browse an image from our computer
+- Show a preview of the image we want the model to detect
+- Show the file location where the image is located
+- Execute a detection command from the ui
+- Show the model prediction result on the ui</p>
+<p>Take all the points into account, the application layout should look something like this.</p>
+<p><img alt="UI layout" src="../images/part_2-user_interface_design.png" /></p>
+<h2 id="lets-start-coding"><b>Let's start coding</b></h2>
+<p>To keep everything clean and organized we will follow the oop practice. 
+Knowing that, we will create 4 python scripts:</p>
+<ol>
+<li>
+<p><code>main.py</code>: for running the application</p>
+</li>
+<li>
+<p><code>root.py</code>: for rot task such as keep the ui open or closing the application.</p>
+</li>
+<li>
+<p><code>user_interface.py</code>: handling the user interface of the application, such as design or main ui tasks.</p>
+</li>
+<li>
+<p><code>backend.py</code>: to handling all none ui task, such as detecting plat's disease.</p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>See full script here on <a href="https://github.com/drliptons/plant-disease-detection">GitHub</a></p>
+</div>
+<h3 id="project-structure">Project structure</h3>
+<p>The project structure will look like this.</p>
+<div class="highlight"><pre><span></span><code>main.py             # main file to run the application
+root.py             # root
+user_interface.py   # handling user interface
+backend.py          # handling image preprocessing and ml prediction
+model_effb0/        # contains the ml model from part 1
+    ...             # model files
+</code></pre></div>
+<p>Later on we will copy the model saved from <a href="../part-1-create-ml-model/">part 1</a> into our project</p>
+<h3 id="the-main-script">The main script</h3>
+<p>The <code>main.py</code> task is to initialize the most basic function that is required by the application.
+In our case it only initializes the Root class.</p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">user_interface.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">root</span> <span class="kn">import</span> <span class="n">Root</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="c1"># initialize Root</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="n">root</span> <span class="o">=</span> <span class="n">Root</span><span class="p">()</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="c1"># Loop trough root to not close the window after open</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>See full <code>main.py</code> <a href="https://github.com/drliptons/plant-disease-detection-with-tensorflow/blob/90165ffb8c43ec792ce5beb28b9e782303d38e42/main.py">here</a></p>
+</div>
+<h2 id="application-first-run-with-rootpy"><b>Application first run with root.py</b></h2>
+<p><code>main.py</code> will initiate <code>Root</code> class and with that to run a blank window for the first time.</p>
+<h3 id="import-the-libraries">Import the libraries</h3>
+<h3 id="import-libraries">Import Libraries</h3>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">root.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">from</span> <span class="nn">user_interface</span> <span class="kn">import</span> <span class="n">UserInterface</span>
+</code></pre></div>
+</td></tr></table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><code>UserInterface</code> class will be created later in the create user interface section</p>
+</div>
+<h3 id="create-root-class">Create Root class</h3>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">root.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">class</span> <span class="nc">Root</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">):</span>
+</code></pre></div>
+</td></tr></table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Our <code>Root</code> class will inherit from <code>tk.Tk</code></p>
+</div>
+<h3 id="init-function">init function</h3>
+<p>At initializing, the following variables will be set and configured</p>
+<ul>
+<li><code>self.title("Title")</code>: set application title to <code>Plant Disease Detection</code></li>
+<li><code>self.geometry("600x720")</code>: set a fix size of the application to 600 x 720 pixels. 
+You can comment this out to have a dynamic size.</li>
+<li><code>self.configure(bg="#F7FBFC")</code>: set background color to a light blue color</li>
+<li><code>self.protocol('set_protocol', 'command')</code>: here I want to set a delay when closing the application. 
+When click close the <code>_close_delay</code> function will be triggered and give a short time of delay
+before the application will be terminated.</li>
+<li><code>self._ui</code>: create the ui frame to contain all the ui element. Then initialize <code>UserInterface</code>
+class into it. The <code>UserInterface</code> class can be found <a href="https://github.com/drliptons/plant-disease-detection-with-tensorflow/blob/main/user_interface.py">here</a>, we will 
+revisit it also later on in this page.</li>
+<li><code>self._ui.pack()</code>: </li>
+</ul>
+<p>The code will look like this:</p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">root.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>    <span class="c1"># Window title</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plant Disease Detection&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="c1"># Window configurations</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;600x720&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;#F7FBFC&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>    <span class="c1"># Delay closing window before close</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">protocol</span><span class="p">(</span><span class="s2">&quot;WM_DELETE_WINDOW&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_close_delay</span><span class="p">)</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>    <span class="c1"># Initialize user interface</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_ui</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_ui</span> <span class="o">=</span> <span class="n">UserInterface</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_ui</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="close_delay-function">close_delay function</h3>
+<p>The function will add a short delay time when closing the application (by clicking <code>x</code>).
+Delay time, in seconds, can be adjusted in <code>time.sleep()</code>.</p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">root.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-4-26" name="__codelineno-4-26"></a>    <span class="k">def</span> <span class="nf">_close_delay</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="optional-test-run-the-application">(Optional) Test run the application</h3>
+<p>It isn't an application yet, but it is worth to see how its look like. By commenting out line
+<code>23</code>, and run the <code>main.py script</code> a blank window will be opened</p>
+<h2 id="build-a-user-interface"><b>Build a User Interface</b></h2>
+<p>Now it's time to create the user interface we have waited so long. When finished with code, the 
+application will look like this;</p>
+<p><img alt="Complete User Interface" src="../images/part_2-user_interface.png" /></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>All codes related to the GUI of the application is contained in the <code>user_interface.py</code> file. 
+The final application might look different on some devices and os.</p>
+</div>
+<h3 id="import-libraries_1">Import libraries</h3>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">user_interface.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kn">import</span> <span class="nn">tkmacosx</span> <span class="k">as</span> <span class="nn">tkmac</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">filedialog</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="kn">from</span> <span class="nn">backend</span> <span class="kn">import</span> <span class="n">Backend</span>
+</code></pre></div>
+</td></tr></table>
+<details class="caution" open="open">
+<summary>Caution</summary>
+<p>'tkmacosx' is only to used to run some tkinter features properly on macOS.</p>
+</details>
+<h3 id="create-a-user-interface-class">Create a User Interface Class</h3>
+<p>The <code>UserInterface</code> class will consist with 4 functions</p>
+<div class="highlight"><pre><span></span><code>UserInterface           # UserInterface class
+    __init__            # initialize the class
+    _show_image         # show image after browsing
+    _browse_image       # triggerd when click browse button
+    _detect_image       # triggerd when click detect button
+</code></pre></div>
+<h3 id="init-function_1">init function</h3>
+<p>The <code>init</code> function's codes are as following:</p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">user_interface.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span>
+<span class="normal"><a href="#__codelineno-6-27">27</a></span>
+<span class="normal"><a href="#__codelineno-6-28">28</a></span>
+<span class="normal"><a href="#__codelineno-6-29">29</a></span>
+<span class="normal"><a href="#__codelineno-6-30">30</a></span>
+<span class="normal"><a href="#__codelineno-6-31">31</a></span>
+<span class="normal"><a href="#__codelineno-6-32">32</a></span>
+<span class="normal"><a href="#__codelineno-6-33">33</a></span>
+<span class="normal"><a href="#__codelineno-6-34">34</a></span>
+<span class="normal"><a href="#__codelineno-6-35">35</a></span>
+<span class="normal"><a href="#__codelineno-6-36">36</a></span>
+<span class="normal"><a href="#__codelineno-6-37">37</a></span>
+<span class="normal"><a href="#__codelineno-6-38">38</a></span>
+<span class="normal"><a href="#__codelineno-6-39">39</a></span>
+<span class="normal"><a href="#__codelineno-6-40">40</a></span>
+<span class="normal"><a href="#__codelineno-6-41">41</a></span>
+<span class="normal"><a href="#__codelineno-6-42">42</a></span>
+<span class="normal"><a href="#__codelineno-6-43">43</a></span>
+<span class="normal"><a href="#__codelineno-6-44">44</a></span>
+<span class="normal"><a href="#__codelineno-6-45">45</a></span>
+<span class="normal"><a href="#__codelineno-6-46">46</a></span>
+<span class="normal"><a href="#__codelineno-6-47">47</a></span>
+<span class="normal"><a href="#__codelineno-6-48">48</a></span>
+<span class="normal"><a href="#__codelineno-6-49">49</a></span>
+<span class="normal"><a href="#__codelineno-6-50">50</a></span>
+<span class="normal"><a href="#__codelineno-6-51">51</a></span>
+<span class="normal"><a href="#__codelineno-6-52">52</a></span>
+<span class="normal"><a href="#__codelineno-6-53">53</a></span>
+<span class="normal"><a href="#__codelineno-6-54">54</a></span>
+<span class="normal"><a href="#__codelineno-6-55">55</a></span>
+<span class="normal"><a href="#__codelineno-6-56">56</a></span>
+<span class="normal"><a href="#__codelineno-6-57">57</a></span>
+<span class="normal"><a href="#__codelineno-6-58">58</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a>    <span class="c1"># Store image and image path</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_image</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_image_path</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">StringVar</span><span class="p">()</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a>    <span class="c1"># Frame 1: for load and preview to the app</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">LabelFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Source&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a>    <span class="c1"># Preview image box</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_preview_image_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">LabelFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_preview_image_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_in_frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_preview_image_frame</span><span class="p">)</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_in_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a>    <span class="c1"># Path label</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_path_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Path:&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_path_label</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a>    <span class="c1"># Entry box</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_path_entry</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_image_path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_path_entry</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34"></a>    <span class="c1"># &#39;Browse&#39; and &#39;Detect&#39; button</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35"></a>    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;darwin&quot;</span><span class="p">:</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_browse_button</span> <span class="o">=</span> <span class="n">tkmac</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Browse&#39;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#D6E6F2&#39;</span><span class="p">,</span> <span class="n">activebackground</span><span class="o">=</span><span class="s1">&#39;#D6E6F2&#39;</span><span class="p">,</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37"></a>                                           <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_browse_image</span><span class="p">)</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_browse_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_detect_button</span> <span class="o">=</span> <span class="n">tkmac</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Detect&#39;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#B9D7EA&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_detect_image</span><span class="p">)</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_detect_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-6-42" name="__codelineno-6-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_browse_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Browse&#39;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#D6E6F2&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_browse_image</span><span class="p">)</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_browse_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-6-44" name="__codelineno-6-44"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_detect_button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Detect&#39;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#B9D7EA&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_detect_image</span><span class="p">)</span>
+<a id="__codelineno-6-45" name="__codelineno-6-45"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_detect_button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-6-46" name="__codelineno-6-46"></a>
+<a id="__codelineno-6-47" name="__codelineno-6-47"></a>    <span class="c1"># Frame 2: displaying model predicted result</span>
+<a id="__codelineno-6-48" name="__codelineno-6-48"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_frame_2</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">LabelFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Result&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-49" name="__codelineno-6-49"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_frame_2</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-6-50" name="__codelineno-6-50"></a>    <span class="c1"># Result title text</span>
+<a id="__codelineno-6-51" name="__codelineno-6-51"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_result_label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Result:&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-52" name="__codelineno-6-52"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_result_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-53" name="__codelineno-6-53"></a>    <span class="c1"># Predicted result text</span>
+<a id="__codelineno-6-54" name="__codelineno-6-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_output_text</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame_2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Waiting for an image...&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-55" name="__codelineno-6-55"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_output_text</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-56" name="__codelineno-6-56"></a>
+<a id="__codelineno-6-57" name="__codelineno-6-57"></a>    <span class="c1"># Initialize Backend class</span>
+<a id="__codelineno-6-58" name="__codelineno-6-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span> <span class="o">=</span> <span class="n">Backend</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<p>There is a lot going on in this function. When you still remember when we design the layout earlier, you will
+see that we only create new variables to match our design. Here is an overview of all the variables.</p>
+<p><img alt="Overview of ui layout variables" src="../images/part_2-ui_layout_init.png" /></p>
+<p>Now lets see our code.</p>
+<h4 id="ui-elements">ui elements</h4>
+<ul>
+<li>
+<p><code>self._frame_1</code>:</p>
+</li>
+<li>
+<p><code>self._preview_image_frame</code>:</p>
+</li>
+<li>
+<p><code>self._in_frame</code>:</p>
+</li>
+<li>
+<p><code>self._path_label</code>:</p>
+</li>
+<li>
+<p><code>self._path_entry</code>:</p>
+</li>
+<li>
+<p><code>self._browse_button</code>:</p>
+</li>
+<li>
+<p><code>self._detect_button</code>:</p>
+</li>
+<li>
+<p><code>self._frame_2</code>:</p>
+</li>
+<li>
+<p><code>self._result_label</code>:</p>
+</li>
+<li>
+<p><code>self._output_text</code>:</p>
+</li>
+</ul>
+<h4 id="initialize-backend-class">initialize Backend class</h4>
+<ul>
+<li><code>self._backend</code>:</li>
+</ul>
+<h3 id="show_image-function">show_image function</h3>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">user_interface.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-60">60</a></span>
+<span class="normal"><a href="#__codelineno-7-61">61</a></span>
+<span class="normal"><a href="#__codelineno-7-62">62</a></span>
+<span class="normal"><a href="#__codelineno-7-63">63</a></span>
+<span class="normal"><a href="#__codelineno-7-64">64</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-7-60" name="__codelineno-7-60"></a><span class="k">def</span> <span class="nf">_show_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-7-61" name="__codelineno-7-61"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<a id="__codelineno-7-62" name="__codelineno-7-62"></a>    <span class="n">resize_img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">530</span><span class="p">,</span> <span class="mi">530</span><span class="p">),</span> <span class="n">Image</span><span class="o">.</span><span class="n">ANTIALIAS</span><span class="p">)</span>
+<a id="__codelineno-7-63" name="__codelineno-7-63"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_image</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">resize_img</span><span class="p">)</span>
+<a id="__codelineno-7-64" name="__codelineno-7-64"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_in_frame</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_image</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="browse_image-function">browse_image function</h3>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">user_interface.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-66">66</a></span>
+<span class="normal"><a href="#__codelineno-8-67">67</a></span>
+<span class="normal"><a href="#__codelineno-8-68">68</a></span>
+<span class="normal"><a href="#__codelineno-8-69">69</a></span>
+<span class="normal"><a href="#__codelineno-8-70">70</a></span>
+<span class="normal"><a href="#__codelineno-8-71">71</a></span>
+<span class="normal"><a href="#__codelineno-8-72">72</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-8-66" name="__codelineno-8-66"></a><span class="k">def</span> <span class="nf">_browse_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-8-67" name="__codelineno-8-67"></a>    <span class="n">fln</span> <span class="o">=</span> <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">(</span><span class="n">initialdir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Browse Image&#39;</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="p">(</span>
+<a id="__codelineno-8-68" name="__codelineno-8-68"></a>        <span class="p">(</span><span class="s1">&#39;JPEG/JPG&#39;</span><span class="p">,</span> <span class="s1">&#39;*.jpg&#39;</span><span class="p">),</span>
+<a id="__codelineno-8-69" name="__codelineno-8-69"></a>        <span class="p">(</span><span class="s1">&#39;PNG&#39;</span><span class="p">,</span> <span class="s1">&#39;*.png&#39;</span><span class="p">),</span>
+<a id="__codelineno-8-70" name="__codelineno-8-70"></a>        <span class="p">(</span><span class="s1">&#39;All Files&#39;</span><span class="p">,</span> <span class="s1">&#39;*.*&#39;</span><span class="p">)))</span>
+<a id="__codelineno-8-71" name="__codelineno-8-71"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_image_path</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">fln</span><span class="p">)</span>
+<a id="__codelineno-8-72" name="__codelineno-8-72"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_show_image</span><span class="p">(</span><span class="n">fln</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="detect_image-function">detect_image function</h3>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">user_interface.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-74">74</a></span>
+<span class="normal"><a href="#__codelineno-9-75">75</a></span>
+<span class="normal"><a href="#__codelineno-9-76">76</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-9-74" name="__codelineno-9-74"></a><span class="k">def</span> <span class="nf">_detect_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-9-75" name="__codelineno-9-75"></a>    <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">predict_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_image_path</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<a id="__codelineno-9-76" name="__codelineno-9-76"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_output_text</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="lets-run-and-see-how-the-application-look-like">Let's run and see how the application look like</h3>
+<p>Now, we have finished the application's ui. Without further a due, let's run and see how its look like.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Different devices and os may show different results</p>
+</div>
+<p><img alt="ui finished picture" src="../images/part_2-ui_finished_preview_image.png" /></p>
+<p>How nice it is! All the buttons are working fine. The image has been adjusted to perfectly fit our frame.
+The file location is showing in our entry element. The result box is showing some text.</p>
+<p>Next jump into our last script, the <code>backend.py</code> script, to make a fully functional application.</p>
+<h2 id="create-the-backend-algorithm-that-runs-the-program"><b>Create the backend algorithm that runs the program</b></h2>
+<p>We will create a new python script call <code>backend.py</code> to separate all the backend code from the others</p>
+<div class="highlight"><pre><span></span><code>Backend                 # Backend class
+    __init__            # initialize the class
+    _load_model         # use to load the ml model when starting the app
+    predict_image       # initialize image prediction
+    _prepare_image      # prepare the input image for the ml model
+</code></pre></div>
+<p>From the code structure above, we will only have 4 functions to run the image prediction.</p>
+<h3 id="import-libraries_2">Import Libraries</h3>
+<p>Before we start, let's import some libraries first.</p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">backend.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="create-a-backend-class">Create a Backend Class</h3>
+<p>The Backend class contains all the computational process of the application.
+The full python code in <a href="https://github.com/drliptons/plant-disease-detection-with-tensorflow/blob/main/backend.py">backend.py</a> under Resources.</p>
+<h4 id="class_name">CLASS_NAME</h4>
+<p><code>CLASS_NAME</code> a static list contains all the category names of the dataset used to
+train the machine model in <a href="../part-1-create-ml-model/">part 1</a>. Currently,
+it is hard coded since I haven't found a better solution to transfer the information into here.</p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">backend.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span>
+<span class="normal"><a href="#__codelineno-11-19">19</a></span>
+<span class="normal"><a href="#__codelineno-11-20">20</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">CLASS_NAME</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Potato___healthy&#39;</span><span class="p">,</span> <span class="s1">&#39;Tomato___healthy&#39;</span><span class="p">,</span> <span class="s1">&#39;Corn___Common_rust&#39;</span><span class="p">,</span> 
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>              <span class="s1">&#39;Apple___Apple_scab&#39;</span><span class="p">,</span> <span class="s1">&#39;Soybean___healthy&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>              <span class="s1">&#39;Tomato___Tomato_mosaic_virus&#39;</span><span class="p">,</span> <span class="s1">&#39;Tomato___Septoria_leaf_spot&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>              <span class="s1">&#39;Tomato___Spider_mites Two-spotted_spider_mite&#39;</span><span class="p">,</span> <span class="s1">&#39;Tomato___Late_blight&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>              <span class="s1">&#39;Grape___healthy&#39;</span><span class="p">,</span> <span class="s1">&#39;Cherry___Powdery_mildew&#39;</span><span class="p">,</span> <span class="s1">&#39;Apple___healthy&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>              <span class="s1">&#39;Pepper,_bell___Bacterial_spot&#39;</span><span class="p">,</span> <span class="s1">&#39;Potato___Late_blight&#39;</span><span class="p">,</span> 
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>              <span class="s1">&#39;Corn___Northern_Leaf_Blight&#39;</span><span class="p">,</span> <span class="s1">&#39;Corn___healthy&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a>              <span class="s1">&#39;Orange___Haunglongbing_(Citrus_greening)&#39;</span><span class="p">,</span> <span class="s1">&#39;Apple___Black_rot&#39;</span><span class="p">,</span> 
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>              <span class="s1">&#39;Tomato___Target_Spot&#39;</span><span class="p">,</span> <span class="s1">&#39;Potato___Early_blight&#39;</span><span class="p">,</span> <span class="s1">&#39;Squash___Powdery_mildew&#39;</span><span class="p">,</span> 
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a>              <span class="s1">&#39;Corn___Cercospora_leaf_spot Gray_leaf_spot&#39;</span><span class="p">,</span> <span class="s1">&#39;Raspberry___healthy&#39;</span><span class="p">,</span> 
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a>              <span class="s1">&#39;Tomato___Tomato_Yellow_Leaf_Curl_Virus&#39;</span><span class="p">,</span> <span class="s1">&#39;Peach___healthy&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a>              <span class="s1">&#39;Tomato___Early_blight&#39;</span><span class="p">,</span> <span class="s1">&#39;Grape___Leaf_blight_(Isariopsis_Leaf_Spot)&#39;</span><span class="p">,</span> 
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a>              <span class="s1">&#39;Strawberry___healthy&#39;</span><span class="p">,</span> <span class="s1">&#39;Blueberry___healthy&#39;</span><span class="p">,</span> <span class="s1">&#39;Peach___Bacterial_spot&#39;</span><span class="p">,</span> 
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a>              <span class="s1">&#39;Pepper,_bell___healthy&#39;</span><span class="p">,</span> <span class="s1">&#39;Grape___Black_rot&#39;</span><span class="p">,</span> <span class="s1">&#39;Cherry___healthy&#39;</span><span class="p">,</span> 
+<a id="__codelineno-11-19" name="__codelineno-11-19"></a>              <span class="s1">&#39;Tomato___Bacterial_spot&#39;</span><span class="p">,</span> <span class="s1">&#39;Background_without_leaves&#39;</span><span class="p">,</span> <span class="s1">&#39;Strawberry___Leaf_scorch&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20"></a>              <span class="s1">&#39;Grape___Esca_(Black_Measles)&#39;</span><span class="p">,</span> <span class="s1">&#39;Tomato___Leaf_Mold&#39;</span><span class="p">,</span> <span class="s1">&#39;Apple___Cedar_apple_rust&#39;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="init-function_2">init function</h4>
+<p>Since we want load the ml model once only at start, 
+the Backend class will be initiated and stored from a Root class <a href="https://github.com/drliptons/plant-disease-detection-with-tensorflow/blob/main/root.py">(see root.py)</a>.</p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">backend.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-24">24</a></span>
+<span class="normal"><a href="#__codelineno-12-25">25</a></span>
+<span class="normal"><a href="#__codelineno-12-26">26</a></span>
+<span class="normal"><a href="#__codelineno-12-27">27</a></span>
+<span class="normal"><a href="#__codelineno-12-28">28</a></span>
+<span class="normal"><a href="#__codelineno-12-29">29</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-12-24" name="__codelineno-12-24"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_image_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_model_path</span> <span class="o">=</span> <span class="s1">&#39;./model_effb0&#39;</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28"></a>
+<a id="__codelineno-12-29" name="__codelineno-12-29"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_load_model</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<p>The <code>__init__</code> function contains 3 variables:</p>
+<ul>
+<li><code>self._image_shape</code>: size of the input size of the model. 
+We need to resize the image that be used in the model to match the model's input size.</li>
+<li><code>self._model_path</code>: path where the ml model is located in our project folders</li>
+<li><code>self._model</code>: store our ml model.</li>
+<li><code>self._load_model()</code>: call <code>_load_model()</code> function to load the model.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>self._image_shape</code> and <code>self._model_path</code> are static variables. 
+I put it in here only to be able to work with other models in the future. 
+Since, we're only working with one ml model, it isn't necessary to make it dynamic.</p>
+</div>
+<h4 id="_load_model-function">_load_model function</h4>
+<p><code>_load_model</code> will be immediately called after the class initialization. It will load the model 
+and store it in the <code>self._model</code> variable. </p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">backend.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-31">31</a></span>
+<span class="normal"><a href="#__codelineno-13-32">32</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-13-31" name="__codelineno-13-31"></a><span class="k">def</span> <span class="nf">_load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_model_path</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>A keras function is need to load a TensorFlow model. By calling <code>_load_model</code> 
+and inject a saved model path as an input, we can initialize a pre-trained model.
+It might take a while to load depending on the size and complexity of the model.</p>
+<h4 id="predict_image-function">predict_image function</h4>
+<p>The <code>predict_image</code> function is only called from the <code>user_interface.py</code> script when the 
+user click the <code>Detect</code> button on the GUI. The function will call another function, <code>_prepare_image</code>,
+to load and prepare the image for the detection. Then, the function will predict the outcome
+with the model and return its value as a string to show it on the user interface.</p>
+<p>An example of the returned string: <code>Image category: Soybean___healthy | Probabilty: 94.45%</code></p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">backend.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-34">34</a></span>
+<span class="normal"><a href="#__codelineno-14-35">35</a></span>
+<span class="normal"><a href="#__codelineno-14-36">36</a></span>
+<span class="normal"><a href="#__codelineno-14-37">37</a></span>
+<span class="normal"><a href="#__codelineno-14-38">38</a></span>
+<span class="normal"><a href="#__codelineno-14-39">39</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-14-34" name="__codelineno-14-34"></a><span class="k">def</span> <span class="nf">predict_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<a id="__codelineno-14-35" name="__codelineno-14-35"></a>    <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_image</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<a id="__codelineno-14-36" name="__codelineno-14-36"></a>    <span class="n">prob</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">img</span><span class="p">]))[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-14-37" name="__codelineno-14-37"></a>    <span class="n">c_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
+<a id="__codelineno-14-38" name="__codelineno-14-38"></a>    <span class="n">prob_f</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">prob</span><span class="p">[</span><span class="n">c_idx</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-14-39" name="__codelineno-14-39"></a>    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Image category: </span><span class="si">{</span><span class="n">CLASS_NAME</span><span class="p">[</span><span class="n">c_idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> | Probability: </span><span class="si">{</span><span class="n">prob_f</span><span class="si">}</span><span class="s2">%&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="prepare-image-function">Prepare image function</h3>
+<p>Before the model can process an image, the input size of the image has to match the input shape of the model.
+The <code>_prepare_image</code> method read the image from its stored location and process it to match the size and dimension
+same as the input size required by the model.</p>
+<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">backend.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-41">41</a></span>
+<span class="normal"><a href="#__codelineno-15-42">42</a></span>
+<span class="normal"><a href="#__codelineno-15-43">43</a></span>
+<span class="normal"><a href="#__codelineno-15-44">44</a></span>
+<span class="normal"><a href="#__codelineno-15-45">45</a></span>
+<span class="normal"><a href="#__codelineno-15-46">46</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-15-41" name="__codelineno-15-41"></a><span class="k">def</span> <span class="nf">_prepare_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<a id="__codelineno-15-42" name="__codelineno-15-42"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<a id="__codelineno-15-43" name="__codelineno-15-43"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">decode_image</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-15-44" name="__codelineno-15-44"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_image_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<a id="__codelineno-15-45" name="__codelineno-15-45"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">/</span><span class="mf">225.</span>
+<a id="__codelineno-15-46" name="__codelineno-15-46"></a>    <span class="k">return</span> <span class="n">img</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="lets-run-the-app-and-see-the-outcome"><b>Let's run the app and see the outcome</b></h2>
+<p>Now that we finally finished the app, why not test it right away.</p>
+<p><img alt="app finished" src="../images/part_2-app_finished.png" /></p>
+<p>As we can see at the bottom of our app, the output from our machine learning model is shown correctly in the ui.
+<b>HOWEVER</b>, the detection result isn't really correct. The image I used is a grape leaf, but the 
+model has detected it as a tomato leaf 😅. We might have to go back and evaluate our model from 
+<a href="../part-1-create-ml-model/">part 1</a> again.</p>
+<h2 id="whats-next"><b>What's next</b></h2>
+<p>Finally, we have reached the end of this part. We have quite of a journey off creating a desktop application. 
+For now, we can only use it through an IDE. In the next <a href="../part-3-make-exe/">part 3</a>, we will
+make the app executable and be able to run as a real world application from any computer (or at least most of them).</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../part-1-create-ml-model/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part 1 - Create ML Model" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Part 1 - Create ML Model
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../part-3-make-exe/" class="md-footer__link md-footer__link--next" aria-label="Next: Part 3 - Make Executable" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Part 3 - Make Executable
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 - 2022 Mark Schwarz
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.tabs.link", "content.tabs.link", "navigation.indexes", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.cefbb252.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f8ea78.min.js"></script>
+      
+    
+  </body>
+</html>
