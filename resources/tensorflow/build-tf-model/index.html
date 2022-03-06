@@ -13,7 +13,7 @@
     
     
       
-        <title>Build TensorFlow Models - DrLiptons</title>
+        <title>Build a TensorFlow Model - DrLiptons</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-tensorflow-models" class="md-skip">
+        <a href="#build-a-tensorflow-model" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Build TensorFlow Models
+              Build a TensorFlow Model
             
           </span>
         </div>
@@ -1017,12 +1017,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Build TensorFlow Models
+          Build a TensorFlow Model
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Build TensorFlow Models
+        Build a TensorFlow Model
       </a>
       
         
@@ -1082,8 +1082,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualize-data" class="md-nav__link">
-    Visualize Data
+  <a href="#inspect-the-data" class="md-nav__link">
+    Inspect the Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-the-data" class="md-nav__link">
+    Prepare the Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-compile-and-run-the-model" class="md-nav__link">
+    Create, Compile, and Run the Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-the-model" class="md-nav__link">
+    Evaluate the Model
   </a>
   
 </li>
@@ -1341,8 +1362,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visualize-data" class="md-nav__link">
-    Visualize Data
+  <a href="#inspect-the-data" class="md-nav__link">
+    Inspect the Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-the-data" class="md-nav__link">
+    Prepare the Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-compile-and-run-the-model" class="md-nav__link">
+    Create, Compile, and Run the Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-the-model" class="md-nav__link">
+    Evaluate the Model
   </a>
   
 </li>
@@ -1360,15 +1402,25 @@
               
                 
 
-<h1 id="building-tensorflow-models">Building TensorFlow Models</h1>
-<p>This page is to demonstrate a simple pattern of building a TensorFlow model. The example that will be given will tackle
-an image classification model using CNN with the FMNIST dataset.</p>
+<h1 id="build-a-tensorflow-model">Build a TensorFlow Model</h1>
+<p>TensorFlow has given machine learning practitioners an incredible environment to easily create and run machine learning 
+models. I have taken this opportunity to prepare a short summary of how I would pursue to create a model of my own with 
+TensorFlow. The example will tackle an image classification problem using CNN with the Fashion MNIST dataset from 
+TensorFlow.</p>
 <h2 id="table-of-contents"><b>Table of Contents</b></h2>
 <details class="example" open="open">
 <summary>At a Glance</summary>
 <ul>
 <li><a href="#import-libraries">Import Libraries</a></li>
-<li><a href="#load-data">Load Data</a></li>
+<li><a href="#load-data">Load Data</a><ul>
+<li><a href="#download-data">Download Data</a></li>
+<li><a href="#create-reference">Create Reference to the Data</a></li>
+</ul>
+</li>
+<li><a href="#inspect">Inspect the Data</a></li>
+<li><a href="#prepare">Prepare the Data</a></li>
+<li><a href="#create">Create, Compile, and Run the Model</a></li>
+<li><a href="#evaluate">Evaluate the Model</a></li>
 </ul>
 </details>
 <p><br></p>
@@ -1394,6 +1446,7 @@ an image classification model using CNN with the FMNIST dataset.</p>
 <p><br></p>
 <p><a name="load-data"></a></p>
 <h2 id="load-data"><b>Load Data</b></h2>
+<p><a name="download-data"></a></p>
 <h3 id="download-data">Download Data</h3>
 <p>Before we can download the data, we need to identify where our Data is coming from. The data may come from a single
 source such as TensorFor Dataset or from Kaggle. Sometimes we might drew data from various sources to have a complete
@@ -1431,13 +1484,23 @@ Some argument might be;</p>
 <p><strong>Kaggle</strong></p>
 <p><strong>Google Drive</strong></p>
 <p><strong>GitHub</strong></p>
+<p><a name=""create-reference></a></p>
 <h3 id="create-reference-to-the-data">Create Reference to the Data</h3>
 <p>Is to create the reference to the download file if it hasn't already been done. Sometimes when finished load and
 extracting data from a zip file, it is needed to create a path reference to the dataset saved location.</p>
 <p><br></p>
-<p><a name="visualize-data"></a></p>
-<h2 id="visualize-data"><b>Visualize Data</b></h2>
+<p><a name="inspect"></a></p>
+<h2 id="inspect-the-data"><b>Inspect the Data</b></h2>
 <p>See more in Visualization Part <a href="">Here</a></p>
+<p><br></p>
+<p><a name="prepare"></a></p>
+<h2 id="prepare-the-data"><b>Prepare the Data</b></h2>
+<p><br></p>
+<p><a name="create"></a></p>
+<h2 id="create-compile-and-run-the-model"><b>Create, Compile, and Run the Model</b></h2>
+<p><br></p>
+<p><a name="evaluate"></a></p>
+<h2 id="evaluate-the-model"><b>Evaluate the Model</b></h2>
 
               
             </article>
