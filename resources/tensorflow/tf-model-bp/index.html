@@ -1,0 +1,2334 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/dl-logo-big-512x512-color.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.5">
+    
+    
+      
+        <title>TensorFlow Blueprint - DrLiptons</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a617204b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9204c3b2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link rel="stylesheet" href="../../../overrides/assets/stylesheets/main.d9227bb8.min.css">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tensorflow-model-blueprint" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DrLiptons" class="md-header__button md-logo" aria-label="DrLiptons" data-md-component="logo">
+      
+  <img src="../../../assets/dl-logo-big-512x512-color.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DrLiptons
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TensorFlow Blueprint
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../about/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../wip/" class="md-tabs__link">
+      In Progress
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../reference/" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resource/" class="md-tabs__link md-tabs__link--active">
+        Resource
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DrLiptons" class="md-nav__button md-logo" aria-label="DrLiptons" data-md-component="logo">
+      
+  <img src="../../../assets/dl-logo-big-512x512-color.png" alt="logo">
+
+    </a>
+    DrLiptons
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wip/" class="md-nav__link">
+        In Progress
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/get-live-financial-data/" class="md-nav__link">
+        Get Live Financial Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/flight-deals/" class="md-nav__link">
+        Flight Deals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/alien-invaders/" class="md-nav__link">
+        Alien Invaders
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/auto-job-app/" class="md-nav__link">
+        Automated Job Application
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/price-tracker/" class="md-nav__link">
+        Price Tracker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/password-manager/" class="md-nav__link">
+        Password Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/text-2-morse-code/" class="md-nav__link">
+        Text2MorseCode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/stock-news-alerts/" class="md-nav__link">
+        Stock News Alert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/tetris/" class="md-nav__link">
+        Tetris Clone
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          TensorFlow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TensorFlow" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          TensorFlow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1" type="checkbox" id="__nav_4_3_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_1">
+          Plant Disease Detection
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plant Disease Detection" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Plant Disease Detection
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/pdd/plant-disease-detection/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/pdd/part-1-create-ml-model/" class="md-nav__link">
+        Part 1 - Create ML Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/pdd/part-2-create-app/" class="md-nav__link">
+        Part 2 - Desktop App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/pdd/part-3-make-exe/" class="md-nav__link">
+        Part 3 - Make Executable
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Resource" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resource/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pandas/" class="md-nav__link">
+        pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/mplfinance/" class="md-nav__link">
+        mplfinance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          TensorFlow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TensorFlow" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          TensorFlow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_1" type="checkbox" id="__nav_5_3_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_1">
+          TensorFlow Exam
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TensorFlow Exam" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          TensorFlow Exam
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tf-exam/tf-exam-overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_1_2" type="checkbox" id="__nav_5_3_1_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_1_2">
+          Coursera - DeepLearning.AI TensorFlow Developer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Coursera - DeepLearning.AI TensorFlow Developer" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Coursera - DeepLearning.AI TensorFlow Developer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tf-exam/cs-part-1/" class="md-nav__link">
+        Part 1 - Introduction to TF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tf-exam/cs-part-2/" class="md-nav__link">
+        Part 2 - CNN in TF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tf-exam/cs-part-3/" class="md-nav__link">
+        Part 3 -  NLP in TF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tf-exam/cs-part-4/" class="md-nav__link">
+        Part 4 - Time Series
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tf-exam/pass-tensorflow-cert/" class="md-nav__link">
+        How I past TensorFlow Exam
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TensorFlow Blueprint
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TensorFlow Blueprint
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    Import Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-data" class="md-nav__link">
+    Download Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Download Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensorflow-dataset" class="md-nav__link">
+    TensorFlow Dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="TensorFlow Dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensorflow-load" class="md-nav__link">
+    TensorFlow load()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorflow-load_data" class="md-nav__link">
+    TensorFlow load_data()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kaggle" class="md-nav__link">
+    Kaggle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-sources" class="md-nav__link">
+    Other Sources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspect-the-data" class="md-nav__link">
+    Inspect the Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-the-data" class="md-nav__link">
+    Prepare the Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare the Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-augmentation" class="md-nav__link">
+    Data Augmentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expand-dimension" class="md-nav__link">
+    Expand dimension
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-compile-and-run-the-model" class="md-nav__link">
+    Create, Compile, and Run the Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Create, Compile, and Run the Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-tensorflow-model" class="md-nav__link">
+    Create a TensorFlow model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile-the-model" class="md-nav__link">
+    Compile the model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-or-run-the-model" class="md-nav__link">
+    Fit (or run) the model
+  </a>
+  
+    <nav class="md-nav" aria-label="Fit (or run) the model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-callback" class="md-nav__link">
+    Create a callback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-model" class="md-nav__link">
+    Run the model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-the-model" class="md-nav__link">
+    Evaluate the Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluate the Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluate" class="md-nav__link">
+    Evaluate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-loss-curve" class="md-nav__link">
+    Plot Loss Curve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-the-model" class="md-nav__link">
+    Save the Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-model" class="md-nav__link">
+    Load Model
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_3" type="checkbox" id="__nav_5_3_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_3">
+          TensorFlow Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TensorFlow Models" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          TensorFlow Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/simple-regression/" class="md-nav__link">
+        Regression - House Prices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/regression-boston-housing/" class="md-nav__link">
+        Regression - Boston Housing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/basic-fmnist/" class="md-nav__link">
+        Basic Image Classification - FMNIST
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/cnn-fmnist/" class="md-nav__link">
+        CNN - FMNIST
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/titanic/" class="md-nav__link">
+        NNR - Titanic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/imdb/" class="md-nav__link">
+        NLP - IMDB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/image-classification-dogs-cats/" class="md-nav__link">
+        Image Classification - Dogs & Cats
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/utilities/" class="md-nav__link">
+        Utility Functions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-libraries" class="md-nav__link">
+    Import Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-data" class="md-nav__link">
+    Download Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Download Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensorflow-dataset" class="md-nav__link">
+    TensorFlow Dataset
+  </a>
+  
+    <nav class="md-nav" aria-label="TensorFlow Dataset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensorflow-load" class="md-nav__link">
+    TensorFlow load()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorflow-load_data" class="md-nav__link">
+    TensorFlow load_data()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kaggle" class="md-nav__link">
+    Kaggle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-sources" class="md-nav__link">
+    Other Sources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspect-the-data" class="md-nav__link">
+    Inspect the Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-the-data" class="md-nav__link">
+    Prepare the Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare the Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-augmentation" class="md-nav__link">
+    Data Augmentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expand-dimension" class="md-nav__link">
+    Expand dimension
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-compile-and-run-the-model" class="md-nav__link">
+    Create, Compile, and Run the Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Create, Compile, and Run the Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-tensorflow-model" class="md-nav__link">
+    Create a TensorFlow model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile-the-model" class="md-nav__link">
+    Compile the model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-or-run-the-model" class="md-nav__link">
+    Fit (or run) the model
+  </a>
+  
+    <nav class="md-nav" aria-label="Fit (or run) the model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-callback" class="md-nav__link">
+    Create a callback
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-model" class="md-nav__link">
+    Run the model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-the-model" class="md-nav__link">
+    Evaluate the Model
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluate the Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluate" class="md-nav__link">
+    Evaluate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-loss-curve" class="md-nav__link">
+    Plot Loss Curve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-the-model" class="md-nav__link">
+    Save the Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-model" class="md-nav__link">
+    Load Model
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="tensorflow-model-blueprint">TensorFlow Model Blueprint</h1>
+<p>TensorFlow has given machine learning practitioners an incredible environment to easily create and run machine learning 
+models. I have taken this opportunity to prepare a summary of how I would make a model with TensorFlow. The example 
+will tackle an image classification problem using CNN with the Fashion MNIST dataset from TensorFlow.</p>
+<h2 id="table-of-contents"><b>Table of Contents</b></h2>
+<details class="example" open="open">
+<summary>At a Glance</summary>
+<ul>
+<li><a href="#import-libraries">Import Libraries</a></li>
+<li><a href="#download-data">Download Data</a><ul>
+<li><a href="#tensorflow-dataset">TensorFlow Dataset</a></li>
+<li><a href="#kaggle">Kaggle</a></li>
+<li><a href="#google">Google Drive</a></li>
+<li><a href="#others">Other Sources</a></li>
+</ul>
+</li>
+<li><a href="#inspect">Inspect the Data</a></li>
+<li><a href="#prepare">Prepare the Data</a></li>
+<li><a href="#create">Create, Compile, and Run the Model</a></li>
+<li><a href="#evaluate">Evaluate the Model</a></li>
+<li><a href="#save">Save the Model</a></li>
+<li><a href="#load">Load Model</a></li>
+</ul>
+</details>
+<p><br></p>
+<p><a name="import-libraries"></a></p>
+<h2 id="import-libraries"><b>Import Libraries</b></h2>
+<p>These are the common libraries that will be used in almost every model. </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># For Loading Data</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">zipfile</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># For General Purposes</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kn">import</span> <span class="nn">pathlib</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1"># For TensorFlows&#39;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="kn">import</span> <span class="nn">tensorflow_hub</span> <span class="k">as</span> <span class="nn">hub</span>
+</code></pre></div>
+</td></tr></table>
+<p><br></p>
+<p><a name="download-data"></a></p>
+<h2 id="download-data"><b>Download Data</b></h2>
+<p>Before we can download the data, we need to identify where our Data is coming from. The data might come from a single 
+source such as from TensorFlow Dataset, or you might create your own collective dataset from various sources. In this 
+notebook, we will use the dataset from TensorFlow.</p>
+<p><a name="tensorflow-dataset"></a></p>
+<h3 id="tensorflow-dataset">TensorFlow Dataset</h3>
+<p>TensorFlow has an extensive list of Datasets available for users to enter. As a start, you may take a look at all 
+datasets by calling the function <code>tfds.list_builders()</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">tfds</span><span class="o">.</span><span class="n">list_builders</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>[&#39;abstract_reasoning&#39;,
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a> &#39;accentdb&#39;,
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a> &#39;aeslc&#39;,
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a> &#39;aflw2k3d&#39;,
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a> &#39;ag_news_subset&#39;,
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a> &#39;ai2_arc&#39;,
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a> &#39;ai2_arc_with_ir&#39;,
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a> &#39;amazon_us_reviews&#39;,
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>...]
+</code></pre></div>
+<p>For more datasets visit: <a href="https://www.tensorflow.org/datasets/catalog/overview">TensorFlow Datasets Overview</a></p>
+<h4 id="tensorflow-load">TensorFlow load()</h4>
+<p>To easily load the dataset we can use the tensorflow function <code>tfds.load()</code> and adding some argument when needed. 
+Some argument might be;</p>
+<ul>
+<li><code>split</code>: to split the dataset into sets (<code>train</code>, <code>['train', 'test']</code>, <code>'train[80%:]'</code>, ...) see more <a href="https://www.tensorflow.org/datasets/splits">here</a></li>
+<li><code>shuffle_files</code>: (bool) to shuffle files between epochs</li>
+<li><code>data_dir</code>: (str) location to save the dataset (Default: <code>~/tensorflow_datasets/</code>)</li>
+<li><code>with_info</code>: (bool) to return a metadata (return: <code>tfds.cose.DatasetInfo</code>)</li>
+</ul>
+<p>Before downloading the dataset, we should check the respective dataset what it returns. A full list of all the datasets 
+available on TensorFlow can be found <a href="ttps://www.tensorflow.org/datasets/catalog">here</a>.</p>
+<p>By default, if using <code>tfds.load()</code>, the function will return a prefetched dataset of <a href="https://www.tensorflow.org/api_docs/python/tf/Tensor">Tensors</a> 
+(<code>(train_ds, test_ds)</code> or <code>ds</code>) and a file that contains the information of the dataset (<code>ds_info</code>).</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="n">train_ds</span><span class="p">,</span> <span class="n">test_ds</span><span class="p">),</span> <span class="n">ds_info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fashion_mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">],</span> <span class="n">shuffle_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<details class="warning" open="open">
+<summary>Note</summary>
+<p>In this example we will not use prefetched data from <code>tfds.load()</code>because later on, we will use data augmentation
+with our data. However, we will need the data's info that will be returned from <code>tfds.load()</code></p>
+</details>
+<h4 id="tensorflow-load_data">TensorFlow load_data()</h4>
+<p>Loading data from TensorFlow with load_data() gives us the raw images and labels instead of prefetched data like the 
+<code>tfds.load()</code> above. This make it easier and less performance consuming when using data augmentation. However, we will 
+fetch the data again when preprocessing the data.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Define model name</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">fashion_mnist</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fashion_mnist</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># Download the dataset</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">(</span><span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">),</span> <span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span> <span class="o">=</span> <span class="n">fashion_mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<a name="kaggle"></a></p>
+<h3 id="kaggle">Kaggle</h3>
+<p>We won't go into detail how to download a dataset from kaggle in this notebook. However, as following are some hints to
+Kaggle;</p>
+<p>**Kaggle Account</p>
+<ol>
+<li>Register for a Kaggle on <a href="https://www.kaggle.com/">kaggle.com</a></li>
+<li>Go to <code>Account/Account</code> in your kaggle account and create a new token API</li>
+</ol>
+<p>** On your notebook (see detailed information <a href="https://github.com/Kaggle/kaggle-api">here</a>)</p>
+<ol>
+<li>install Kaggle library</li>
+<li>Create an API credential</li>
+<li>Load the dataset</li>
+</ol>
+<p><a name="others"></a></p>
+<h3 id="other-sources">Other Sources</h3>
+<p>There are wide range of platform that have public datasets available to use. The matter of fact is that each platform
+might have their own method to retrieve that data. Best is to go through their documentation of looking in faq.</p>
+<p><a name="inspect"></a></p>
+<h2 id="inspect-the-data"><b>Inspect the Data</b></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Print ds_info</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">ds_info</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>&gt;tfds.core.DatasetInfo(
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>&gt;    name=&#39;fashion_mnist&#39;,
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>&gt;    version=3.0.1,
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>&gt;    description=&#39;Fashion-MNIST is a dataset of Zalando&#39;s article images consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes.&#39;,
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>&gt;    homepage=&#39;https://github.com/zalandoresearch/fashion-mnist&#39;,
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>&gt;    features=FeaturesDict({
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>&gt;        &#39;image&#39;: Image(shape=(28, 28, 1), dtype=tf.uint8),
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>&gt;        &#39;label&#39;: ClassLabel(shape=(), dtype=tf.int64, num_classes=10),
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>&gt;    }),
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>&gt;    total_num_examples=70000,
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>&gt;    splits={
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>&gt;        &#39;test&#39;: 10000,
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>&gt;        &#39;train&#39;: 60000,
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>&gt;    },
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>&gt;    supervised_keys=(&#39;image&#39;, &#39;label&#39;),
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a>&gt;    citation=&quot;&quot;&quot;@article{DBLP:journals/corr/abs-1708-07747,
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a>&gt;      author    = {Han Xiao and
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>&gt;                   Kashif Rasul and
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>&gt;                   Roland Vollgraf},
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a>&gt;      title     = {Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>&gt;                   Algorithms},
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a>&gt;      journal   = {CoRR},
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a>&gt;      volume    = {abs/1708.07747},
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a>&gt;      year      = {2017},
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a>&gt;      url       = {http://arxiv.org/abs/1708.07747},
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a>&gt;      archivePrefix = {arXiv},
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a>&gt;      eprint    = {1708.07747},
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a>&gt;      timestamp = {Mon, 13 Aug 2018 16:47:27 +0200},
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a>&gt;      biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1708-07747},
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a>&gt;      bibsource = {dblp computer science bibliography, https://dblp.org}
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a>&gt;    }&quot;&quot;&quot;,
+<a id="__codelineno-6-32" name="__codelineno-6-32"></a>&gt;    redistribution_info=,
+<a id="__codelineno-6-33" name="__codelineno-6-33"></a>&gt;)
+</code></pre></div>
+<p>In variable <code>features</code> we can see that it stores a <code>ClassLabel()</code> function. Since TensorFlow hasn't given us the class
+names of the dataset, we will extract those names from the <code>features</code> variable and store it into <code>class_names</code>.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Extract class names from info.features</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">class_names</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">names</span>
+</code></pre></div>
+</td></tr></table>
+The result of our extraction will be;</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>[&#39;T-shirt/top&#39;,
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a> &#39;Trouser&#39;,
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a> &#39;Pullover&#39;,
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a> &#39;Dress&#39;,
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a> &#39;Coat&#39;,
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a> &#39;Sandal&#39;,
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a> &#39;Shirt&#39;,
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a> &#39;Sneaker&#39;,
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a> &#39;Bag&#39;,
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a> &#39;Ankle boot&#39;]
+</code></pre></div>
+<p>The dataset that we have downloaded should have in total of 70,000 images. </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Check number of images</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nb">len</span><span class="p">(</span><span class="n">train_ds</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_ds</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>&gt; (60000, 10000)
+</code></pre></div>
+<p>The amount is correct. Let's visualize some images using <code>tfds.show_examples(train_ds, info)</code>. By default, it will 
+display the first 9 images.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Visualize some example images</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">show_examples</span><span class="p">(</span><span class="n">train_ds</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="ds-example" src="../../images/ds-example.png" /></p>
+<p>As mentioned earlier that when loading Fashion MNIST dataset by using <code>tfds.load()</code> prefetched data will be returned.
+Let's see if this is true.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># Check train_ds info</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">train_ds</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>&gt; &lt;PrefetchDataset element_spec=(TensorSpec(shape=(28, 28, 1), dtype=tf.uint8, name=None), TensorSpec(shape=(), dtype=tf.int64, name=None))&gt;
+</code></pre></div>
+<p>As we can see, Using tf.load() by default will prefetch the data which want make it difficult to use data augmentations. 
+In order to use augmentation with the dataset, another method will be used.</p>
+<p><br></p>
+<p><a name="prepare"></a></p>
+<h2 id="prepare-the-data"><b>Prepare the Data</b></h2>
+<p>Currently we have 2 datasets, a training set and a testing set. Additionally, for the sake of completeness, 
+let's create a validation set.</p>
+<p>The validation set will be used to evaluate the model after finished training the model. It will indicate how well the 
+model will performed on an unseen dataset.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1"># Percentage of how much data will be kept as the training set</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="n">SPLIT</span> <span class="o">=</span> <span class="mi">80</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="c1"># Split the training set into training and validation set</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="n">training_images</span> <span class="o">=</span> <span class="n">train_images</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_images</span><span class="p">)</span> <span class="o">*</span> <span class="n">SPLIT</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)]</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="n">validation_images</span> <span class="o">=</span> <span class="n">train_images</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_images</span><span class="p">)</span> <span class="o">*</span> <span class="n">SPLIT</span> <span class="o">/</span> <span class="mi">100</span><span class="p">):]</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="n">training_labels</span> <span class="o">=</span> <span class="n">train_labels</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span> <span class="o">*</span> <span class="n">SPLIT</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)]</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="n">validation_labels</span> <span class="o">=</span> <span class="n">train_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span> <span class="o">*</span> <span class="n">SPLIT</span> <span class="o">/</span> <span class="mi">100</span><span class="p">):]</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="data-augmentation">Data Augmentation</h3>
+<p>Data augmentation is a technique to increase the amount of data by modifying copies of the original data. In other words,
+if there isn't enough data we can use data augmentation to alter the existing data in a (small) way that doesn't look the
+same. By making such, we will have a new sets of data that doesn't look like the original. The changes are enough to make
+the model belief that it is a new dataset. However, in human eyes, we still know that the augmented data are still the
+same.</p>
+<p>To doing so, TensorFlow has a build-in function <code>ImageDataGenerator</code> to perform data-augmentation. It comes with a lot 
+of functionality, such as</p>
+<ul>
+<li><code>rotation_range</code>: (int) - degree range for randomly rotations</li>
+<li><code>height_shift_range</code>: (float, 1D-array-like, or int) - randomly shift the image height</li>
+<li><code>width_shift_range</code>: (float, 1D-array-like, or int) - randomly shift the image width</li>
+<li><code>shear_range</code>: (float) - shear intensity (angle counter-clockwise)</li>
+<li><code>zoom_range</code>: (float or [lower, upper]) - range for random zooms</li>
+<li><code>horizontal_flip</code>: (bool) flip image horizontally</li>
+<li><code>vertical_flip</code>: (bool) flip image vertically</li>
+<li>There are still more arguments that can be used. More information <a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator?version=nightly">here</a></li>
+</ul>
+<p>Let's define data augmentation functions with the above listed arguments.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span>
+<span class="normal"><a href="#__codelineno-15-14">14</a></span>
+<span class="normal"><a href="#__codelineno-15-15">15</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># Create data augmentation function</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">train_datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>    <span class="n">rescale</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mf">255.</span><span class="p">,</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>    <span class="n">rotation_range</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a>    <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a>    <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a>    <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a>    <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a>    <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a>    <span class="n">fill_mode</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="p">)</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="n">validation_datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a>    <span class="n">rescale</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mf">255.</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Now that we have defined the necessary augmentation functions, we can use it to augmenting the existing data.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># Image augmentation</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="n">train_set</span> <span class="o">=</span> <span class="n">train_datagen</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">training_images</span><span class="p">,</span> <span class="n">training_labels</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">validation_set</span> <span class="o">=</span> <span class="n">validation_datagen</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">validation_images</span><span class="p">,</span> <span class="n">validation_labels</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span> 
+</code></pre></div>
+</td></tr></table>
+<h3 id="expand-dimension">Expand dimension</h3>
+<p>Let's take a look of the dimension of our dataset</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">training_images</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">validation_images</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test_images</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+</td></tr></table>
+<blockquote>
+<p>(48000, 28, 28)</p>
+</blockquote>
+<p>Our datasets haven't the correct dimension yet, We need to change them before we can use them for training our model.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># Expand dimension of the image sets</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="n">training_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">training_images</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="n">validation_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">validation_images</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>So far we haven't made any changes to our test dataset, Let's quickly do that before we move on.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Resize test images dimension </span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">test_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="c1"># Resize test images</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="n">test_images</span> <span class="o">=</span> <span class="n">test_images</span> <span class="o">/</span> <span class="mf">255.</span>
+</code></pre></div>
+</td></tr></table>
+<br></p>
+<p><a name="create"></a></p>
+<h2 id="create-compile-and-run-the-model"><b>Create, Compile, and Run the Model</b></h2>
+<p>This part is the main heart of TensorFlow since we are going to create a TensorFlow machine learning model. There are 3
+steps of this part</p>
+<ol>
+<li><strong>Create:</strong> define what neural layers will consist in the model</li>
+<li><strong>Compile:</strong> Configure the model</li>
+<li><strong>Fit:</strong></li>
+</ol>
+<h3 id="create-a-tensorflow-model">Create a TensorFlow model</h3>
+<p>In this step we will define how the model will look like. To create a model we will use the function 
+<code>keras.models.Sequantial()</code>. A <code>Sequantial()</code> model can be seen as a container that can contain stacks of layers 
+on top of each outer. Each layer represent a neural network layer where each layer can have only one input and an 
+output tensor.</p>
+<p>The model that we will create will have several layers, as following;</p>
+<ul>
+<li><code>Conv2D</code>: for detecting pattern</li>
+<li><code>MaxPooling2D</code>: is to select the maximum value of its pool and remove the remaining</li>
+<li><code>Flatten</code>: is to flatten the input into a single array</li>
+<li><code>Dense</code>: is a fully connected neural network layer.</li>
+</ul>
+<p>The model will look like this;</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">),</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">),</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">),</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a>    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;softmax&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="p">])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="compile-the-model">Compile the model</h3>
+<p>Compiling a model is to configure the <strong>loss function (<code>loss</code>), the </strong>optimizer<strong> (<code>optimizer</code>), and the </strong>metrics** 
+(<code>metrics</code>)</p>
+<ul>
+<li><code>loss</code>: loss function that will be minimized</li>
+<li><code>optimizer</code>: how to improve the model</li>
+<li><code>metrics</code>: list of metrics to be evaluated </li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="c1"># Compile model</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;sparse_categorical_crossentropy&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a>              <span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(),</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="fit-or-run-the-model">Fit (or run) the model</h3>
+<p>By <code>fit()</code> means to run or train a model. The model will be trained by the given inputs. We can define with what data 
+it will be trained, what data should be used to validate the training, how much it should be trained, or even using
+callbacks to preforming extra tasks after each end of a training epoch.</p>
+<h4 id="create-a-callback">Create a callback</h4>
+<p>TensorFlow have a lot of built-in callbacks that can be passed into the training session. However, in this case we will
+use only one, <code>EarlyStopping()</code>.</p>
+<p><code>EarlyStopping</code> is used to stop the training in the middle of the session. It will be checked at the end of every epoch
+and will stop the training when its observable parameter hasn't been improved after a curtain number of epochs.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="n">early_stopping</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">EarlyStopping</span><span class="p">(</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>    <span class="n">monitor</span><span class="o">=</span><span class="s2">&quot;val_loss&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a>    <span class="n">patience</span><span class="o">=</span><span class="mi">5</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a>    <span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="run-the-model">Run the model</h4>
+<p>We will run the model with the train_set to train the model and a validation set to validate the model. The model will
+be set to train for 100 epochs. However, we will pass a callback function to stop the model once it <code>val_loss</code> value
+hasn't been improved for 5 epochs.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span>
+<span class="normal"><a href="#__codelineno-23-6">6</a></span>
+<span class="normal"><a href="#__codelineno-23-7">7</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_set</span><span class="p">,</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>                    <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a>                    <span class="n">steps_per_epoch</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">training_images</span><span class="p">)</span><span class="o">/</span><span class="mi">64</span><span class="p">,</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>                    <span class="n">validation_data</span><span class="o">=</span><span class="n">validation_set</span><span class="p">,</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a>                    <span class="n">validation_steps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a>                    <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">]</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a>                    <span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>&gt; Epoch 1/100
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5714 - accuracy: 0.7860 - val_loss: 0.4610 - val_accuracy: 0.8188
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a>&gt; Epoch 2/100
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5623 - accuracy: 0.7912 - val_loss: 0.4497 - val_accuracy: 0.8250
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a>&gt; Epoch 3/100
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5605 - accuracy: 0.7913 - val_loss: 0.4085 - val_accuracy: 0.8250
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a>&gt; Epoch 4/100
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5401 - accuracy: 0.7993 - val_loss: 0.4631 - val_accuracy: 0.8062
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a>&gt; Epoch 5/100
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5363 - accuracy: 0.7997 - val_loss: 0.4790 - val_accuracy: 0.8188
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a>&gt; Epoch 6/100
+<a id="__codelineno-24-12" name="__codelineno-24-12"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5243 - accuracy: 0.8037 - val_loss: 0.5222 - val_accuracy: 0.7625
+<a id="__codelineno-24-13" name="__codelineno-24-13"></a>&gt; Epoch 7/100
+<a id="__codelineno-24-14" name="__codelineno-24-14"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5122 - accuracy: 0.8096 - val_loss: 0.3287 - val_accuracy: 0.8750
+<a id="__codelineno-24-15" name="__codelineno-24-15"></a>&gt; Epoch 8/100
+<a id="__codelineno-24-16" name="__codelineno-24-16"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5143 - accuracy: 0.8082 - val_loss: 0.5058 - val_accuracy: 0.8000
+<a id="__codelineno-24-17" name="__codelineno-24-17"></a>&gt; Epoch 9/100
+<a id="__codelineno-24-18" name="__codelineno-24-18"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.5030 - accuracy: 0.8139 - val_loss: 0.4172 - val_accuracy: 0.8438
+<a id="__codelineno-24-19" name="__codelineno-24-19"></a>&gt; Epoch 10/100
+<a id="__codelineno-24-20" name="__codelineno-24-20"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.4922 - accuracy: 0.8157 - val_loss: 0.4861 - val_accuracy: 0.8188
+<a id="__codelineno-24-21" name="__codelineno-24-21"></a>&gt; Epoch 11/100
+<a id="__codelineno-24-22" name="__codelineno-24-22"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.4935 - accuracy: 0.8146 - val_loss: 0.4688 - val_accuracy: 0.8438
+<a id="__codelineno-24-23" name="__codelineno-24-23"></a>&gt; Epoch 12/100
+<a id="__codelineno-24-24" name="__codelineno-24-24"></a>&gt; 750/750 [==============================] - 15s 20ms/step - loss: 0.4863 - accuracy: 0.8183 - val_loss: 0.4359 - val_accuracy: 0.8375
+</code></pre></div></p>
+<p>Thanks to the callback function that we have created earlier, it doesn't take 100 epochs to successfully run the model. 
+The model has stopped after 12 epochs.</p>
+<p><br></p>
+<p><a name="evaluate"></a></p>
+<h2 id="evaluate-the-model"><b>Evaluate the Model</b></h2>
+<p>There are a lot of method that can be used to evaluate a trained model by its output. TensorFlow have many build-in
+function that can be used depending on what we want to test. We also can use custom methods like plot metrics or charts
+to help evaluate the output values.</p>
+<h3 id="evaluate">Evaluate()</h3>
+<p>One of the simplest ways is to
+use <code>evaluate()</code>. By passing a dataset, it will return the loss value and metrics value for the model that's been
+evaluated.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="c1"># Evaluate the model</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>&gt; [0.4617650806903839, 0.8398000001907349]
+</code></pre></div>
+<p>As the value above, when we tested our model with unseen data it has a loss of 0.4618 and an accuracy of 0.8398 which
+isn't bad for training a model for only 12 epochs.</p>
+<h3 id="plot-loss-curve">Plot Loss Curve</h3>
+<p>Instead of looking at raw numbers when running the model, all the information is stored in the <code>history</code> variable.
+We can use that variable to plot a chart to have a better look of how the model has performed over the epochs.</p>
+<p>First, let's quickly create a plot function.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span>
+<span class="normal"><a href="#__codelineno-27-11">11</a></span>
+<span class="normal"><a href="#__codelineno-27-12">12</a></span>
+<span class="normal"><a href="#__codelineno-27-13">13</a></span>
+<span class="normal"><a href="#__codelineno-27-14">14</a></span>
+<span class="normal"><a href="#__codelineno-27-15">15</a></span>
+<span class="normal"><a href="#__codelineno-27-16">16</a></span>
+<span class="normal"><a href="#__codelineno-27-17">17</a></span>
+<span class="normal"><a href="#__codelineno-27-18">18</a></span>
+<span class="normal"><a href="#__codelineno-27-19">19</a></span>
+<span class="normal"><a href="#__codelineno-27-20">20</a></span>
+<span class="normal"><a href="#__codelineno-27-21">21</a></span>
+<span class="normal"><a href="#__codelineno-27-22">22</a></span>
+<span class="normal"><a href="#__codelineno-27-23">23</a></span>
+<span class="normal"><a href="#__codelineno-27-24">24</a></span>
+<span class="normal"><a href="#__codelineno-27-25">25</a></span>
+<span class="normal"><a href="#__codelineno-27-26">26</a></span>
+<span class="normal"><a href="#__codelineno-27-27">27</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="c1"># Plot loss curve function</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="k">def</span> <span class="nf">plot_loss_curves</span><span class="p">(</span><span class="n">history</span><span class="p">):</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a>  <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="sd">  Returns separate loss curves for training and validation metrics.</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="sd">  &quot;&quot;&quot;</span> 
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a>  <span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a>  <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a>
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a>  <span class="n">accuracy</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10"></a>  <span class="n">val_accuracy</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">]</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11"></a>
+<a id="__codelineno-27-12" name="__codelineno-27-12"></a>  <span class="n">epochs</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]))</span>
+<a id="__codelineno-27-13" name="__codelineno-27-13"></a>
+<a id="__codelineno-27-14" name="__codelineno-27-14"></a>  <span class="c1"># Plot loss</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;training_loss&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-16" name="__codelineno-27-16"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-17" name="__codelineno-27-17"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-18" name="__codelineno-27-18"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epochs&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-19" name="__codelineno-27-19"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<a id="__codelineno-27-20" name="__codelineno-27-20"></a>
+<a id="__codelineno-27-21" name="__codelineno-27-21"></a>  <span class="c1"># Plot accuracy</span>
+<a id="__codelineno-27-22" name="__codelineno-27-22"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<a id="__codelineno-27-23" name="__codelineno-27-23"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;training_accuracy&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-24" name="__codelineno-27-24"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">val_accuracy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-25" name="__codelineno-27-25"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-26" name="__codelineno-27-26"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epochs&#39;</span><span class="p">)</span>
+<a id="__codelineno-27-27" name="__codelineno-27-27"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
+<p>Now, let's plot the chart</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="c1"># Plot loss curve</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="n">plot_loss_curves</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p><img alt="plot-history" src="../../images/plot-history.png" /></p>
+<p>As we can see in the pictures above, until the sixth epoch, validation loss has decreased and accuracy has increased dastrictly.
+After that the trend has changes. We might to go back and find a way to improve our model later.</p>
+<p><br></p>
+<p><a name="save"></a></p>
+<h2 id="save-the-model"><b>Save the Model</b></h2>
+<p>When finishing training a model we can choose to save the result rather than let the model be deleted. This allows us
+to get access to the model without having the original code.</p>
+<p>The entire model can be saved into 2 formats, <code>SavedModel</code> (a TF 2.X format) or <code>HDF5</code> (a h5 format). To choose between
+those format we can simply put the respective file format into the name or pass it into the <code>save_format</code> argument.
+For more information visit this <a href="https://www.tensorflow.org/api_docs/python/tf/keras/Model?version=nightly#save">page</a>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span>
+<span class="normal"><a href="#__codelineno-29-5">5</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="c1"># Set saving location</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="n">export_path_keras</span> <span class="o">=</span> <span class="s2">&quot;./image_classification_(fmnist).h5&quot;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="c1"># Save model</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">export_path_keras</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p><br></p>
+<p><a name="load"></a></p>
+<h2 id="load-model"><b>Load Model</b></h2>
+<p><code>load_model()</code> can be used to load any saved model by <code>model.save()</code>. It takes by default only one argument to indicate
+the path of the saved model. More information <a href="https://www.tensorflow.org/api_docs/python/tf/keras/models/load_model">here</a></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
+<span class="normal"><a href="#__codelineno-30-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="c1"># Load model</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="n">loaded_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;./image_classification_(fmnist).h5&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../tf-exam/pass-tensorflow-cert/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How I past TensorFlow Exam" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              How I past TensorFlow Exam
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../models/simple-regression/" class="md-footer__link md-footer__link--next" aria-label="Next: Regression - House Prices" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Regression - House Prices
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 - 2022 Mark Schwarz
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["search.suggest", "search.highlight", "search.tabs.link", "content.tabs.link", "navigation.indexes", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.cefbb252.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f8ea78.min.js"></script>
+      
+    
+  </body>
+</html>
