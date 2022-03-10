@@ -1148,7 +1148,7 @@
         
           <li class="md-nav__item">
   <a href="#expand-dimension" class="md-nav__link">
-    Expand dimension
+    Expand Dimension
   </a>
   
 </li>
@@ -1168,36 +1168,36 @@
         
           <li class="md-nav__item">
   <a href="#create-a-tensorflow-model" class="md-nav__link">
-    Create a TensorFlow model
+    Create a TensorFlow Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#compile-the-model" class="md-nav__link">
-    Compile the model
+    Compile the Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#fit-or-run-the-model" class="md-nav__link">
-    Fit (or run) the model
+    Fit (or run) the Model
   </a>
   
-    <nav class="md-nav" aria-label="Fit (or run) the model">
+    <nav class="md-nav" aria-label="Fit (or run) the Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#create-a-callback" class="md-nav__link">
-    Create a callback
+    Create a Callback
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#run-the-model" class="md-nav__link">
-    Run the model
+    Run the Model
   </a>
   
 </li>
@@ -1556,7 +1556,7 @@
         
           <li class="md-nav__item">
   <a href="#expand-dimension" class="md-nav__link">
-    Expand dimension
+    Expand Dimension
   </a>
   
 </li>
@@ -1576,36 +1576,36 @@
         
           <li class="md-nav__item">
   <a href="#create-a-tensorflow-model" class="md-nav__link">
-    Create a TensorFlow model
+    Create a TensorFlow Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#compile-the-model" class="md-nav__link">
-    Compile the model
+    Compile the Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#fit-or-run-the-model" class="md-nav__link">
-    Fit (or run) the model
+    Fit (or run) the Model
   </a>
   
-    <nav class="md-nav" aria-label="Fit (or run) the model">
+    <nav class="md-nav" aria-label="Fit (or run) the Model">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#create-a-callback" class="md-nav__link">
-    Create a callback
+    Create a Callback
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#run-the-model" class="md-nav__link">
-    Run the model
+    Run the Model
   </a>
   
 </li>
@@ -1682,20 +1682,14 @@ will tackle an image classification problem using CNN with the Fashion MNIST dat
 <details class="example" open="open">
 <summary>At a Glance</summary>
 <ul>
-<li><a href="#import-libraries">Import Libraries</a></li>
-<li><a href="#download-data">Download Data</a><ul>
-<li><a href="#tensorflow-dataset">TensorFlow Dataset</a></li>
-<li><a href="#kaggle">Kaggle</a></li>
-<li><a href="#google">Google Drive</a></li>
-<li><a href="#others">Other Sources</a></li>
-</ul>
-</li>
-<li><a href="#inspect">Inspect the Data</a></li>
-<li><a href="#prepare">Prepare the Data</a></li>
-<li><a href="#create">Create, Compile, and Run the Model</a></li>
-<li><a href="#evaluate">Evaluate the Model</a></li>
-<li><a href="#save">Save the Model</a></li>
-<li><a href="#load">Load Model</a></li>
+<li><a href="#import-libraries">Import Libraries</a> - import all the relevant libraries</li>
+<li><a href="#download-data">Download Data</a> - download the dataset for this notebook</li>
+<li><a href="#inspect">Inspect the Data</a> - visualize the dataset and make sense of the data</li>
+<li><a href="#prepare">Prepare the Data</a> - preprocessing the data to ready to use in the model</li>
+<li><a href="#create">Create, Compile, and Run the Model</a> - define the complete model and train the model</li>
+<li><a href="#evaluate">Evaluate the Model</a> - visualize the output and model's performance</li>
+<li><a href="#save">Save the Model</a> - save the successfully trained model</li>
+<li><a href="#load">Load Model</a> - load any model that have been previously created</li>
 </ul>
 </details>
 <p><br></p>
@@ -1757,31 +1751,36 @@ datasets by calling the function <code>tfds.list_builders()</code>.</p>
 <a id="__codelineno-2-9" name="__codelineno-2-9"></a>...]
 </code></pre></div>
 <p>For more datasets visit: <a href="https://www.tensorflow.org/datasets/catalog/overview">TensorFlow Datasets Overview</a></p>
+<p><a name="tf-load"></a></p>
 <h4 id="tensorflow-load">TensorFlow load()</h4>
-<p>To easily load the dataset we can use the tensorflow function <code>tfds.load()</code> and adding some argument when needed. 
-Some argument might be;</p>
+<p>To easily load the dataset we can use the TensorFlow function <code>tfds.load()</code> and add some argument when needed. 
+Some of the arguments might be;</p>
 <ul>
 <li><code>split</code>: to split the dataset into sets (<code>train</code>, <code>['train', 'test']</code>, <code>'train[80%:]'</code>, ...) see more <a href="https://www.tensorflow.org/datasets/splits">here</a></li>
 <li><code>shuffle_files</code>: (bool) to shuffle files between epochs</li>
 <li><code>data_dir</code>: (str) location to save the dataset (Default: <code>~/tensorflow_datasets/</code>)</li>
 <li><code>with_info</code>: (bool) to return a metadata (return: <code>tfds.cose.DatasetInfo</code>)</li>
 </ul>
-<p>Before downloading the dataset, we should check the respective dataset what it returns. A full list of all the datasets 
-available on TensorFlow can be found <a href="ttps://www.tensorflow.org/datasets/catalog">here</a>.</p>
-<p>By default, if using <code>tfds.load()</code>, the function will return a prefetched dataset of <a href="https://www.tensorflow.org/api_docs/python/tf/Tensor">Tensors</a> 
-(<code>(train_ds, test_ds)</code> or <code>ds</code>) and a file that contains the information of the dataset (<code>ds_info</code>).</p>
+<p>Before downloading the dataset, we should see check what dataset will return when calling it. A full list of all the 
+available datasets on TensorFlow can be found <a href="https://www.tensorflow.org/datasets/catalog">here</a>.</p>
+<p>By default, if using <code>tfds.load()</code>, it will return the data as a prefetched dataset of <a href="https://www.tensorflow.org/api_docs/python/tf/Tensor">Tensors</a> 
+(below as <code>(train_ds, test_ds)</code> or <code>ds</code>) and a file that contains the information of the dataset (below as <code>ds_info</code>).</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="n">train_ds</span><span class="p">,</span> <span class="n">test_ds</span><span class="p">),</span> <span class="n">ds_info</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fashion_mnist&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">],</span> <span class="n">shuffle_files</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">with_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <details class="warning" open="open">
 <summary>Note</summary>
-<p>In this example we will not use prefetched data from <code>tfds.load()</code>because later on, we will use data augmentation
-with our data. However, we will need the data's info that will be returned from <code>tfds.load()</code></p>
+<p>In this example, we will not use prefetched data from <code>tfds.load()</code> because later on, we will use data augmentation
+to our data. However, we will need the data info (<code>ds_info</code>) that will be returned from <code>tfds.load()</code> to create a 
+class names array.</p>
 </details>
+<p><a name="tf-load-data"></a></p>
 <h4 id="tensorflow-load_data">TensorFlow load_data()</h4>
-<p>Loading data from TensorFlow with load_data() gives us the raw images and labels instead of prefetched data like the 
-<code>tfds.load()</code> above. This make it easier and less performance consuming when using data augmentation. However, we will 
-fetch the data again when preprocessing the data.</p>
+<p>Loading data from TensorFlow with <code>load_data()</code> return raw images and labels instead of prefetched data like the 
+<code>tfds.load()</code> above. This makes it easier and less performance-consuming when using data augmentation. To be able to 
+augment prefetched data we need to un-fetched it first. To do so with 70,000 images a lot of time and resources be 
+needed. While knowing this, it makes sense to use raw data. However, we will fetch the data again when the raw data 
+has been augmented during the data preprocessing.</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -1795,25 +1794,27 @@ fetch the data again when preprocessing the data.</p>
 </td></tr></table>
 <a name="kaggle"></a></p>
 <h3 id="kaggle">Kaggle</h3>
-<p>We won't go into detail how to download a dataset from kaggle in this notebook. However, as following are some hints to
-Kaggle;</p>
-<p>**Kaggle Account</p>
+<p>We won't go into detail about how to download a dataset from Kaggle in this notebook. However, as following are some 
+hints to use Kaggle;</p>
+<p><strong>Kaggle Account</strong></p>
 <ol>
-<li>Register for a Kaggle on <a href="https://www.kaggle.com/">kaggle.com</a></li>
-<li>Go to <code>Account/Account</code> in your kaggle account and create a new token API</li>
+<li>Register for a Kaggle account on <a href="https://www.kaggle.com/">kaggle.com</a></li>
+<li>Go to <code>Account</code> in your Kaggle profile and create a new token API</li>
 </ol>
-<p>** On your notebook (see detailed information <a href="https://github.com/Kaggle/kaggle-api">here</a>)</p>
+<p><strong>On your Notebook</strong> (see detailed information <a href="https://github.com/Kaggle/kaggle-api">here</a>)</p>
 <ol>
-<li>install Kaggle library</li>
+<li>Install the Kaggle library</li>
 <li>Create an API credential</li>
 <li>Load the dataset</li>
 </ol>
 <p><a name="others"></a></p>
 <h3 id="other-sources">Other Sources</h3>
-<p>There are wide range of platform that have public datasets available to use. The matter of fact is that each platform
-might have their own method to retrieve that data. Best is to go through their documentation of looking in faq.</p>
+<p>There is a wide range of platforms that have public datasets available to use. The matter of fact is that each platform 
+might have its own method to retrieve that data. The best is to go through their documentation or to look in at the 
+frequently asked questions (FAQ) section.</p>
 <p><a name="inspect"></a></p>
 <h2 id="inspect-the-data"><b>Inspect the Data</b></h2>
+<p>First, let's take a look at the <code>ds_info</code> file and see what kind of information it contains.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Print ds_info</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">ds_info</span><span class="p">)</span>
@@ -1853,14 +1854,17 @@ might have their own method to retrieve that data. Best is to go through their d
 <a id="__codelineno-6-32" name="__codelineno-6-32"></a>&gt;    redistribution_info=,
 <a id="__codelineno-6-33" name="__codelineno-6-33"></a>&gt;)
 </code></pre></div>
-<p>In variable <code>features</code> we can see that it stores a <code>ClassLabel()</code> function. Since TensorFlow hasn't given us the class
-names of the dataset, we will extract those names from the <code>features</code> variable and store it into <code>class_names</code>.</p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<p>The file contains several important information about the dataset such as the description, original dataset repo, 
+features, number of samples, etc.</p>
+<p>However, we are particularly interested in variable <code>features</code>. We can see that it stores a <code>ClassLabel()</code> function. 
+Since TensorFlow hasn't given us the class names of the dataset, we will extract those class names from the <code>features</code> 
+variable and store them into our <code>class_names</code> variables.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Extract class names from info.features</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">class_names</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">names</span>
 </code></pre></div>
 </td></tr></table>
-The result of our extraction will be;</p>
+<p>The result of our extraction will be;</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>[&#39;T-shirt/top&#39;,
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a> &#39;Trouser&#39;,
 <a id="__codelineno-8-3" name="__codelineno-8-3"></a> &#39;Pullover&#39;,
@@ -1872,7 +1876,7 @@ The result of our extraction will be;</p>
 <a id="__codelineno-8-9" name="__codelineno-8-9"></a> &#39;Bag&#39;,
 <a id="__codelineno-8-10" name="__codelineno-8-10"></a> &#39;Ankle boot&#39;]
 </code></pre></div>
-<p>The dataset that we have downloaded should have in total of 70,000 images. </p>
+<p>The dataset that we have downloaded should have in total of 70,000 images.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Check number of images</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nb">len</span><span class="p">(</span><span class="n">train_ds</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_ds</span><span class="p">)</span>
@@ -1888,8 +1892,8 @@ display the first 9 images.</p>
 </code></pre></div>
 </td></tr></table>
 <p><img alt="ds-example" src="../../images/ds-example.png" /></p>
-<p>As mentioned earlier that when loading Fashion MNIST dataset by using <code>tfds.load()</code> prefetched data will be returned.
-Let's see if this is true.</p>
+<p>As mentioned earlier, when loading the Fashion MNIST dataset by using <code>tfds.load()</code> it will return prefetched data. 
+Let's see if this holds true.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># Check train_ds info</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">train_ds</span>
@@ -1897,16 +1901,16 @@ Let's see if this is true.</p>
 </td></tr></table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>&gt; &lt;PrefetchDataset element_spec=(TensorSpec(shape=(28, 28, 1), dtype=tf.uint8, name=None), TensorSpec(shape=(), dtype=tf.int64, name=None))&gt;
 </code></pre></div>
-<p>As we can see, Using tf.load() by default will prefetch the data which want make it difficult to use data augmentations. 
-In order to use augmentation with the dataset, another method will be used.</p>
+<p>As we can see, using <code>tf.load()</code>, by default will return prefetch the data which will make it difficult to use data 
+augmentations. In order to use augmentation with the dataset, we need another workaround.</p>
 <p><br></p>
 <p><a name="prepare"></a></p>
 <h2 id="prepare-the-data"><b>Prepare the Data</b></h2>
-<p>Currently we have 2 datasets, a training set and a testing set. Additionally, for the sake of completeness, 
-let's create a validation set.</p>
-<p>The validation set will be used to evaluate the model after finished training the model. It will indicate how well the 
-model will performed on an unseen dataset.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<p>Currently, we have 2 datasets, a training set, and a testing set. Additionally, for the sake of completeness, let's 
+create a validation set.</p>
+<p>The validation set will be used to evaluate the model after finishing training the model. It will indicate how well 
+the model will perform on an unseen dataset.</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span>
 <span class="normal"><a href="#__codelineno-14-4">4</a></span>
@@ -1923,14 +1927,14 @@ model will performed on an unseen dataset.</p>
 <a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="n">validation_labels</span> <span class="o">=</span> <span class="n">train_labels</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span> <span class="o">*</span> <span class="n">SPLIT</span> <span class="o">/</span> <span class="mi">100</span><span class="p">):]</span>
 </code></pre></div>
 </td></tr></table>
+<a name="data-aug"></a></p>
 <h3 id="data-augmentation">Data Augmentation</h3>
-<p>Data augmentation is a technique to increase the amount of data by modifying copies of the original data. In other words,
-if there isn't enough data we can use data augmentation to alter the existing data in a (small) way that doesn't look the
-same. By making such, we will have a new sets of data that doesn't look like the original. The changes are enough to make
-the model belief that it is a new dataset. However, in human eyes, we still know that the augmented data are still the
-same.</p>
-<p>To doing so, TensorFlow has a build-in function <code>ImageDataGenerator</code> to perform data-augmentation. It comes with a lot 
-of functionality, such as</p>
+<p>Data augmentation is a technique to increase the amount of data by modifying copies of the original data. In other 
+words, if there isn't enough data we can use data augmentation to alter the existing data in a (small) way that doesn't 
+look the same. By making such, we will have a new set of data that doesn't look like the original. The changes are 
+enough to make the model believe that it is a new dataset.</p>
+<p>TensorFlow has a build-in function <code>ImageDataGenerator</code> to perform data augmentation. The function has a lot of 
+functionality, some of them are listed below;</p>
 <ul>
 <li><code>rotation_range</code>: (int) - degree range for randomly rotations</li>
 <li><code>height_shift_range</code>: (float, 1D-array-like, or int) - randomly shift the image height</li>
@@ -1939,9 +1943,10 @@ of functionality, such as</p>
 <li><code>zoom_range</code>: (float or [lower, upper]) - range for random zooms</li>
 <li><code>horizontal_flip</code>: (bool) flip image horizontally</li>
 <li><code>vertical_flip</code>: (bool) flip image vertically</li>
-<li>There are still more arguments that can be used. More information <a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator?version=nightly">here</a></li>
 </ul>
-<p>Let's define data augmentation functions with the above listed arguments.</p>
+<p>There are still more arguments that can be used. More information 
+<a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator?version=nightly">here</a></p>
+<p>Let's define data augmentation functions with the above-listed arguments.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
@@ -1973,7 +1978,7 @@ of functionality, such as</p>
 <a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<p>Now that we have defined the necessary augmentation functions, we can use it to augmenting the existing data.</p>
+<p>Now that we have defined an augmentation function, we can use it to augment the existing data.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
 <span class="normal"><a href="#__codelineno-16-2">2</a></span>
 <span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># Image augmentation</span>
@@ -1981,15 +1986,16 @@ of functionality, such as</p>
 <a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">validation_set</span> <span class="o">=</span> <span class="n">validation_datagen</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">validation_images</span><span class="p">,</span> <span class="n">validation_labels</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span> 
 </code></pre></div>
 </td></tr></table>
-<h3 id="expand-dimension">Expand dimension</h3>
-<p>Let's take a look of the dimension of our dataset</p>
+<p><a name="expand-dim"></a></p>
+<h3 id="expand-dimension">Expand Dimension</h3>
+<p>Let's take a look at the dimension of our dataset.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">training_images</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">validation_images</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test_images</span><span class="o">.</span><span class="n">shape</span>
 </code></pre></div>
 </td></tr></table>
 <blockquote>
 <p>(48000, 28, 28)</p>
 </blockquote>
-<p>Our datasets haven't the correct dimension yet, We need to change them before we can use them for training our model.</p>
+<p>Our datasets haven't the correct dimension yet, We need to change them before we can use them to train our model.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
 <span class="normal"><a href="#__codelineno-18-2">2</a></span>
 <span class="normal"><a href="#__codelineno-18-3">3</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># Expand dimension of the image sets</span>
@@ -1997,7 +2003,7 @@ of functionality, such as</p>
 <a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="n">validation_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">validation_images</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<p>So far we haven't made any changes to our test dataset, Let's quickly do that before we move on.</p>
+<p>So far we haven't made any changes to our test dataset yet, Let's quickly do that before we move on.</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
 <span class="normal"><a href="#__codelineno-19-2">2</a></span>
 <span class="normal"><a href="#__codelineno-19-3">3</a></span>
@@ -2012,19 +2018,23 @@ of functionality, such as</p>
 <br></p>
 <p><a name="create"></a></p>
 <h2 id="create-compile-and-run-the-model"><b>Create, Compile, and Run the Model</b></h2>
-<p>This part is the main heart of TensorFlow since we are going to create a TensorFlow machine learning model. There are 3
-steps of this part</p>
+<p>Now we have arrived at the step to create a TensorFlow machine learning model. There are 3 steps needed to be done to 
+successfully train the model. </p>
 <ol>
-<li><strong>Create:</strong> define what neural layers will consist in the model</li>
-<li><strong>Compile:</strong> Configure the model</li>
-<li><strong>Fit:</strong></li>
+<li><strong>Create:</strong> define what neural layers will exist in the model</li>
+<li><strong>Compile:</strong> configure the model</li>
+<li><strong>Fit:</strong> to train the model</li>
 </ol>
-<h3 id="create-a-tensorflow-model">Create a TensorFlow model</h3>
-<p>In this step we will define how the model will look like. To create a model we will use the function 
-<code>keras.models.Sequantial()</code>. A <code>Sequantial()</code> model can be seen as a container that can contain stacks of layers 
-on top of each outer. Each layer represent a neural network layer where each layer can have only one input and an 
-output tensor.</p>
-<p>The model that we will create will have several layers, as following;</p>
+<p>We can think of it as building a tower. The <strong>create</strong> step is like building each level of the building. Each level can 
+be representing a neural network layer in our model. The second step, <strong>compile</strong>, represent how to set the interior of 
+the build, as of how the model functionality is. The <strong>fit</strong> step is to define what kind of people and how frequently 
+we will allow entering the building.</p>
+<p><a name="create-model"></a></p>
+<h3 id="create-a-tensorflow-model">Create a TensorFlow Model</h3>
+<p>The first is to define what the model will look like. To create a model we will use the <code>keras.models.Sequential()</code> 
+function. A <code>Sequential()</code> model can be seen as a container that can contain stacks of layers that are lied on top of 
+each outer. Each layer represents a neural network layer where each layer can have only one input and an output tensor.</p>
+<p>The model that we will create will have several layers, as follows;</p>
 <ul>
 <li><code>Conv2D</code>: for detecting pattern</li>
 <li><code>MaxPooling2D</code>: is to select the maximum value of its pool and remove the remaining</li>
@@ -2053,9 +2063,10 @@ output tensor.</p>
 <a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="p">])</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="compile-the-model">Compile the model</h3>
+<p><a name="compile-model"></a></p>
+<h3 id="compile-the-model">Compile the Model</h3>
 <p>Compiling a model is to configure the <strong>loss function (<code>loss</code>), the </strong>optimizer<strong> (<code>optimizer</code>), and the </strong>metrics** 
-(<code>metrics</code>)</p>
+(<code>metrics</code>).</p>
 <ul>
 <li><code>loss</code>: loss function that will be minimized</li>
 <li><code>optimizer</code>: how to improve the model</li>
@@ -2070,15 +2081,19 @@ output tensor.</p>
 <a id="__codelineno-21-4" name="__codelineno-21-4"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="fit-or-run-the-model">Fit (or run) the model</h3>
-<p>By <code>fit()</code> means to run or train a model. The model will be trained by the given inputs. We can define with what data 
-it will be trained, what data should be used to validate the training, how much it should be trained, or even using
-callbacks to preforming extra tasks after each end of a training epoch.</p>
-<h4 id="create-a-callback">Create a callback</h4>
-<p>TensorFlow have a lot of built-in callbacks that can be passed into the training session. However, in this case we will
+<p><a name="fit-model"></a></p>
+<h3 id="fit-or-run-the-model">Fit (or run) the Model</h3>
+<p><code>fit()</code> function is the function to actually run the model by passing the inputs and the number of training epochs into 
+the model. The model will then start training with the given inputs. We can define what data it will be trained, what 
+data should be used to validate the training, how much it should be trained, or even use callbacks to perform extra 
+tasks after the end of a training epoch.</p>
+<p><a name="callback"></a></p>
+<h4 id="create-a-callback">Create a Callback</h4>
+<p>TensorFlow has a lot of built-in callbacks that can be passed into the training session. However, in this case, we will 
 use only one, <code>EarlyStopping()</code>.</p>
-<p><code>EarlyStopping</code> is used to stop the training in the middle of the session. It will be checked at the end of every epoch
-and will stop the training when its observable parameter hasn't been improved after a curtain number of epochs.</p>
+<p><code>EarlyStopping</code> is used to stop the training in the middle of the session. After the end of every epoch, it will check 
+if the condition has been met and will stop the training when its observable parameter hasn't been improved after a 
+certain number of epochs.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
 <span class="normal"><a href="#__codelineno-22-2">2</a></span>
 <span class="normal"><a href="#__codelineno-22-3">3</a></span>
@@ -2088,10 +2103,11 @@ and will stop the training when its observable parameter hasn't been improved af
 <a id="__codelineno-22-4" name="__codelineno-22-4"></a>    <span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<h4 id="run-the-model">Run the model</h4>
-<p>We will run the model with the train_set to train the model and a validation set to validate the model. The model will
-be set to train for 100 epochs. However, we will pass a callback function to stop the model once it <code>val_loss</code> value
-hasn't been improved for 5 epochs.</p>
+<p><a name="run-model"></a></p>
+<h4 id="run-the-model">Run the Model</h4>
+<p>We will run the model with the training set <code>train_set</code> and the validation set <code>validation_set</code> to validate the model. 
+The model will be set to train for 100 epochs. However, we will pass a callback function to stop the model once its 
+<code>val_loss</code> value hasn't been improved for 5 epochs.</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
 <span class="normal"><a href="#__codelineno-23-2">2</a></span>
 <span class="normal"><a href="#__codelineno-23-3">3</a></span>
@@ -2137,13 +2153,14 @@ The model has stopped after 12 epochs.</p>
 <p><br></p>
 <p><a name="evaluate"></a></p>
 <h2 id="evaluate-the-model"><b>Evaluate the Model</b></h2>
-<p>There are a lot of method that can be used to evaluate a trained model by its output. TensorFlow have many build-in
-function that can be used depending on what we want to test. We also can use custom methods like plot metrics or charts
+<p>There is a lot of methods that can be used to evaluate a trained model by using its output. TensorFlow has many built-in 
+functions that can be used depending on what we want to test. We also can use custom methods like plot metrics or charts 
 to help evaluate the output values.</p>
+<p><a name="evaluate-func"></a></p>
 <h3 id="evaluate">Evaluate()</h3>
-<p>One of the simplest ways is to
-use <code>evaluate()</code>. By passing a dataset, it will return the loss value and metrics value for the model that's been
-evaluated.</p>
+<p>One of the simplest ways is to use <code>evaluate()</code>. By injecting a dataset, it will return the loss value and metrics 
+value. Earlier we have prepared a test set named <code>test_set</code> that hasn't been used yet. We will use that set for the 
+evaluation.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
 <span class="normal"><a href="#__codelineno-25-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="c1"># Evaluate the model</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -2151,11 +2168,13 @@ evaluated.</p>
 </td></tr></table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>&gt; [0.4617650806903839, 0.8398000001907349]
 </code></pre></div>
-<p>As the value above, when we tested our model with unseen data it has a loss of 0.4618 and an accuracy of 0.8398 which
+<p>As the value above, when we tested our model with unseen data it has a loss of 0.4618 and an accuracy of 0.8398 which 
 isn't bad for training a model for only 12 epochs.</p>
+<p><a name="plot-curve"></a></p>
 <h3 id="plot-loss-curve">Plot Loss Curve</h3>
-<p>Instead of looking at raw numbers when running the model, all the information is stored in the <code>history</code> variable.
-We can use that variable to plot a chart to have a better look of how the model has performed over the epochs.</p>
+<p>When <code>fit()</code> or running the model, the model will return loss and metrics values. We ha set a variable <code>history</code> to 
+capture those. We can use that variable to plot a chart to have a better look at how the model has performed over the 
+epochs.</p>
 <p>First, let's quickly create a plot function.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
@@ -2212,22 +2231,23 @@ We can use that variable to plot a chart to have a better look of how the model 
 <a id="__codelineno-27-27" name="__codelineno-27-27"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </code></pre></div>
 </td></tr></table>
-<p>Now, let's plot the chart</p>
+<p>Now, let's plot the loos chart</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
 <span class="normal"><a href="#__codelineno-28-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="c1"># Plot loss curve</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="n">plot_loss_curves</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <p><img alt="plot-history" src="../../images/plot-history.png" /></p>
-<p>As we can see in the pictures above, until the sixth epoch, validation loss has decreased and accuracy has increased dastrictly.
-After that the trend has changes. We might to go back and find a way to improve our model later.</p>
+<p>From the charts above, we can see that the model has validation loss has decreased and accuracy has increased rapidly 
+until the sixth epoch. After that, the trend has changed. The performances have been fluctuating. This is a good reason 
+to go back and fine-tune the model.</p>
 <p><br></p>
 <p><a name="save"></a></p>
 <h2 id="save-the-model"><b>Save the Model</b></h2>
-<p>When finishing training a model we can choose to save the result rather than let the model be deleted. This allows us
+<p>When finishing training a model we can choose to save the result rather than let the model be deleted. This allows us 
 to get access to the model without having the original code.</p>
-<p>The entire model can be saved into 2 formats, <code>SavedModel</code> (a TF 2.X format) or <code>HDF5</code> (a h5 format). To choose between
-those format we can simply put the respective file format into the name or pass it into the <code>save_format</code> argument.
+<p>The entire model can be saved into 2 formats, <code>SavedModel</code> (a TF 2.X format) or <code>HDF5</code> (a h5 format). To choose between 
+those formats we can simply put the respective file format into the name or pass it into the <code>save_format</code> argument. 
 For more information visit this <a href="https://www.tensorflow.org/api_docs/python/tf/keras/Model?version=nightly#save">page</a>.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
 <span class="normal"><a href="#__codelineno-29-2">2</a></span>
@@ -2243,7 +2263,7 @@ For more information visit this <a href="https://www.tensorflow.org/api_docs/pyt
 <p><br></p>
 <p><a name="load"></a></p>
 <h2 id="load-model"><b>Load Model</b></h2>
-<p><code>load_model()</code> can be used to load any saved model by <code>model.save()</code>. It takes by default only one argument to indicate
+<p><code>load_model()</code> can be used to load any saved model by <code>model.save()</code>. It takes by default only one argument to indicate 
 the path of the saved model. More information <a href="https://www.tensorflow.org/api_docs/python/tf/keras/models/load_model">here</a></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
 <span class="normal"><a href="#__codelineno-30-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="c1"># Load model</span>
