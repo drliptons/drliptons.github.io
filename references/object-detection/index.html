@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="../../../../assets/dl-logo-big-512x512-color.png">
+      <link rel="icon" href="../../assets/dl-logo-big-512x512-color.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.5">
     
     
       
-        <title>Part 4 - Time Series - DrLiptons</title>
+        <title>Object Detection - DrLiptons</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.a617204b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a617204b.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.9204c3b2.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9204c3b2.min.css">
         
       
     
@@ -34,15 +34,15 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link rel="stylesheet" href="../../../../overrides/assets/stylesheets/main.d9227bb8.min.css">
+  <link rel="stylesheet" href="../../overrides/assets/stylesheets/main.d9227bb8.min.css">
 
   </head>
   
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#object-detection" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,9 +80,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="DrLiptons" class="md-header__button md-logo" aria-label="DrLiptons" data-md-component="logo">
+    <a href="../.." title="DrLiptons" class="md-header__button md-logo" aria-label="DrLiptons" data-md-component="logo">
       
-  <img src="../../../../assets/dl-logo-big-512x512-color.png" alt="logo">
+  <img src="../../assets/dl-logo-big-512x512-color.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part 4 - Time Series
+              Object Detection
             
           </span>
         </div>
@@ -180,7 +185,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -192,7 +197,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../../about/" class="md-tabs__link">
+    <a href="../../about/" class="md-tabs__link">
       About
     </a>
   </li>
@@ -204,26 +209,10 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../../wip/" class="md-tabs__link">
+    <a href="../../wip/" class="md-tabs__link">
       In Progress
     </a>
   </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../../reference/" class="md-tabs__link">
-        Reference
-      </a>
-    </li>
-  
 
       
         
@@ -237,7 +226,23 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../resource/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../reference/" class="md-tabs__link md-tabs__link--active">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../resource/" class="md-tabs__link">
         Resource
       </a>
     </li>
@@ -265,9 +270,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="DrLiptons" class="md-nav__button md-logo" aria-label="DrLiptons" data-md-component="logo">
+    <a href="../.." title="DrLiptons" class="md-nav__button md-logo" aria-label="DrLiptons" data-md-component="logo">
       
-  <img src="../../../../assets/dl-logo-big-512x512-color.png" alt="logo">
+  <img src="../../assets/dl-logo-big-512x512-color.png" alt="logo">
 
     </a>
     DrLiptons
@@ -283,7 +288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -298,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -313,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../wip/" class="md-nav__link">
+      <a href="../../wip/" class="md-nav__link">
         In Progress
       </a>
     </li>
@@ -326,12 +331,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -362,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../reference/" class="md-nav__link">
+      <a href="../../reference/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -422,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/get-live-financial-data/" class="md-nav__link">
+      <a href="../get-live-financial-data/" class="md-nav__link">
         Get Live Financial Data
       </a>
     </li>
@@ -436,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/flight-deals/" class="md-nav__link">
+      <a href="../flight-deals/" class="md-nav__link">
         Flight Deals
       </a>
     </li>
@@ -450,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/alien-invaders/" class="md-nav__link">
+      <a href="../alien-invaders/" class="md-nav__link">
         Alien Invaders
       </a>
     </li>
@@ -464,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/auto-job-app/" class="md-nav__link">
+      <a href="../auto-job-app/" class="md-nav__link">
         Automated Job Application
       </a>
     </li>
@@ -478,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/price-tracker/" class="md-nav__link">
+      <a href="../price-tracker/" class="md-nav__link">
         Price Tracker
       </a>
     </li>
@@ -492,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/password-manager/" class="md-nav__link">
+      <a href="../password-manager/" class="md-nav__link">
         Password Manager
       </a>
     </li>
@@ -506,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/text-2-morse-code/" class="md-nav__link">
+      <a href="../text-2-morse-code/" class="md-nav__link">
         Text2MorseCode
       </a>
     </li>
@@ -520,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/stock-news-alerts/" class="md-nav__link">
+      <a href="../stock-news-alerts/" class="md-nav__link">
         Stock News Alert
       </a>
     </li>
@@ -534,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/tetris/" class="md-nav__link">
+      <a href="../tetris/" class="md-nav__link">
         Tetris Clone
       </a>
     </li>
@@ -553,12 +560,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
       
       
       
@@ -623,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/pdd/plant-disease-detection/" class="md-nav__link">
+      <a href="../pdd/plant-disease-detection/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -637,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/pdd/part-1-create-ml-model/" class="md-nav__link">
+      <a href="../pdd/part-1-create-ml-model/" class="md-nav__link">
         Part 1 - Create ML Model
       </a>
     </li>
@@ -651,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/pdd/part-2-create-app/" class="md-nav__link">
+      <a href="../pdd/part-2-create-app/" class="md-nav__link">
         Part 2 - Desktop App
       </a>
     </li>
@@ -665,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../references/pdd/part-3-make-exe/" class="md-nav__link">
+      <a href="../pdd/part-3-make-exe/" class="md-nav__link">
         Part 3 - Make Executable
       </a>
     </li>
@@ -684,11 +693,86 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../references/object-detection/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Object Detection
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Object Detection
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#information" class="md-nav__link">
+    Information
+  </a>
+  
+    <nav class="md-nav" aria-label="Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-parameters" class="md-nav__link">
+    Test Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-results" class="md-nav__link">
+    Test Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-log" class="md-nav__link">
+    Change Log
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -713,14 +797,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -751,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resource/" class="md-nav__link">
+      <a href="../../resource/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -799,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/mplfinance/" class="md-nav__link">
+      <a href="../../resources/python/mplfinance/" class="md-nav__link">
         mplfinance
       </a>
     </li>
@@ -813,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/pandas/" class="md-nav__link">
+      <a href="../../resources/python/pandas/" class="md-nav__link">
         pandas
       </a>
     </li>
@@ -827,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/numpy/" class="md-nav__link">
+      <a href="../../resources/python/numpy/" class="md-nav__link">
         numpy
       </a>
     </li>
@@ -846,14 +928,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
       
       
@@ -882,14 +962,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_1" type="checkbox" id="__nav_5_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_1" type="checkbox" id="__nav_5_3_1" >
       
       
       
@@ -920,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tf-exam-overview/" class="md-nav__link">
+      <a href="../../resources/tensorflow/tf-exam/tf-exam-overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -932,14 +1010,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_1_2" type="checkbox" id="__nav_5_3_1_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_1_2" type="checkbox" id="__nav_5_3_1_2" >
       
       
       
@@ -972,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cs-part-1/" class="md-nav__link">
+      <a href="../../resources/tensorflow/tf-exam/cs-part-1/" class="md-nav__link">
         Part 1 - Introduction to TF
       </a>
     </li>
@@ -986,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cs-part-2/" class="md-nav__link">
+      <a href="../../resources/tensorflow/tf-exam/cs-part-2/" class="md-nav__link">
         Part 2 - CNN in TF
       </a>
     </li>
@@ -1000,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cs-part-3/" class="md-nav__link">
+      <a href="../../resources/tensorflow/tf-exam/cs-part-3/" class="md-nav__link">
         Part 3 -  NLP in TF
       </a>
     </li>
@@ -1012,19 +1088,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../resources/tensorflow/tf-exam/cs-part-4/" class="md-nav__link">
         Part 4 - Time Series
       </a>
-      
     </li>
   
 
@@ -1043,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pass-tensorflow-cert/" class="md-nav__link">
+      <a href="../../resources/tensorflow/tf-exam/pass-tensorflow-cert/" class="md-nav__link">
         How I past TensorFlow Exam
       </a>
     </li>
@@ -1064,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tf-model-bp/" class="md-nav__link">
+      <a href="../../resources/tensorflow/tf-model-bp/" class="md-nav__link">
         TensorFlow Blueprint
       </a>
     </li>
@@ -1122,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/simple-regression/" class="md-nav__link">
+      <a href="../../resources/tensorflow/models/simple-regression/" class="md-nav__link">
         Regression - House Prices
       </a>
     </li>
@@ -1136,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/regression-boston-housing/" class="md-nav__link">
+      <a href="../../resources/tensorflow/models/regression-boston-housing/" class="md-nav__link">
         Regression - Boston Housing
       </a>
     </li>
@@ -1150,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/basic-fmnist/" class="md-nav__link">
+      <a href="../../resources/tensorflow/models/basic-fmnist/" class="md-nav__link">
         Basic Image Classification - FMNIST
       </a>
     </li>
@@ -1164,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/cnn-fmnist/" class="md-nav__link">
+      <a href="../../resources/tensorflow/models/cnn-fmnist/" class="md-nav__link">
         CNN - FMNIST
       </a>
     </li>
@@ -1178,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/titanic/" class="md-nav__link">
+      <a href="../../resources/tensorflow/models/titanic/" class="md-nav__link">
         NNR - Titanic
       </a>
     </li>
@@ -1192,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/imdb/" class="md-nav__link">
+      <a href="../../resources/tensorflow/models/imdb/" class="md-nav__link">
         NLP - IMDB
       </a>
     </li>
@@ -1206,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/image-classification-dogs-cats/" class="md-nav__link">
+      <a href="../../resources/tensorflow/models/image-classification-dogs-cats/" class="md-nav__link">
         Image Classification - Dogs & Cats
       </a>
     </li>
@@ -1220,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/utilities/" class="md-nav__link">
+      <a href="../../resources/tensorflow/models/utilities/" class="md-nav__link">
         Utility Functions
       </a>
     </li>
@@ -1255,15 +1323,168 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#information" class="md-nav__link">
+    Information
+  </a>
+  
+    <nav class="md-nav" aria-label="Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-parameters" class="md-nav__link">
+    Test Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-results" class="md-nav__link">
+    Test Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-log" class="md-nav__link">
+    Change Log
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
 
-  <h1>Part 4 - Time Series</h1>
-
-
+<h1 id="object-detection"><b>Object Detection</b></h1>
+<p><img alt="image" src="../images/object-detection-preview.png" /></p>
+<h3 id="information"><b>Information</b></h3>
+<p>This small but beautiful project is about object detection using pre-trained models from 
+<a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md">TensorFlow 2 Model Zoo</a>. 
+The aim of this project is to lay the foundation of how pre-trained models could be easily deployed and applied to 
+other projects. Two models (<a href="http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_1024x1024_coco17_tpu-8.tar.gz">RetinaNet50</a> 
+and <a href="http://download.tensorflow.org/models/object_detection/tf2/20200711/efficientdet_d7_coco17_tpu-32.tar.gz">EfficientDet D7</a>) 
+were tested on a local machine with the same data sources to compare the differences, e.g. loading time, calculation 
+speed, etc. The results aren't to compare which model is better, rather explore the differences of choices. The models 
+were tested by using images, a video clip, and a live webcam feed.</p>
+<p><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md">TensorFlow 2 Detection Model Zoo</a> 
+is a public repository of large numbers of pre-trained models, made available by Google. The models have been trained 
+on the same <a href="https://cocodataset.org/">COCO 2017</a> dataset.</p>
+<h4 id="test-parameters">Test Parameters</h4>
+<ul>
+<li><strong>Loading Time:</strong> (result) time to load the model</li>
+<li><strong>Total Time:</strong> (result) accumulated time of the total prediction time over all 5 images</li>
+<li><strong>Speed (ms):</strong> (source) prediction time per frame</li>
+<li><strong>COCO mAP:</strong> (source) mean average precision tested on COCO 2017 dataset</li>
+<li><strong>iou_threshold:</strong> (input) overlapping bbox above this value will be discarded. Calculate by area of overlap / total area</li>
+<li><strong>score_threshold:</strong> minimum confidence score threshold to keep the bbox</li>
+<li><strong>max_output_size:</strong> number of maximum bboxes</li>
+<li><strong>outputs:</strong> boxes of detected objects</li>
+</ul>
+<h4 id="test-results">Test Results</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Model</th>
+<th align="center">Loading Time (s)</th>
+<th align="center">Total Time (s)</th>
+<th align="center">Speed (ms)</th>
+<th align="center">COCO mAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ResNet50 V1 FPN 1024x1024 (RetinaNet50)</td>
+<td align="center">12.9903</td>
+<td align="center">21.3637</td>
+<td align="center">87</td>
+<td align="center">38.3</td>
+</tr>
+<tr>
+<td align="center">EfficientDet D7 1536x1536</td>
+<td align="center">57.1772</td>
+<td align="center">73.2684</td>
+<td align="center">325</td>
+<td align="center">51.2</td>
+</tr>
+</tbody>
+</table>
+<p><small><strong><em>All tests are performed on a local machine</em></strong></small></p>
+<h3 id="features"><b>Features</b></h3>
+<ul>
+<li>
+<p>Prepare class list of COCO 2017 Dataset</p>
+<ul>
+<li>load class name into a list as assign a color for each class</li>
+</ul>
+</li>
+<li>
+<p>Download and save model from TensorFlow 2 Model Zoo</p>
+</li>
+<li>
+<p>Detect object(s) in image(s)</p>
+</li>
+<li>
+<p>Detect object(s)</p>
+<ul>
+<li>Show the current image with detected object(s)</li>
+<li>Save the image with the detected object(s) locally</li>
+</ul>
+</li>
+<li>
+<p>Detect object(s) in a video clip</p>
+<ul>
+<li>Live object(s) detection when playing the video clip</li>
+</ul>
+</li>
+<li>
+<p>Detect object(s) live from a webcam feed</p>
+</li>
+</ul>
+<h3 id="change-log"><b>Change Log</b></h3>
+<ul>
+<li>15.03.2022: First commit</li>
+</ul>
 
               
             </article>
@@ -1282,7 +1503,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../cs-part-3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part 3 -  NLP in TF" rel="prev">
+        <a href="../pdd/part-3-make-exe/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Part 3 - Make Executable" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1291,20 +1512,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Part 3 -  NLP in TF
+              Part 3 - Make Executable
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pass-tensorflow-cert/" class="md-footer__link md-footer__link--next" aria-label="Next: How I past TensorFlow Exam" rel="next">
+        <a href="../../resource/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              How I past TensorFlow Exam
+              Overview
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1338,10 +1559,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["search.suggest", "search.highlight", "search.tabs.link", "content.tabs.link", "navigation.indexes", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.cefbb252.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "search.tabs.link", "content.tabs.link", "navigation.indexes", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.cefbb252.min.js"}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.a5f8ea78.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f8ea78.min.js"></script>
       
     
   </body>
