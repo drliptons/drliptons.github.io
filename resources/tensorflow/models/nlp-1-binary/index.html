@@ -1308,18 +1308,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#import-libraries" class="md-nav__link">
-    Import libraries
+  <a href="#import-dependencies" class="md-nav__link">
+    Import Dependencies
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#utility-scripts" class="md-nav__link">
-    Utility scripts
+  <a href="#utility-functions" class="md-nav__link">
+    Utility Functions
   </a>
   
-    <nav class="md-nav" aria-label="Utility scripts">
+    <nav class="md-nav" aria-label="Utility Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1532,299 +1532,867 @@
 <li><a href="#model-7">Model 7: Model 7: TensorFlow Hub - Pretrained Sentence Encoder 10% of training data</a></li>
 </ul>
 </details>
+<p><a name="check"></a></p>
 <h2 id="check-the-computing-processor"><strong>Check the computing processor</strong></h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Check for GPU</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="err">!</span><span class="n">nvcc</span> <span class="o">--</span><span class="n">version</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="err">!</span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
+    nvcc: NVIDIA (R) Cuda compiler driver
+    Copyright (c) 2005-2020 NVIDIA Corporation
+    Built on Mon_Oct_12_20:09:46_PDT_2020
+    Cuda compilation tools, release 11.1, V11.1.105
+    Build cuda_11.1.TC455_06.29190527_0
+    Fri Dec  3 13:41:55 2021       
+    +-----------------------------------------------------------------------------+
+    | NVIDIA-SMI 495.44       Driver Version: 460.32.03    CUDA Version: 11.2     |
+    |-------------------------------+----------------------+----------------------+
+    | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+    |                               |                      |               MIG M. |
+    |===============================+======================+======================|
+    |   0  Tesla K80           Off  | 00000000:00:04.0 Off |                    0 |
+    | N/A   37C    P8    27W / 149W |      0MiB / 11441MiB |      0%      Default |
+    |                               |                      |                  N/A |
+    +-------------------------------+----------------------+----------------------+
 
+    +-----------------------------------------------------------------------------+
+    | Processes:                                                                  |
+    |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+    |        ID   ID                                                   Usage      |
+    |=============================================================================|
+    |  No running processes found                                                 |
+    +-----------------------------------------------------------------------------+
 </pre>
 </div>
 
-<h2 id="import-libraries"><strong>Import libraries</strong></h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>
+<p><a name="import-dependencies"></a></p>
+<h2 id="import-dependencies"><strong>Import Dependencies</strong></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span>
+<span class="normal"><a href="#__codelineno-1-43">43</a></span>
+<span class="normal"><a href="#__codelineno-1-44">44</a></span>
+<span class="normal"><a href="#__codelineno-1-45">45</a></span>
+<span class="normal"><a href="#__codelineno-1-46">46</a></span>
+<span class="normal"><a href="#__codelineno-1-47">47</a></span>
+<span class="normal"><a href="#__codelineno-1-48">48</a></span>
+<span class="normal"><a href="#__codelineno-1-49">49</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1"># tensorflow dataset</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1"># import wget as wget # only for PyCharm</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="kn">import</span> <span class="nn">zipfile</span> <span class="k">as</span> <span class="nn">zf</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="kn">import</span> <span class="nn">pathlib</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="c1"># Used in Prepare the data</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="kn">from</span> <span class="nn">tensorflow.keras.layers.experimental.preprocessing</span> <span class="kn">import</span> <span class="n">TextVectorization</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span> <span class="c1"># Use for preprocessing the data</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="c1"># Use in the model</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">MaxPool2D</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="kn">import</span> <span class="nn">tensorflow_hub</span> <span class="k">as</span> <span class="nn">hub</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="kn">import</span> <span class="nn">datetime</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="kn">from</span> <span class="nn">tensorflow.keras.layers.experimental</span> <span class="kn">import</span> <span class="n">preprocessing</span> <span class="c1"># for data augmentation</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">MultinomialNB</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="c1"># Evaluate model</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_fscore_support</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="c1"># Utility scripts (confusion matrix)</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="kn">import</span> <span class="nn">itertools</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47"></a>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="c1"># mixed_precision</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">mixed_precision</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
-<h2 id="utility-scripts"><strong>Utility scripts</strong></h2>
+<p><a name="utility-functions"></a></p>
+<h2 id="utility-functions"><strong>Utility Functions</strong></h2>
+<p><a name=""></a></p>
 <h3 id="compare-histories">Compare histories</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span>
+<span class="normal"><a href="#__codelineno-2-38">38</a></span>
+<span class="normal"><a href="#__codelineno-2-39">39</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span> <span class="nf">compare_histories</span><span class="p">(</span><span class="n">original_history</span><span class="p">,</span> <span class="n">new_history</span><span class="p">,</span> <span class="n">initial_epochs</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>  <span class="c1"># Get original history measurement</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>  <span class="n">acc</span> <span class="o">=</span> <span class="n">original_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>  <span class="n">loss</span> <span class="o">=</span> <span class="n">original_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;loss&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">acc</span><span class="p">))</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>  <span class="n">val_acc</span> <span class="o">=</span> <span class="n">original_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_accuracy&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>  <span class="n">val_loss</span> <span class="o">=</span> <span class="n">original_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_loss&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>  <span class="c1"># Combine original history with new history</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>  <span class="n">total_acc</span> <span class="o">=</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">new_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>  <span class="n">total_loss</span> <span class="o">=</span> <span class="n">loss</span> <span class="o">+</span> <span class="n">new_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;loss&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>  <span class="n">total_val_acc</span> <span class="o">=</span> <span class="n">val_acc</span> <span class="o">+</span> <span class="n">new_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_accuracy&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>  <span class="n">total_val_loss</span> <span class="o">=</span> <span class="n">val_loss</span> <span class="o">+</span> <span class="n">new_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_loss&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>  <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">total_acc</span><span class="p">))</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">total_acc</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>  <span class="c1"># Make plots</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">total_acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">total_val_acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">initial_epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">initial_epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>            <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Start Fine Tuning&#39;</span><span class="p">)</span> <span class="c1"># reshift plot around epochs</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training and Validation Accuracy&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">total_loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Loss&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">total_val_loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Loss&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">initial_epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">initial_epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>            <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Start Fine Tuning&#39;</span><span class="p">)</span> <span class="c1"># reshift plot around epochs</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training and Validation Loss&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;epoch&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="inspect-data">Inspect data</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span> <span class="nf">inspect_data</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>  <span class="n">total_files</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>  <span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filesnames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">folder_name</span><span class="p">):</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="n">total_files</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">filesnames</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dirnames</span><span class="p">)</span><span class="si">}</span><span class="s2"> directories and </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">filesnames</span><span class="p">)</span><span class="si">}</span><span class="s2"> images in &#39;</span><span class="si">{</span><span class="n">dirpath</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are total </span><span class="si">{</span><span class="n">total_files</span><span class="si">}</span><span class="s2"> files.&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="unzip-data">Unzip data</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">def</span> <span class="nf">unzip_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>  <span class="n">zip_ref</span> <span class="o">=</span> <span class="n">zf</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>  <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>  <span class="n">zip_ref</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="predictions-load-pred-plot">Predictions (load, pred, plot)</h3>
+<p><a name=""></a></p>
 <h4 id="load-and-prep-image">Load and prep image</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span> <span class="nf">load_and_prep_image</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">img_shape</span><span class="o">=</span><span class="mi">224</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>  <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="sd">  Reads in an image from filename, turns it into a tensor and reshapes into</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="sd">  (224, 224, 3).</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="sd">  Parameters</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="sd">  ----------</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="sd">  filename (str): string filename of target image</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="sd">  img_shape (int): size to resize target image to, default 224</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="sd">  scale (bool): whether to scale pixel values to range(0, 1), default True</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="sd">  &quot;&quot;&quot;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>  <span class="c1"># Read in the image</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>  <span class="n">img</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>  <span class="c1"># Decode it into a tensor</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>  <span class="n">img</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">decode_jpeg</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>  <span class="c1"># Resize the image</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>  <span class="n">img</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">[</span><span class="n">img_shape</span><span class="p">,</span> <span class="n">img_shape</span><span class="p">])</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>  <span class="k">if</span> <span class="n">scale</span><span class="p">:</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>    <span class="c1"># Rescale the image (get all values between 0 and 1)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="k">return</span> <span class="n">img</span><span class="o">/</span><span class="mf">255.</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>  <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>    <span class="k">return</span> <span class="n">img</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h4 id="pred-and-plot-single">Pred and plot single</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">def</span> <span class="nf">pred_and_plot</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">class_names</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>  <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="sd">  Imports an image located at filename, makes a prediction on it with</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="sd">  a trained model and plots the image with the predicted class as the title.</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="sd">  &quot;&quot;&quot;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>  <span class="c1"># Import the target image and preprocess it</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>  <span class="n">img</span> <span class="o">=</span> <span class="n">load_and_prep_image</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>  <span class="c1"># Make a prediction</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>  <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>  <span class="c1"># Get the predicted class</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pred</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># check for multi-class</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>    <span class="n">pred_class</span> <span class="o">=</span> <span class="n">class_names</span><span class="p">[</span><span class="n">pred</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span> <span class="c1"># if more than one output, take the max</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>  <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a>    <span class="n">pred_class</span> <span class="o">=</span> <span class="n">class_names</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">pred</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])]</span> <span class="c1"># if only one output, round</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>  <span class="c1"># Plot the image and predicted class</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction: </span><span class="si">{</span><span class="n">pred_class</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h4 id="pred-and-plot-multi">Pred and plot multi</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">def</span> <span class="nf">predict_and_plot_multiple</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">file_dir</span><span class="p">,</span> <span class="n">class_names</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="c1"># Choose a random image from a random class </span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="n">class_name</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="n">filename</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">file_dir</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">class_name</span><span class="p">))</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>    <span class="n">filepath</span> <span class="o">=</span> <span class="n">file_dir</span> <span class="o">+</span> <span class="n">class_name</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">filename</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>    <span class="c1"># Load the image and make predictions</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">load_and_prep_image</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># don&#39;t scale images for EfficientNet predictions</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>    <span class="n">pred_prob</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># model accepts tensors of shape [None, 224, 224, 3]</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>    <span class="n">pred_class</span> <span class="o">=</span> <span class="n">class_names</span><span class="p">[</span><span class="n">pred_prob</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span> <span class="c1"># find the predicted class </span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a>    <span class="c1"># Plot the image(s)</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">/</span><span class="mf">255.</span><span class="p">)</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a>    <span class="k">if</span> <span class="n">class_name</span> <span class="o">==</span> <span class="n">pred_class</span><span class="p">:</span> <span class="c1"># Change the color of text based on whether prediction is right or wrong</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a>      <span class="n">title_color</span> <span class="o">=</span> <span class="s2">&quot;g&quot;</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a>      <span class="n">title_color</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;actual: </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2">, pred: </span><span class="si">{</span><span class="n">pred_class</span><span class="si">}</span><span class="s2">, prob: </span><span class="si">{</span><span class="n">pred_prob</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">title_color</span><span class="p">)</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="calculate-results-for-evaluating-accuracy-precision-recall-f1-score">Calculate results (for evaluating: accuracy, precision, recall, f1-score)</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">def</span> <span class="nf">calculate_results</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>  <span class="c1"># Calculate model accuracy</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>  <span class="n">model_accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>  <span class="c1"># Calculate precision, recall, and f1-score using &quot;weightd average&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>  <span class="n">model_precision</span><span class="p">,</span> <span class="n">model_recall</span><span class="p">,</span> <span class="n">model_f1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">precision_recall_fscore_support</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s2">&quot;weighted&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>  <span class="n">model_results</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;accuracy&quot;</span><span class="p">:</span> <span class="n">model_accuracy</span><span class="p">,</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>                   <span class="s2">&quot;precision&quot;</span><span class="p">:</span> <span class="n">model_precision</span><span class="p">,</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>                   <span class="s2">&quot;recall&quot;</span><span class="p">:</span> <span class="n">model_recall</span><span class="p">,</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>                   <span class="s2">&quot;f1&quot;</span><span class="p">:</span> <span class="n">model_f1</span><span class="p">}</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>  <span class="k">return</span> <span class="n">model_results</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="create-tensorboard-callback">Create tensorboard callback</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">def</span> <span class="nf">create_tensorboard_callback</span><span class="p">(</span><span class="n">dir_name</span><span class="p">,</span> <span class="n">experiment_name</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>  <span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="sd">  Creates a TensorBoard callback instand to store log files.</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="sd">  Stores log files with the filepath:</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="sd">    &quot;dir_name/experiment_name/current_datetime/&quot;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="sd">  Args:</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="sd">    dir_name: target directory to store TensorBoard log files</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="sd">    experiment_name: name of experiment directory (e.g. efficientnet_model_1)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="sd">  &quot;&quot;&quot;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a>  <span class="n">log_dir</span> <span class="o">=</span> <span class="n">dir_name</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">experiment_name</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">-%H%M%S&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>  <span class="n">tensorboard_callback</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">callbacks</span><span class="o">.</span><span class="n">TensorBoard</span><span class="p">(</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a>      <span class="n">log_dir</span><span class="o">=</span><span class="n">log_dir</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a>  <span class="p">)</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a>  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving TensorBoard log files to: </span><span class="si">{</span><span class="n">log_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a>  <span class="k">return</span> <span class="n">tensorboard_callback</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="compare-baseline-to-new-results">Compare baseline to new results</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">def</span> <span class="nf">compare_baseline_to_new_results</span><span class="p">(</span><span class="n">baseline_results</span><span class="p">,</span> <span class="n">new_results</span><span class="p">):</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>  <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">baseline_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Baseline </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> , New </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">new_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Difference: </span><span class="si">{</span><span class="n">new_results</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">-</span><span class="n">value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name="the-data"></a></p>
 <h2 id="the-data"><strong>The data</strong></h2>
+<p><a name=""></a></p>
 <h3 id="download-the-data">Download the data</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Download data (same as from Kaggle)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="err">!</span><span class="n">wget</span> <span class="s2">&quot;https://storage.googleapis.com/ztm_tf_course/nlp_getting_started.zip&quot;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="c1"># Unzip data</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">unzip_data</span><span class="p">(</span><span class="s2">&quot;nlp_getting_started.zip&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
+    --2021-12-03 13:43:54--  https://storage.googleapis.com/ztm_tf_course/nlp_getting_started.zip
+    Resolving storage.googleapis.com (storage.googleapis.com)... 74.125.133.128, 74.125.140.128, 108.177.15.128, ...
+    Connecting to storage.googleapis.com (storage.googleapis.com)|74.125.133.128|:443... connected.
+    HTTP request sent, awaiting response... 200 OK
+    Length: 607343 (593K) [application/zip]
+    Saving to: ‘nlp_getting_started.zip.1’
 
+    nlp_getting_started 100%[===================>] 593.11K  --.-KB/s    in 0.009s  
+
+    2021-12-03 13:43:54 (61.5 MB/s) - ‘nlp_getting_started.zip.1’ saved [607343/607343]
 </pre>
 </div>
 
-<h2 id="inspect-the-data">Inspect the data</h2>
+<p><a name="inspect-the-data"></a></p>
+<h2 id="inspect-the-data"><strong>Inspect the data</strong></h2>
+<p><a name=""></a></p>
 <h3 id="turn-csv-files-into-pandas-dataframe">Turn .csv files into pandas DataFrame</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;train.csv&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">test_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;test.csv&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="shuffle-the-data">Shuffle the data</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">train_df_shuffled</span> <span class="o">=</span> <span class="n">train_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># shuffle with random_state=42 for reproducibility</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">train_df_shuffled</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+            id      keyword     location                text                                                target
+    2644    3796    destruction NaN                     So you have a new weapon that can cause un-ima...   1
+    2227    3185    deluge      NaN                     The f$&amp;@ing things I do for #GISHWHES Just...   0
+    5448    7769    police      UK                      DT @georgegalloway: RT @Galloway4Mayor: ÛÏThe...   1
+    132     191     aftershock  NaN                     Aftershock back to school kick off was great. ...   0
+    6845    9810    trauma      Montgomery County, MD   in response to trauma Children of Addicts deve...   0
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1"># Visualize test_df</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="n">test_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+        id  keyword location    text
+    0   0   NaN     NaN         Just happened a terrible car crash
+    1   2   NaN     NaN         Heard about #earthquake is different cities, s...
+    2   3   NaN     NaN         there is a forest fire at spot pond, geese are...
+    3   9   NaN     NaN         Apocalypse lighting. #Spokane #wildfires
+    4   11  NaN     NaN         Typhoon Soudelor kills 28 in China and Taiwan
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># How many examples of each class?</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">train_df</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+    0    4342
+    1    3271
+    Name: target, dtype: int64
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># How many samples total?</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total training samples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total test samples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total samples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+    Total training samples: 7613
+    Total test samples: 3263
+    Total samples: 10876
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span>
+<span class="normal"><a href="#__codelineno-17-7">7</a></span>
+<span class="normal"><a href="#__codelineno-17-8">8</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1"># Let&#39;s visualize some random training examples</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="n">random_index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># create random indexes not higher than the total number of samples</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">train_df_shuffled</span><span class="p">[[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">]][</span><span class="n">random_index</span><span class="p">:</span><span class="n">random_index</span><span class="o">+</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a>  <span class="n">_</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">row</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a>  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Target: </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;(real disaster)&quot;</span> <span class="k">if</span> <span class="n">target</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;(not real disaster)&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a>  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Text:</span><span class="se">\n</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
+    Target: 0 (not real disaster)
+    Text:
+    'McFadden Reportedly to Test Hamstring Thursday' via @TeamStream http://t.co/jWq4KvJH2j
 
+    ---
+
+    Target: 1 (real disaster)
+    Text:
+    w--=-=-=-[ NEMA warns Nigerians to prepare for drought http://t.co/5uoOPhSqU3
+
+    ---
+
+    Target: 0 (not real disaster)
+    Text:
+    When I was cooking earlier I got electrocuted some crucial ?????? now I'm psychic lol
+
+    ---
+
+    Target: 0 (not real disaster)
+    Text:
+    I'm On Fire.  http://t.co/WATsmxYTVa
+
+    ---
+
+    Target: 1 (real disaster)
+    Text:
+    More than 40 families affected by the fatal outbreak of Legionnaires' disease in Edinburgh are to sue two comp... http://t.co/vsoXioOy78
+
+    ---
 </pre>
 </div>
 
+<p><a name="prepare-the-data"></a></p>
 <h2 id="prepare-the-data">Prepare the data</h2>
+<p><a name=""></a></p>
 <h3 id="split-the-data">Split the data</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="c1"># Use train_test_split to split training data into training and validation sets</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="n">train_sentences</span><span class="p">,</span> <span class="n">val_sentences</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">val_labels</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train_df_shuffled</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>                                                                           <span class="n">train_df_shuffled</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a>                                                                           <span class="n">test_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="c1"># dedicate 10% of samples to the validation set</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a>                                                                           <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># random state for reproducibility</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="c1"># Check the new splitted dataset</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="nb">len</span><span class="p">(</span><span class="n">train_sentences</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_labels</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_sentences</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_labels</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+    (6851, 6851, 762, 762)
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="c1"># Visulize the new splitted dataset</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="n">train_sentences</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">train_labels</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+    (array(['@mogacola @zamtriossu i screamed after hitting tweet',
+            'Imagine getting flattened by Kurt Zouma',
+            '@Gurmeetramrahim #MSGDoing111WelfareWorks Green S welfare force ke appx 65000 members har time disaster victim ki help ke liye tyar hai....',
+            "@shakjn @C7 @Magnums im shaking in fear he's gonna hack the planet",
+            'Somehow find you and I collide http://t.co/Ee8RpOahPk',
+            '@EvaHanderek @MarleyKnysh great times until the bus driver held us hostage in the mall parking lot lmfao',
+            'destroy the free fandom honestly',
+            'Weapons stolen from National Guard Armory in New Albany still missing #Gunsense http://t.co/lKNU8902JE',
+            '@wfaaweather Pete when will the heat wave pass? Is it really going to be mid month? Frisco Boy Scouts have a canoe trip in Okla.',
+            'Patient-reported outcomes in long-term survivors of metastatic colorectal cancer - British Journal of Surgery http://t.co/5Yl4DC1Tqt'],
+           dtype=object), array([0, 0, 1, 0, 0, 1, 1, 0, 1, 1]))
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>
-</code></pre></div>
-</td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="convert-texts-into-numbers">Convert texts into numbers</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span>
+<span class="normal"><a href="#__codelineno-21-7">7</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="n">text_vectorizer</span> <span class="o">=</span> <span class="n">TextVectorization</span><span class="p">(</span><span class="n">max_tokens</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># how many words in the vocabulary (all the different words)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>                                    <span class="n">standardize</span><span class="o">=</span><span class="s2">&quot;lower_and_strip_punctuation&quot;</span><span class="p">,</span> <span class="c1"># how to process data</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a>                                    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;whitespace&quot;</span><span class="p">,</span> <span class="c1"># how to split tokens</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a>                                    <span class="n">ngrams</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="c1"># create groups of n words?</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a>                                    <span class="n">output_mode</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="c1"># how to map tokens to numbers</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a>                                    <span class="n">output_sequence_length</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="c1"># how long should the output sequence of tokens be?</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a>                                    <span class="c1"># pad_to_max_tokens=True)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="c1"># Find the average number of tokens (words) in training Tweets</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">train_sentences</span><span class="p">])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_sentences</span><span class="p">))</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+    15
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span>
+<span class="normal"><a href="#__codelineno-23-6">6</a></span>
+<span class="normal"><a href="#__codelineno-23-7">7</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="c1"># Setup text vectorization with custom varibles</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="n">max_vocab_length</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># max number of words to have in our vocabulary</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="n">max_length</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># max length of our sentences</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="n">text_vectorizer</span> <span class="o">=</span> <span class="n">TextVectorization</span><span class="p">(</span><span class="n">max_tokens</span><span class="o">=</span><span class="n">max_vocab_length</span><span class="p">,</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a>                                    <span class="n">output_mode</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a>                                    <span class="n">output_sequence_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="c1"># Fit the text vectorizer to the training set</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="n">text_vectorizer</span><span class="o">.</span><span class="n">adapt</span><span class="p">(</span><span class="n">train_sentences</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span>
+<span class="normal"><a href="#__codelineno-25-4">4</a></span>
+<span class="normal"><a href="#__codelineno-25-5">5</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="c1"># [Optional] Display some random sentences</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">random_sentence</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">train_sentences</span><span class="p">)</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original text: </span><span class="se">\n</span><span class="si">{</span><span class="n">random_sentence</span><span class="si">}</span><span class="se">\</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="se">\n\n</span><span class="s2">Vectorized text:&quot;</span><span class="p">)</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="n">text_vectorizer</span><span class="p">([</span><span class="n">random_sentence</span><span class="p">])</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
+    Original text: 
+    Even when I was a kid haha super late but folks used to bash me for that shit I understand he survived cancer but he still cheated
 
+    Vectorized text:
+    <tf.Tensor: shape=(1, 15), dtype=int64, numpy=
+    array([[ 151,   45,    8,   23,    3, 1650,  847, 1058, 1394,   30,    1,
+             493,    5,    1,   31]])>
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span>
+<span class="normal"><a href="#__codelineno-26-6">6</a></span>
+<span class="normal"><a href="#__codelineno-26-7">7</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="c1"># [Optional] Display most common words</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="n">words_in_vocab</span> <span class="o">=</span> <span class="n">text_vectorizer</span><span class="o">.</span><span class="n">get_vocabulary</span><span class="p">()</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="n">top_5_words</span> <span class="o">=</span> <span class="n">words_in_vocab</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># most common tokens (notice the [UNK] token for &quot;unknown&quot; words)</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="n">bottom_5_words</span> <span class="o">=</span> <span class="n">words_in_vocab</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span> <span class="c1"># least common tokens</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of words in vocab: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">words_in_vocab</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top 5 most common words: </span><span class="si">{</span><span class="n">top_5_words</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bottom 5 least common words: </span><span class="si">{</span><span class="n">bottom_5_words</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+    Number of words in vocab: 10000
+    Top 5 most common words: ['', '[UNK]', 'the', 'a', 'in']
+    Bottom 5 least common words: ['pages', 'paeds', 'pads', 'padres', 'paddytomlinson1']
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>
-</code></pre></div>
-</td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>
-</code></pre></div>
-</td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>
-</code></pre></div>
-</td></tr></table>
-<div class="test">
-<pre id="__code_7">
-
-</pre>
-</div>
-
+<p><a name=""></a></p>
 <h3 id="creating-an-embedding-using-an-embedding-layer">Creating an Embedding using an Embedding Layer</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
+<span class="normal"><a href="#__codelineno-27-2">2</a></span>
+<span class="normal"><a href="#__codelineno-27-3">3</a></span>
+<span class="normal"><a href="#__codelineno-27-4">4</a></span>
+<span class="normal"><a href="#__codelineno-27-5">5</a></span>
+<span class="normal"><a href="#__codelineno-27-6">6</a></span>
+<span class="normal"><a href="#__codelineno-27-7">7</a></span>
+<span class="normal"><a href="#__codelineno-27-8">8</a></span>
+<span class="normal"><a href="#__codelineno-27-9">9</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="c1"># Creating an embedding</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="n">embedding</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="n">max_vocab_length</span><span class="p">,</span> <span class="c1"># set input shape</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a>                                      <span class="n">output_dim</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="c1"># set size of embedding vector</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a>                                      <span class="n">embeddings_initializer</span><span class="o">=</span><span class="s2">&quot;uniform&quot;</span><span class="p">,</span> <span class="c1"># default, initialize randomly</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a>                                      <span class="n">input_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span> <span class="c1"># how long is each input</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a>                                      <span class="n">name</span><span class="o">=</span><span class="s2">&quot;embedding_1&quot;</span><span class="p">)</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="n">embedding</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+    <keras.layers.embeddings.Embedding at 0x7fb959616290>
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span>
+<span class="normal"><a href="#__codelineno-28-6">6</a></span>
+<span class="normal"><a href="#__codelineno-28-7">7</a></span>
+<span class="normal"><a href="#__codelineno-28-8">8</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="c1"># [Optional] Get a random sentence from training set</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="n">random_sentence</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">train_sentences</span><span class="p">)</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original text:</span><span class="se">\n</span><span class="si">{</span><span class="n">random_sentence</span><span class="si">}</span><span class="se">\</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="s2">      </span><span class="se">\n\n</span><span class="s2">Embedded version:&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="c1"># [Optional] Embed the random sentence (turn it into numerical representation)</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="n">sample_embed</span> <span class="o">=</span> <span class="n">embedding</span><span class="p">(</span><span class="n">text_vectorizer</span><span class="p">([</span><span class="n">random_sentence</span><span class="p">]))</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="n">sample_embed</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
+    Original text:
+    @GailSimone #IWasDisappointedBy TellTale's The Walking Dead. Good characters &amp;story but no real gameplay and too many performance issues.      
 
+    Embedded version:
+    <tf.Tensor: shape=(1, 15, 128), dtype=float32, numpy=
+    array([[[ 0.03977952, -0.03782602, -0.03646283, ...,  0.00236253,
+              0.03332629,  0.02803668],
+            [ 0.03977952, -0.03782602, -0.03646283, ...,  0.00236253,
+              0.03332629,  0.02803668],
+            [-0.01498866, -0.01711886, -0.01795023, ...,  0.00425522,
+              0.04084368, -0.04459424],
+            ...,
+            [-0.03001971,  0.00568042,  0.03136439, ...,  0.0466901 ,
+              0.00128862, -0.00029041],
+            [ 0.02248487, -0.02848336,  0.04786098, ...,  0.03069806,
+             -0.04317403, -0.04145076],
+            [-0.00452621, -0.00316794,  0.00424971, ..., -0.00910323,
+             -0.00566288,  0.00264918]]], dtype=float32)>
 </pre>
 </div>
 
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="c1"># [Optional] Check out a single token&#39;s embedding</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="n">sample_embed</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 <div class="test">
 <pre id="__code_7">
-
+    tf.Tensor: shape=(128,), dtype=float32, numpy=
+    array([ 0.03977952, -0.03782602, -0.03646283, -0.02449075, -0.00015752,
+            0.02220254,  0.00162981,  0.00603487,  0.0085157 , -0.02620113,
+            0.04101599,  0.03715892,  0.02397566,  0.00281113, -0.02704906,
+           -0.04870148,  0.01457943,  0.0059551 , -0.02334484,  0.03581132,
+            0.04377897,  0.04186075,  0.03245703, -0.045092  ,  0.04260418,
+            0.03398135, -0.01812425, -0.03539513,  0.02954218,  0.02556742,
+           -0.03345481,  0.04272738, -0.00798845, -0.0406163 , -0.00644834,
+            0.00232404,  0.01703629,  0.03645121, -0.02622857,  0.03498118,
+           -0.03059715,  0.02576998, -0.04221511,  0.02654583, -0.02192564,
+           -0.0346157 ,  0.00075326,  0.01427345,  0.01027539, -0.04311384,
+           -0.03973336, -0.00966626,  0.01032177, -0.04011822, -0.018892  ,
+           -0.01233201,  0.02721632, -0.01232889, -0.02504088, -0.04715574,
+            0.00558523, -0.00801403,  0.03058865, -0.01923352, -0.04175536,
+           -0.03654208, -0.04277095, -0.0033918 , -0.04226271,  0.0240727 ,
+            0.01274442, -0.00268712,  0.03158386,  0.04823284,  0.02940297,
+            0.00636031,  0.01719667,  0.03907609, -0.0249153 , -0.00834242,
+            0.03881217, -0.04461795,  0.03740455, -0.02412283, -0.01538421,
+            0.03984089, -0.04073881,  0.0317078 , -0.04241145, -0.03435747,
+            0.03021734,  0.0443267 ,  0.00424304, -0.01204874, -0.00213076,
+           -0.02668054,  0.0461436 , -0.04644201,  0.02519932, -0.04503984,
+           -0.03163396, -0.02846084,  0.01276297,  0.02938429,  0.03437588,
+            0.00973482, -0.01860742,  0.03510927, -0.04996962,  0.01983938,
+            0.00642185,  0.00372197,  0.01576127,  0.01591486, -0.04195998,
+            0.02777341,  0.00619875, -0.02269079, -0.00224097,  0.0289592 ,
+            0.04377018, -0.03377642,  0.00907839, -0.01134553, -0.02910458,
+            0.00236253,  0.03332629,  0.02803668], dtype=float32)
 </pre>
 </div>
 
+<p><a name="model-0"></a></p>
 <h2 id="model-0-base-model">Model 0: Base Model</h2>
+<p><a name=""></a></p>
 <h3 id="create-compile-and-run-the-model">Create, Compile, and Run the model</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a>
 </code></pre></div>
@@ -1835,6 +2403,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h1 id="evaluate-the-model">Evaluate the model</h1>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a>
 </code></pre></div>
@@ -1863,7 +2432,9 @@
 </pre>
 </div>
 
+<p><a name="model-1"></a></p>
 <h2 id="model-1-a-simple-dense-model">Model 1: A Simple Dense Model</h2>
+<p><a name=""></a></p>
 <h3 id="callbacks">Callbacks</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a>
 </code></pre></div>
@@ -1874,6 +2445,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h3 id="create-compile-and-run-the-model_1">Create, Compile, and Run the model</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a>
 </code></pre></div>
@@ -1884,6 +2456,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h3 id="evaluate-the-model_1">Evaluate the model</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a>
 </code></pre></div>
@@ -1921,6 +2494,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h3 id="make-prediction">Make prediction</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1"></a>
 </code></pre></div>
@@ -1940,6 +2514,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h3 id="calculate-results">Calculate results</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a>
 </code></pre></div>
@@ -1968,6 +2543,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h3 id="optional-plot-results-to-embedding-projector-tool">(Optional) Plot results to Embedding Projector Tool</h3>
 <p>Once you've downloaded the embedding vectors and metadata, we can visualize them using Embedding Vector tool:</p>
 <ol>
@@ -1986,7 +2562,9 @@
 </pre>
 </div>
 
+<p><a name="model2"></a></p>
 <h2 id="model-2-lstm">Model 2: LSTM</h2>
+<p><a name=""></a></p>
 <h3 id="create-compile-and-run-the-model_2">Create, Compile, and Run the model</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a>
 </code></pre></div>
@@ -2006,6 +2584,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h3 id="evaluate-the-model_2">Evaluate the model</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a>
 </code></pre></div>
@@ -2016,6 +2595,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h3 id="make-prediction_1">Make prediction</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a>
 </code></pre></div>
@@ -2035,6 +2615,7 @@
 </pre>
 </div>
 
+<p><a name=""></a></p>
 <h3 id="calculate-results_1">Calculate results</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a>
 </code></pre></div>
@@ -2054,22 +2635,713 @@
 </pre>
 </div>
 
+<p><a name="model-3"></a></p>
 <h2 id="model-3-gru">Model 3: GRU</h2>
+<p><a name=""></a></p>
+<h3 id="create-compile-and-run-the-model_3">Create, Compile, and Run the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-54-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="evaluate-the-model_3">Evaluate the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-55-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="make-prediction_2">Make prediction</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-56-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-57-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="calculate-results_2">Calculate results</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-58-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-59-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="model-4"></a></p>
 <h2 id="model-4-bidirectional-rnn">Model 4: Bidirectional RNN</h2>
+<p><a name=""></a></p>
+<h3 id="create-compile-and-run-the-model_4">Create, Compile, and Run the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-60-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-61-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="evaluate-the-model_4">Evaluate the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-62-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="make-prediction_3">Make prediction</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-63-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-64-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="calculate-results_3">Calculate results</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-65-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-66-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="model-5"></a></p>
 <h2 id="model-5-conv1d">Model 5: Conv1D</h2>
+<p><a name=""></a></p>
+<h3 id="create-compile-and-run-the-model_5">Create, Compile, and Run the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-67-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-68-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="evaluate-the-model_5">Evaluate the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-69-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="make-prediction_4">Make prediction</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-70-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-71-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="calculate-results_4">Calculate results</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-72-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-73-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="model-6"></a></p>
 <h2 id="model-6-tensorflow-hub-pretrained-sentence-encoder-use">Model 6: TensorFlow Hub - Pretrained Sentence Encoder (USE)</h2>
+<p><a name=""></a></p>
+<h3 id="create-compile-and-run-the-model_6">Create, Compile, and Run the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-74-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-75-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="evaluate-the-model_6">Evaluate the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-76-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="make-prediction_5">Make prediction</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-77-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-78-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="calculate-results_5">Calculate results</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-79-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-80-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="model-7"></a></p>
 <h2 id="model-7-tensorflow-hub-pretrained-sentence-encoder-10-of-training-data">Model 7: TensorFlow Hub - Pretrained Sentence Encoder 10% of training data</h2>
+<p><a name=""></a></p>
 <h3 id="prepare-the-data_1">Prepare the data</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-81-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-82-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-83-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-84-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="create-compile-and-run-the-model_7">Create, Compile, and Run the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-85-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-86-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="evaluate-the-model_7">Evaluate the model</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-87-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="make-prediction_6">Make prediction</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-88-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-89-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
+<h3 id="calculate-results_6">Calculate results</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-90-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-91-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="compare-all-models"></a></p>
 <h2 id="compare-all-models">Compare all models</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-92-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-93-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-94-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-95-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-96-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="use-tensorboard"></a></p>
 <h2 id="optional-use-tensorboard">(Optional) Use TensorBoard</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-97-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1"></a>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-98-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1"></a>
+</code></pre></div>
+</td></tr></table>
+<p><a name="combine-models"></a></p>
 <h2 id="optional-combining-models">(Optional) Combining models</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-99-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-99-1" name="__codelineno-99-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-100-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-101-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-102-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-102-1" name="__codelineno-102-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-103-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-103-1" name="__codelineno-103-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="save-and-load"></a></p>
 <h2 id="save-and-load-trained-models">Save and Load trained models</h2>
+<p><a name=""></a></p>
 <h3 id="hdf5-h5-format">HDF5 (.h5) format</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-104-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-104-1" name="__codelineno-104-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-105-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-105-1" name="__codelineno-105-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-106-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-106-1" name="__codelineno-106-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
 <h3 id="savemodel-format">SaveModel format</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-107-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-107-1" name="__codelineno-107-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-108-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-108-1" name="__codelineno-108-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-109-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-109-1" name="__codelineno-109-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
 <h2 id="make-prediction-and-revisit-the-data">Make prediction and revisit the data</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-110-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-110-1" name="__codelineno-110-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name=""></a></p>
 <h3 id="find-the-most-wrong-prediction">Find the most wrong prediction</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-111-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-111-1" name="__codelineno-111-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-112-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-112-1" name="__codelineno-112-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-113-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-113-1" name="__codelineno-113-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="making-predictions"></a></p>
 <h3 id="making-predictions">Making predictions</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-114-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-114-1" name="__codelineno-114-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-115-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-115-1" name="__codelineno-115-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-116-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-116-1" name="__codelineno-116-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-117-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-117-1" name="__codelineno-117-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-118-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-119-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-119-1" name="__codelineno-119-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-120-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-120-1" name="__codelineno-120-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<p><a name="tradeoff"></a></p>
 <h2 id="speedscore-tradeoff">Speed/Score tradeoff</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-121-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-121-1" name="__codelineno-121-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-122-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-122-1" name="__codelineno-122-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-123-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-124-1">1</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1"></a>
+</code></pre></div>
+</td></tr></table>
+<div class="test">
+<pre id="__code_7">
+
+</pre>
+</div>
 
               
             </article>
