@@ -234,13 +234,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../../resource/" class="md-tabs__link">
+      <a href="../../../../resource/" class="md-tabs__link md-tabs__link--active">
         Resource
       </a>
     </li>
@@ -716,12 +718,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -879,12 +883,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
       
       
       
@@ -1095,12 +1101,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_3" type="checkbox" id="__nav_5_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_3" type="checkbox" id="__nav_5_3_3" checked>
       
       
       
@@ -1331,6 +1339,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3_3_4">
@@ -1352,7 +1362,7 @@
   
     <li class="md-nav__item">
       <a href="../imdb/" class="md-nav__link">
-        NLP - IMDB
+        NLP - Binary-Class IMDB
       </a>
     </li>
   
@@ -1366,7 +1376,7 @@
   
     <li class="md-nav__item">
       <a href="../nlp-1-binary/" class="md-nav__link">
-        NLP - Binary-Class Classification
+        NLP - Binary-Class Disaster Tweets
       </a>
     </li>
   
@@ -1380,7 +1390,21 @@
   
     <li class="md-nav__item">
       <a href="../nlp-2-multi/" class="md-nav__link">
-        NLP - Multi-Class Classification
+        NLP - Multi-Class PedMed
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-3-sentiment/" class="md-nav__link">
+        NLP - Multi-Class Sentiment Analysis
       </a>
     </li>
   
@@ -1398,15 +1422,19 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_3_5" type="checkbox" id="__nav_5_3_3_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_3_5" type="checkbox" id="__nav_5_3_3_5" checked>
       
       
       
+        
+          
         
           
         
@@ -1428,10 +1456,487 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Time Series - Bitcoin Price Forecast
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Time Series - Bitcoin Price Forecast
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#at-a-glance" class="md-nav__link">
+    At a Glance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-dependencies" class="md-nav__link">
+    Import Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-functions" class="md-nav__link">
+    Utility Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data" class="md-nav__link">
+    The Data
+  </a>
+  
+    <nav class="md-nav" aria-label="The Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-data" class="md-nav__link">
+    Download Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-the-data" class="md-nav__link">
+    Inspect the Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-data" class="md-nav__link">
+    Prepare the Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-0-naive-forecast" class="md-nav__link">
+    Model 0: Naïve Forecast
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 0: Naïve Forecast">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-model" class="md-nav__link">
+    Inspect Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-1-dense-window7-horizon1" class="md-nav__link">
+    Model 1: Dense (window=7, horizon=1)
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 1: Dense (window=7, horizon=1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-data" class="md-nav__link">
+    Prepare Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_1" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_1" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-2-dense-window30-horizon1" class="md-nav__link">
+    Model 2: Dense (window=30, horizon=1)
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 2: Dense (window=30, horizon=1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-data_1" class="md-nav__link">
+    Prepare Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_2" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_2" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-3-dense-window30-horizon7" class="md-nav__link">
+    Model 3: Dense (window=30, horizon=7)
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 3: Dense (window=30, horizon=7)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-data_2" class="md-nav__link">
+    Prepare Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_3" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_3" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-4-conv1d" class="md-nav__link">
+    Model 4: Conv1D
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 4: Conv1D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-data_3" class="md-nav__link">
+    Prepare Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_4" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_4" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-5-rnn-lstm" class="md-nav__link">
+    Model 5: RNN (LSTM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 5: RNN (LSTM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_5" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_5" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-6-dense-multivariate-time-series" class="md-nav__link">
+    Model 6: Dense (Multivariate Time Series)
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 6: Dense (Multivariate Time Series)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-data_4" class="md-nav__link">
+    Prepare Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_6" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_6" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-7-n-beats" class="md-nav__link">
+    Model 7: N-BEATS
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 7: N-BEATS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-custom-layer" class="md-nav__link">
+    Prepare Custom Layer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-data_5" class="md-nav__link">
+    Prepare Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_7" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_7" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-8-stacking-models" class="md-nav__link">
+    Model 8: Stacking Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 8: Stacking Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_8" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_8" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-9-full-history" class="md-nav__link">
+    Model 9: Full History
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 9: Full History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-data_6" class="md-nav__link">
+    Prepare Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_9" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_9" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-10-turkey-problem" class="md-nav__link">
+    Model 10: Turkey Problem
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 10: Turkey Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-data_7" class="md-nav__link">
+    Prepare Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-compile-and-fit-model_10" class="md-nav__link">
+    Create, Compile, and Fit Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-model_10" class="md-nav__link">
+    Evaluate Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare-models" class="md-nav__link">
+    Compare Models
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../../../../404/" class="md-nav__link">
-        Blank
+      <a href="../ts-weather/" class="md-nav__link">
+        Time Series - Weather Forecast
       </a>
     </li>
   
@@ -5822,6 +6327,41 @@ Predicting on:
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../nlp-3-sentiment/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NLP - Multi-Class Sentiment Analysis" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              NLP - Multi-Class Sentiment Analysis
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ts-weather/" class="md-footer__link md-footer__link--next" aria-label="Next: Time Series - Weather Forecast" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Time Series - Weather Forecast
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
