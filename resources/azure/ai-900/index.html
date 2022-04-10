@@ -1758,6 +1758,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#classify-images-with-the-custom-vision-service" class="md-nav__link">
+    Classify images with the Custom Vision service
+  </a>
+  
+    <nav class="md-nav" aria-label="Classify images with the Custom Vision service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-resources-for-custom-vision" class="md-nav__link">
+    Azure resources for Custom Vision
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-evaluation" class="md-nav__link">
+    Model Evaluation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2275,6 +2302,23 @@ processing to perform knowledge mining of documents.</p>
 <li><strong>Detect image color schemes</strong> - specifically, identifying the dominant foreground, background, and overall <strong>colors in an image</strong>.</li>
 <li><strong>Generate thumbnails</strong> - creating <strong>small versions of images</strong>.</li>
 <li><strong>Moderate content</strong> - detecting images that <strong>contain adult content</strong> or depict <strong>violent</strong>, <strong>gory scenes</strong>.</li>
+</ul>
+<h3 id="classify-images-with-the-custom-vision-service">Classify images with the Custom Vision service</h3>
+<p>AI systems to identify real-world items based on images. Some potential uses for image classification include:</p>
+<ul>
+<li><strong>Product identification</strong>: performing <strong>visual searches for specific products</strong> in online searches or even, in-store using a mobile device.</li>
+<li><strong>Disaster investigation</strong>: identifying key <strong>infrastructure</strong> for major <strong>disaster preparation</strong> efforts. For example, identifying bridges and roads in aerial images can help disaster relief teams plan ahead in regions that are not well mapped.</li>
+<li><strong>Medical diagnosis</strong>: <strong>evaluating images</strong> from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other <strong>medical conditions</strong> related to medical imaging diagnosis.</li>
+</ul>
+<h4 id="azure-resources-for-custom-vision">Azure resources for Custom Vision</h4>
+<p>use the following types of resource:</p>
+<p><strong>Custom Vision</strong>: A dedicated <strong>resource</strong> for the custom vision service, which can be <strong>training, a prediction, or both resources</strong>.
+<strong>Cognitive Services</strong>: A general cognitive services resource that <strong>includes Custom Vision</strong> along with many other cognitive services. You can use this type of resource for <strong>training, prediction, or both</strong>.</p>
+<h4 id="model-evaluation">Model Evaluation</h4>
+<ul>
+<li><strong>Precision</strong>: What <strong>percentage of the class predictions made by the model were correct</strong>? For example, if the model predicted that 10 images are oranges, of which eight were actually oranges, then the precision is 0.8 (80%).</li>
+<li><strong>Recall</strong>: What percentage of class <strong>predictions did the model correctly identify</strong>? For example, if there are 10 images of apples, and the model found 7 of them, then the recall is 0.7 (70%).</li>
+<li><strong>Average Precision (AP)</strong>: An overall metric that takes into account both <strong>precision and recall</strong>).</li>
 </ul>
 <p><br></p>
 <p><a name='module-4')></a></p>
