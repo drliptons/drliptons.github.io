@@ -1724,6 +1724,46 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#model-3-" class="md-nav__link">
+    Model 3 -
+  </a>
+  
+    <nav class="md-nav" aria-label="Model 3 -">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analyze-images-with-computer-vision-service" class="md-nav__link">
+    Analyze images with Computer Vision service
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyze images with Computer Vision service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-resources-for-computer-vision" class="md-nav__link">
+    Azure resources for Computer Vision
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyzing-images-with-computer-vision-service" class="md-nav__link">
+    Analyzing images with Computer Vision service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#model-4-not-cleaned" class="md-nav__link">
     Model 4 -  (NOT CLEANED)
   </a>
@@ -1875,8 +1915,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#authoring" class="md-nav__link">
+    Authoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-intents" class="md-nav__link">
+    Creating intents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-entities" class="md-nav__link">
+    Creating entities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-the-model" class="md-nav__link">
+    Training the model
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicting" class="md-nav__link">
+    Predicting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-a-bot-with-language-service-and-azure-bot-service" class="md-nav__link">
+    Build a bot with Language Service and Azure Bot Service
+  </a>
   
 </li>
         
@@ -2150,6 +2238,45 @@ processing to perform knowledge mining of documents.</p>
 <li><strong>Number of Points</strong>: The <strong>number of points</strong> assigned to the cluster.</li>
 <li><strong>Maximal Distance to Cluster Center</strong>: The maximum of the <strong>distances between each point and the centroid of that point’s cluster</strong>. If this number is <strong>high</strong>, the cluster may be <strong>widely dispersed</strong>. This statistic in combination with the Average Distance to Cluster Center helps you determine the cluster’s spread.</li>
 </ul>
+<p><br></p>
+<p><a name='module-4')></a></p>
+<h2 id="model-3-"><strong>Model 3 - </strong></h2>
+<h3 id="analyze-images-with-computer-vision-service">Analyze images with Computer Vision service</h3>
+<p>Creating solutions that enable <strong>AI applications to see the world and make sense of it</strong>.</p>
+<p>Some potential uses for computer vision include:</p>
+<ul>
+<li><strong>Content Organization</strong>: <strong>Identify</strong> people or objects in photos and <strong>organize them based on that identification</strong>. Photo recognition applications like this are commonly used in photo storage and social media applications.</li>
+<li><strong>Text Extraction</strong>: Analyze images and PDF documents that contain text and <strong>extract the text into a structured format</strong>.</li>
+<li><strong>Spatial Analysis</strong>: <strong>Identify</strong> people or objects, such as cars, in a space <strong>and map their movement within that space</strong>.</li>
+</ul>
+<h4 id="azure-resources-for-computer-vision">Azure resources for Computer Vision</h4>
+<p>Computer Vision service can be used and created as a resource in an Azure subscription. The following services type can be used for computer vision:</p>
+<ul>
+<li><strong>Computer Vision</strong>: A specific resource for the Computer Vision service. Use this resource type if you <strong>don't intend to use any other cognitive services</strong>, or if you want to track utilization and costs for your Computer Vision resource separately.</li>
+<li><strong>Cognitive Services</strong>: A general cognitive services resource that includes Computer Vision along <strong>with many other cognitive services</strong>; such as Text Analytics, Translator Text, and others. Use this resource type if you plan to use multiple cognitive services and want to simplify administration and development.</li>
+</ul>
+<p>Whichever type of resource you choose to create, it will provide two pieces of information:</p>
+<ul>
+<li>A <strong>key</strong> that is used to <strong>authenticate client applications</strong>.</li>
+<li>An <strong>endpoint</strong> that provides the <strong>HTTP address</strong> at which your <strong>resource can be accessed</strong>.</li>
+</ul>
+<h4 id="analyzing-images-with-computer-vision-service">Analyzing images with Computer Vision service</h4>
+<p>Computer Vision service can perform a wide range of analytical tasks as following</p>
+<ul>
+<li><strong>Describing an image</strong> - <strong>analyze an image</strong>, evaluate the objects that are detected, and <strong>generate a human-readable phrase</strong> or sentence that can <strong>describe what was detected</strong> in the image.</li>
+<li><strong>Tagging visual features</strong> - can be used to <strong>suggest tags for the image</strong>. </li>
+<li><strong>Detecting objects</strong> - <strong>identify common objects</strong> and return what is known as <strong>bounding box coordinates</strong></li>
+<li><strong>Detecting brands</strong> - <strong>identify commercial brands</strong> and returns a response (if any) that contains the brand name, a <strong>confidence score</strong> (from 0 to 1 indicating how positive the identification is), and a <strong>bounding box</strong> (coordinates)</li>
+<li><strong>Detecting faces</strong> - <strong>detect and analyze human faces in an image</strong>, including the ability to <strong>determine age</strong> and a <strong>bounding box</strong> rectangle for the location of the face(s) using such as the <strong>Face Service</strong></li>
+<li><strong>Categorizing an image</strong> - <strong>categorize images based on their content</strong></li>
+<li><strong>Detecting domain-specific content</strong> - <strong>categorizing an image</strong> into two specialized domain models (1) <strong>Celebrities</strong> and (2) <strong>Landmarks</strong></li>
+<li><strong>Optical character recognition (OCR)</strong> - capabilities to <strong>detect printed and handwritten text</strong> in images.</li>
+<li><strong>Detect image types</strong> - for example, identifying <strong>clip art</strong> images or <strong>line drawings</strong>.</li>
+<li><strong>Detect image color schemes</strong> - specifically, identifying the dominant foreground, background, and overall <strong>colors in an image</strong>.</li>
+<li><strong>Generate thumbnails</strong> - creating <strong>small versions of images</strong>.</li>
+<li><strong>Moderate content</strong> - detecting images that <strong>contain adult content</strong> or depict <strong>violent</strong>, <strong>gory scenes</strong>.</li>
+</ul>
+<p><br></p>
 <p><a name='module-4')></a></p>
 <h2 id="model-4-not-cleaned"><strong>Model 4 - </strong> (NOT CLEANED)</h2>
 <h3 id="natural-language-processing-not-cleaned">Natural Language Processing (NOT CLEANED)</h3>
@@ -2263,11 +2390,6 @@ processing to perform knowledge mining of documents.</p>
 </ul>
 <h3 id="conversational-language-understanding">Conversational Language Understanding</h3>
 <p>is to be able to <strong>interpret the semantic meaning</strong> of the input (understand what is being said). Conversational language understanding is supported through the <strong>Language Service</strong> which need to take into account three core concepts:</p>
-<ul>
-<li><strong>Utterances</strong> - is an example of <strong>something a user might say</strong>, and which your application must interpret.</li>
-<li><strong>Entities</strong> -</li>
-<li><strong>Intents</strong> -</li>
-</ul>
 <table>
 <thead>
 <tr>
@@ -2295,10 +2417,67 @@ processing to perform knowledge mining of documents.</p>
 <p><strong>NOTE</strong></p>
 <p>Of special interest is the <strong>None</strong> intent. <strong>Always</strong> consider using the None intent to help <strong>handle utterances</strong> that do <strong>not match</strong> any of the utterances you have entered. The None intent is considered a fallback, and is typically used to <strong>provide a generic response</strong> to users when their requests don't match any other intent.</p>
 <h4 id="azure-resources-for-conversational-language-understanding">Azure resources for Conversational Language Understanding</h4>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="left">Language Service</th>
+<th align="left">Cognitive Services</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">definition</td>
+<td align="left">to <strong>build apps</strong> with natural language understanding capabilities</td>
+<td align="left">is a general cognitive services resource that includes Conversational Language Understanding along with many other cognitive services. You can <strong>only</strong> use <strong>this type</strong> of resource <strong>for prediction</strong></td>
+</tr>
+<tr>
+<td align="center">implementation</td>
+<td align="left">want to track resource utilization for Language Service use separately from client applications</td>
+<td align="left">manage access to all of the cognitive services being used, including the Language Service, through a single endpoint and key.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="authoring">Authoring</h4>
+<p>is to define the resources to author and train a Conversational Language Understanding application by defining the entities and intents as well as utterances.</p>
+<h5 id="creating-intents">Creating intents</h5>
+<p>Define intents based on actions a user would want to perform with your application. For each intent, you should include a variety of utterances that provide examples of how a user might express the intent.</p>
+<h5 id="creating-entities">Creating entities</h5>
 <ul>
-<li><strong>Language Service</strong> - A resource that enables you to build apps with industry-leading natural language understanding capabilities without machine learning expertise.
-Cognitive Services: A general cognitive services resource that includes Conversational Language Understanding along with many other cognitive services. You can only use this type of resource for prediction.</li>
+<li><strong>Machine-Learned</strong> - Entities that are learned by your model during training from <strong>context in the sample utterances</strong> you provide.</li>
+<li><strong>List</strong> -  Entities that are defined as a <strong>hierarchy of lists and sublists</strong>. For example, a device list might include sublists for light and fan. For each list entry, you can specify synonyms, such as lamp for light.</li>
+<li><strong>RegEx</strong> - Entities that are defined as a <strong>regular expression</strong> that describes a <strong>pattern</strong> - for example, you might define a pattern like [0-9]{3}-[0-9]{3}-[0-9]{4} for telephone numbers of the form 555-123-4567.</li>
+<li><strong>Pattern.any* - Entities that are used with </strong>patterns** to define complex entities that may be hard to extract from sample utterances.</li>
 </ul>
+<h5 id="training-the-model">Training the model</h5>
+<p>Training is the process of <strong>using the sample utterances to teach the model</strong> to match natural language expressions that a user might say to probable intents and entities.</p>
+<h4 id="predicting">Predicting</h4>
+<p>When satisfied with the results from the training and testing, the model can be published to a Conversational Language Understanding application to a prediction resource for consumption.</p>
+<p><strong>Client applications</strong> can use the model by <strong>connecting to the endpoint</strong> for the <strong>prediction resource</strong>, specifying the appropriate <strong>authentication key</strong>; and <strong>submit user input</strong> to get predicted intents and entities. The predictions are returned to the client application, which can then take appropriate action based on the predicted intent.</p>
+<h3 id="build-a-bot-with-language-service-and-azure-bot-service">Build a bot with Language Service and Azure Bot Service</h3>
+<p>This section is an example to create a <strong>chatbot</strong> for frequently asked questions (<strong>FAQ</strong>) using Language Service and Azure Bot Service based on <strong>existing FAQ documentation</strong> To implement this kind of solution, it is needed to have:</p>
+<ul>
+<li>A <strong>knowledge base</strong> of question and answer pairs - usually with some built-in natural language processing model to enable questions that can be phrased in multiple ways to be understood with the same semantic meaning.</li>
+<li>A <strong>bot service</strong> that provides an interface to the knowledge base through one or more channels.</li>
+</ul>
+<p>To creating a bot solution on Microsoft Azure, can be done with the use of the following core services</p>
+<ul>
+<li>The <strong>Language service</strong> using a custom question answering feature that enables you to <strong>create a knowledge base of question and answer pairs</strong> that can be queried using natural language input.</li>
+<li><strong>Azure Bot service</strong> a service provides a <strong>framework for developing, publishing, and managing bots</strong> on Azure.</li>
+</ul>
+<p>???* Note
+    The question answering capability in the Language service is a newer version of the QnA Maker service - which is still available as a separate service.</p>
+<ol>
+<li><strong>Create a custom question answering knowledge base</strong> - by using Language Studio's question answering feature to create, train, publish, and manage knowledge bases.
+    1.1 <strong>Provision a Language service Azure resource</strong> in an Azure subscription
+    1.2 <strong>Define questions and answer</strong> by using <strong>Language Studio</strong>'s custom question answering feature to create a knowledge base 
+    1.3 <strong>Test the knowledge base</strong> by submitting questions and reviewing the answers
+    1.4 <strong>Use (deploy) the knowledge base</strong></li>
+<li>Build a bot with the Azure Bot Service
+    2.1 <strong>Create a bot for the knowledge base</strong> using the Microsoft Bot Framework SDK to write code that controls conversation flow and integrates with your knowledge base
+    2.2 Extend and <strong>configure</strong> the bot
+    2.3 <strong>Connect channels</strong> and making it possible for users to interact with the bot</li>
+</ol>
 
               
             </article>
