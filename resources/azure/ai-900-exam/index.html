@@ -1796,12 +1796,18 @@
     Question 32
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Question 32">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#question-33" class="md-nav__link">
     Question 33
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1876,8 +1882,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#question-44" class="md-nav__link">
-    Question 44
+  <a href="#question-44-obsolete" class="md-nav__link">
+    Question 44 (Obsolete)
   </a>
   
 </li>
@@ -2107,8 +2113,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#question-76_1" class="md-nav__link">
-    Question 76
+  <a href="#question-77" class="md-nav__link">
+    Question 77
   </a>
   
 </li>
@@ -2512,164 +2518,543 @@
                 
 
 <h1 id="microsoft-azure-fundamentals-certification-exam-questions">Microsoft Azure Fundamentals Certification Exam Questions</h1>
-<h4 id="question-1">Question 1</h4>
+<h2 id="question-1"><strong>Question 1</strong></h2>
+<p>A company employs a team of customer service agents to provide telephone and email support to customers.</p>
+<p>The company develops a webchat bot to provide automated answers to common customer queries.</p>
+<p>Which business benefit should the company expect as a result of creating the webchat bot solution?</p>
+<p>A. increased sales</p>
+<p>B. a reduced workload for the customer service agents</p>
+<p>C. improved product reliability</p>
 <details class="- example">
 <summary>Answer 1</summary>
-<p>Correct Answer: B 🗳️ </p>
+<p><strong>Correct Answer:</strong> B </p>
 </details>
-<h4 id="question-2">Question 2</h4>
+<h2 id="question-2"><strong>Question 2</strong></h2>
+<p>For a machine learning progress, how should you split data for training and evaluation?</p>
+<p>A. Use features for training and labels for evaluation.</p>
+<p>B. Randomly split the data into rows for training and rows for evaluation.</p>
+<p>C. Use labels for training and features for evaluation.</p>
+<p>D. Randomly split the data into columns for training and columns for evaluation.</p>
+<details class="- example">
+<summary>Answer 2</summary>
+<p><strong>Correct Answer:</strong> B </p>
+<p>The Split Data module is particularly useful when you need to separate data into training and testing sets. Use the Split Rows option if you want to divide the data into two parts. You can specify the percentage of data to put in each split, but by default, the data is divided 50-50. You can also randomize the selection of rows in each group, and use stratified sampling.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/split-data">https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/split-data</a></p>
+</details>
+<h2 id="question-3"><strong>Question 3</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>You are developing a model to predict events by using classification.</p>
+<p>You have a confusion matrix for the model scored on test data as shown in the following exhibit.</p>
+<p><img alt="3-1q" src="../ai-900-images/3-1q.png" /></p>
+<p>Use the drop-down menus to select the answer choice that completes each statement based on the information presented in the graphic.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="3-2q" src="../ai-900-images/3-2q.png" /></p>
+<details class="- example">
+<summary>Answer 3</summary>
+<p><img alt="3-1a" src="../ai-900-images/3-1a.png" /></p>
+<p><strong>Box 1:</strong> 11 -</p>
+<p><img alt="3-2a" src="../ai-900-images/3-2a.png" /></p>
+<p>TP = True Positive.</p>
+<p>The class labels in the training set can take on only two possible values, which we usually refer to as positive or negative. The positive and negative instances that a classifier predicts correctly are called true positives (TP) and true negatives (TN), respectively. Similarly, the incorrectly classified instances are called false positives (FP) and false negatives (FN).</p>
+<p><strong>Box 2:</strong> 1,033 -</p>
+<p>FN = False Negative -</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio/evaluate-model-performance">https://docs.microsoft.com/en-us/azure/machine-learning/studio/evaluate-model-performance</a></p>
+</details>
+<h2 id="question-4"><strong>Question 4</strong></h2>
+<p>You build a machine learning model by using the automated machine learning user interface (UI).</p>
+<p>You need to ensure that the model meets the Microsoft transparency principle for responsible AI.</p>
+<p>What should you do?</p>
+<p>A. Set Validation type to Auto.</p>
+<p>B. Enable Explain best model.</p>
+<p>C. Set Primary metric to accuracy.</p>
+<p>D. Set Max concurrent iterations to 0.</p>
+<details class="- example">
+<summary>Answer 4</summary>
+<p><strong>Correct Answer:</strong> B </p>
+<p>Model Explain Ability.</p>
+<p>Most businesses run on trust and being able to open the ML ג€black boxג€ helps build transparency and trust. In heavily regulated industries like healthcare and banking, it is critical to comply with regulations and best practices. One key aspect of this is understanding the relationship between input variables (features) and model output. Knowing both the magnitude and direction of the impact each feature (feature importance) has on the predicted value helps better understand and explain the model. With model explain ability, we enable you to understand feature importance as part of automated ML runs.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://azure.microsoft.com/en-us/blog/new-automated-machine-learning-capabilities-in-azure-machine-learning-service/">https://azure.microsoft.com/en-us/blog/new-automated-machine-learning-capabilities-in-azure-machine-learning-service/</a></p>
+</details>
+<h2 id="question-5"><strong>Question 5</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="5q" src="../ai-900-images/5q.png" /></p>
+<details class="- example">
+<summary>Answer 5</summary>
+<p><img alt="5a" src="../ai-900-images/5a.png" /></p>
+<p>Anomaly detection encompasses many important tasks in machine learning:</p>
+<p>Identifying transactions that are potentially fraudulent.</p>
+<p>Learning patterns that indicate that a network intrusion has occurred.</p>
+<p>Finding abnormal clusters of patients.</p>
+<p>Checking values entered into a system.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/anomaly-detection">https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/anomaly-detection</a></p>
+</details>
+<h2 id="question-6"><strong>Question 6</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="6q" src="../ai-900-images/6q.png" /></p>
+<details class="- example">
+<summary>Answer 6</summary>
+<p><strong>Correct Answer:</strong> reliability and safety</p>
+<p>Reliability and safety:</p>
+<p>AI systems need to be reliable and safe in order to be trusted. It is important for a system to perform as it was originally designed and for it to respond safely to new situations. Its inherent resilience should resist intended or unintended manipulation. Rigorous testing and validation should be established for operating conditions to ensure that the system responds safely to edge cases, and A/B testing and champion/challenger methods should be integrated into the evaluation process.</p>
+<p>An AI system's performance can degrade over time, so a robust monitoring and model tracking process needs to be established to reactively and proactively measure the model's performance and retrain it, as necessary, to modernize it.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai</a></p>
+</details>
+<h2 id="question-7"><strong>Question 7</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the types of AI workloads to the appropriate scenarios.</p>
+<p>To answer, drag the appropriate workload type from the column on the left to its scenario on the right. Each workload type may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="7q" src="../ai-900-images/7q.png" /></p>
+<details class="- example">
+<summary>Answer 7</summary>
+<p><img alt="7a" src="../ai-900-images/7a.png" /></p>
+<p><strong>Box 3:</strong> Natural language processing</p>
+<p>Natural language processing (NLP) is used for tasks such as sentiment analysis, topic detection, language detection, key phrase extraction, and document categorization.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/natural-language-processing">https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/natural-language-processing</a></p>
+</details>
+<h2 id="question-8"><strong>Question 8</strong></h2>
+<p>You are designing an AI system that empowers everyone, including people who have hearing, visual, and other impairments.</p>
+<p>This is an example of which Microsoft guiding principle for responsible AI?</p>
+<p>A. fairness</p>
+<p>B. inclusiveness</p>
+<p>C. reliability and safety</p>
+<p>D. accountability</p>
+<details class="- example">
+<summary>Answer 8</summary>
+<p><strong>Correct Answer:</strong> B </p>
+<p>Inclusiveness: At Microsoft, we firmly believe everyone should benefit from intelligent technology, meaning it must incorporate and address a broad range of human needs and experiences. For the 1 billion people with disabilities around the world, AI technologies can be a game-changer.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles">https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles</a></p>
+</details>
+<h2 id="question-9"><strong>Question 9</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the Microsoft guiding principles for responsible AI to the appropriate descriptions.</p>
+<p>To answer, drag the appropriate principle from the column on the left to its description on the right. Each principle may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="9q" src="../ai-900-images/9q.png" /></p>
+<details class="- example">
+<summary>Answer 9</summary>
+<p><img alt="9a" src="../ai-900-images/9a.png" /></p>
+<p><strong>Box 1:</strong> Reliability and safety -</p>
+<p>To build trust, it's critical that AI systems operate reliably, safely, and consistently under normal circumstances and in unexpected conditions. These systems should be able to operate as they were originally designed, respond safely to unanticipated conditions, and resist harmful manipulation.</p>
+<p><strong>Box 2:</strong> Accountability -</p>
+<p>The people who design and deploy AI systems must be accountable for how their systems operate. Organizations should draw upon industry standards to develop accountability norms. These norms can ensure that AI systems are not the final authority on any decision that impacts people's lives and that humans maintain meaningful control over otherwise highly autonomous AI systems.</p>
+<p><strong>Box 3:</strong> Privacy and security -</p>
+<p>As AI becomes more prevalent, protecting privacy and securing important personal and business information is becoming more critical and complex. With AI, privacy and data security issues require especially close attention because access to data is essential for AI systems to make accurate and informed predictions and decisions about people. AI systems must comply with privacy laws that require transparency about the collection, use, and storage of data and mandate that consumers have appropriate controls to choose how their data is used</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles">https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles</a></p>
+</details>
+<h2 id="question-10"><strong>Question 10</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="10q" src="ai-900-images/10q.png" /></p>
+<details class="- example">
+<summary>Answer 10</summary>
+<p><strong>Correct Answer:</strong> reliability and safety</p>
+<p>Reliability and safety: To build trust, it's critical that AI systems operate reliably, safely, and consistently under normal circumstances and in unexpected conditions.</p>
+<p>These systems should be able to operate as they were originally designed, respond safely to unanticipated conditions, and resist harmful manipulation.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles">https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles</a></p>
+</details>
+<h2 id="question-11"><strong>Question 11</strong></h2>
+<p>You are building an AI system.</p>
+<p>Which task should you include to ensure that the service meets the Microsoft transparency principle for responsible AI?</p>
+<p>A. Ensure that all visuals have an associated text that can be read by a screen reader.</p>
+<p>B. Enable autoscaling to ensure that a service scales based on demand.</p>
+<p>C. Provide documentation to help developers debug code.</p>
+<p>D. Ensure that a training dataset is representative of the population.</p>
+<details class="- example">
+<summary>Answer 11</summary>
+<p><strong>Correct Answer:</strong> C </p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles">https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles</a></p>
+</details>
+<h2 id="question-12"><strong>Question 12</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the types of AI workloads to the appropriate scenarios.</p>
+<p>To answer, drag the appropriate workload type from the column on the left to its scenario on the right. Each workload type may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="12q" src="../ai-900-images/12q.png" /></p>
+<details class="- example">
+<summary>Answer 12</summary>
+<p><img alt="12a" src="../ai-900-images/12a.png" /></p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/paths/get-started-with-artificial-intelligence-on-azure/">https://docs.microsoft.com/en-us/learn/paths/get-started-with-artificial-intelligence-on-azure/</a></p>
+</details>
+<h2 id="question-13"><strong>Question 13</strong></h2>
+<p>Your company is exploring the use of voice recognition technologies in its smart home devices. The company wants to identify any barriers that might unintentionally leave out specific user groups.</p>
+<p>This an example of which Microsoft guiding principle for responsible AI?</p>
+<p>A. accountability</p>
+<p>B. fairness</p>
+<p>C. inclusiveness</p>
+<p>D. privacy and security</p>
+<details class="- example">
+<summary>Answer 13</summary>
+<p><strong>Correct Answer:</strong> C </p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles">https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles</a></p>
+</details>
+<h2 id="question-14"><strong>Question 14</strong></h2>
+<p>What are three Microsoft guiding principles for responsible AI? Each correct answer presents a complete solution.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p>A. knowledgeability</p>
+<p>B. decisiveness</p>
+<p>C. inclusiveness</p>
+<p>D. fairness</p>
+<p>E. opinionatedness</p>
+<p>F. reliability and safety</p>
+<details class="- example">
+<summary>Answer 14</summary>
+<p><strong>Correct Answer:</strong> C, D, and F </p>
+<p>Reference:</p>
+<p><a href="https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles">https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles</a></p>
+</details>
+<h2 id="question-15"><strong>Question 15</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="15q" src="../ai-900-images/15q.png" /></p>
+<details class="- example">
+<summary>Answer 15</summary>
+<p><strong>Correct Answer:</strong> object detection</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-object-detection">https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-object-detection</a></p>
+</details>
+<h2 id="question-16"><strong>Question 16</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="16q" src="../ai-900-images/16q.png" /></p>
+<details class="- example">
+<summary>Answer 16</summary>
+<p><strong>Correct Answer:</strong> Feature engineering</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/create-features">https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/create-features</a></p>
+</details>
+<h2 id="question-17"><strong>Question 17</strong></h2>
+<p>You run a charity event that involves posting photos of people wearing sunglasses on Twitter.</p>
+<p>You need to ensure that you only retweet photos that meet the following requirements:</p>
+<ul>
+<li>Include one or more faces.</li>
+<li>Contain at least one person wearing sunglasses.</li>
+</ul>
+<p>What should you use to analyze the images?</p>
+<p>A. the Verify operation in the Face service</p>
+<p>B. the Detect operation in the Face service</p>
+<p>C. the Describe Image operation in the Computer Vision service</p>
+<p>D. the Analyze Image operation in the Computer Vision service</p>
+<details class="- example">
+<summary>Answer 17</summary>
+<p><strong>Correct Answer:</strong> B </p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview">https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview</a></p>
+</details>
+<h2 id="question-18"><strong>Question 18</strong></h2>
+<p>When you design an AI system to assess whether loans should be approved, the factors used to make the decision should be explainable.</p>
+<p>This is an example of which Microsoft guiding principle for responsible AI?</p>
+<p>A. transparency</p>
+<p>B. inclusiveness</p>
+<p>C. fairness</p>
+<p>D. privacy and security</p>
+<details class="- example">
+<summary>Answer 18</summary>
+<p><strong>Correct Answer:</strong> A </p>
+<p>Achieving transparency helps the team to understand the data and algorithms used to train the model, what transformation logic was applied to the data, the final model generated, and its associated assets. This information offers insights about how the model was created, which allows it to be reproduced in a transparent way.</p>
+<p><strong>Incorrect Answers:</strong></p>
+<p><strong>B:</strong> Inclusiveness mandates that AI should consider all human races and experiences, and inclusive design practices can help developers to understand and address potential barriers that could unintentionally exclude people. Where possible, speech-to-text, text-to-speech, and visual recognition technology should be used to empower people with hearing, visual, and other impairments.</p>
+<p><strong>C:</strong> Fairness is a core ethical principle that all humans aim to understand and apply. This principle is even more important when AI systems are being developed.</p>
+<p>Key checks and balances need to make sure that the system's decisions don't discriminate or run a gender, race, sexual orientation, or religion bias toward a group or individual.</p>
+<p><strong>D:</strong> A data holder is obligated to protect the data in an AI system, and privacy and security are an integral part of this system. Personal needs to be secured, and it should be accessed in a way that doesn't compromise an individual's privacy.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/responsible-ai">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/responsible-ai</a></p>
+</details>
+<h2 id="question-19"><strong>Question 19</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="19q" src="ai-900-images/19q.png" /></p>
+<details class="- example">
+<summary>Answer 19</summary>
+<p><img alt="19a" src="ai-900-images/19a.png" /></p>
+<p><strong>Box 1:</strong> Yes -</p>
+<p>Achieving transparency helps the team to understand the data and algorithms used to train the model, what transformation logic was applied to the data, the final model generated, and its associated assets. This information offers insights about how the model was created, which allows it to be reproduced in a transparent way.</p>
+<p><strong>Box 2:</strong> No -</p>
+<p>A data holder is obligated to protect the data in an AI system, and privacy and security are an integral part of this system. Personal needs to be secured, and it should be accessed in a way that doesn't compromise an individual's privacy.</p>
+<p><strong>Box 3:</strong> No -</p>
+<p>Inclusiveness mandates that AI should consider all human races and experiences, and inclusive design practices can help developers to understand and address potential barriers that could unintentionally exclude people. Where possible, speech-to-text, text-to-speech, and visual recognition technology should be used to empower people with hearing, visual, and other impairments.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai</a></p>
+</details>
+<h2 id="question-20"><strong>Question 20</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the principles of responsible AI to appropriate requirements.</p>
+<p>To answer, drag the appropriate principles from the column on the left to its requirement on the right. Each principle may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="20q" src="ai-900-images/20q.png" /></p>
+<details class="- example">
+<summary>Answer 20</summary>
+<p><img alt="20a" src="ai-900-images/20a.png" /></p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/4-guiding-principles</a></p>
+</details>
+<h2 id="question-21"><strong>Question 21</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>You plan to deploy an Azure Machine Learning model as a service that will be used by client applications.</p>
+<p>Which three processes should you perform in sequence before you deploy the model? To answer, move the appropriate processes from the list of processes to the answer area and arrange them in the correct order.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="21q" src="../ai-900-images/21q.png" /></p>
+<details class="- example">
+<summary>Answer 21</summary>
+<p><img alt="21a" src="../ai-900-images/21a.png" /></p>
+<p>Reference:</p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-ml-pipelines">https://docs.microsoft.com/en-us/azure/machine-learning/concept-ml-pipelines</a></p>
+</details>
+<h2 id="question-22"><strong>Question 22</strong></h2>
+<p>You are building an AI-based app.</p>
+<p>You need to ensure that the app uses the principles for responsible AI.</p>
+<p>Which two principles should you follow? Each correct answer presents part of the solution.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>A.</strong> Implement an Agile software development methodology</p>
+<p><strong>B.</strong> Implement a process of AI model validation as part of the software review process</p>
+<p><strong>C.</strong> Establish a risk governance committee that includes members of the legal team, members of the risk management team, and a privacy officer</p>
+<p><strong>D.</strong> Prevent the disclosure of the use of AI-based algorithms for automated decision making</p>
+<details class="- example">
+<summary>Answer 22</summary>
+<p><strong>Correct Answer:</strong> B and C </p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/3-implications-responsible-ai-practical">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai https://docs.microsoft.com/en-us/learn/modules/responsible-ai-principles/3-implications-responsible-ai-practical</a></p>
+</details>
+<h2 id="question-23"><strong>Question 23</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="23q" src="../ai-900-images/23q.png" /></p>
+<details class="- example">
+<summary>Answer 23</summary>
+<p><strong>Correct Answer:</strong> fairness</p>
+<p><em>Reference:</em>*</p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai</a></p>
+</details>
+<h2 id="question-24"><strong>Question 24</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the machine learning tasks to the appropriate scenarios.</p>
+<p>To answer, drag the appropriate task from the column on the left to its scenario on the right. Each task may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="24q" src="../ai-900-images/24q.png" /></p>
+<details class="- example">
+<summary>Answer 24</summary>
+<p><img alt="24a" src="../ai-900-images/24a.png" /></p>
+<p><strong>Box 1:</strong> Model evaluation -</p>
+<p>The Model evaluation module outputs a confusion matrix showing the number of true positives, false negatives, false positives, and true negatives, as well as ROC, Precision/Recall, and Lift curves.</p>
+<p><strong>Box 2:</strong> Feature engineering -</p>
+<p>Feature engineering is the process of using domain knowledge of the data to create features that help ML algorithms learn better. In Azure Machine Learning, scaling and normalization techniques are applied to facilitate feature engineering. Collectively, these techniques and feature engineering are referred to as featurization.</p>
+<p><strong>Note:</strong> Often, features are created from raw data through a process of feature engineering. For example, a time stamp in itself might not be useful for modeling until the information is transformed into units of days, months, or categories that are relevant to the problem, such as holiday versus working day.</p>
+<p><strong>Box 3:</strong> Feature selection -</p>
+<p>In machine learning and statistics, feature selection is the process of selecting a subset of relevant, useful features to use in building an analytical model. Feature selection helps narrow the field of data to the most valuable inputs. Narrowing the field of data helps reduce noise and improve training performance.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio/evaluate-model-performance">https://docs.microsoft.com/en-us/azure/machine-learning/studio/evaluate-model-performance</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml">https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml</a></p>
+</details>
+<h2 id="question-25"><strong>Question 25</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="25q" src="../ai-900-images/25q.png" /></p>
+<details class="- example">
+<summary>Answer 25</summary>
+<p><strong>Correct Answer:</strong> features</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://www.baeldung.com/cs/feature-vs-label">https://www.baeldung.com/cs/feature-vs-label</a></p>
+<p><a href="https://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/">https://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/</a></p>
+</details>
+<h2 id="question-26"><strong>Question 26</strong></h2>
+<p>You have the Predicted vs. True chart shown in the following exhibit.</p>
+<p><img alt="26q" src="ai-900-images/26q.png" /></p>
+<p>Which type of model is the chart used to evaluate?</p>
+<p><strong>A.</strong> classification</p>
+<p><strong>B.</strong> regression</p>
+<p><strong>C.</strong> clustering</p>
+<details class="- example">
+<summary>Answer 26</summary>
+<p><strong>Correct Answer:</strong> B </p>
+<p>What is a Predicted vs. True chart?</p>
+<p>Predicted vs. True shows the relationship between a predicted value and its correlating true value for a regression problem. This graph can be used to measure performance of a model as the closer to the y=x line the predicted values are, the better the accuracy of a predictive model.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-m">https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-m</a></p>
+</details>
+<h2 id="question-27"><strong>Question 27</strong></h2>
+<p>Which type of machine learning should you use to predict the number of gift cards that will be sold next month?</p>
+<p><strong>A.</strong> classification</p>
+<p><strong>B.</strong> regression</p>
+<p><strong>C.</strong> clustering</p>
+<details class="- example">
+<summary>Answer 27</summary>
+<p><strong>Correct Answer:</strong> B</p>
+<p>In the most basic sense, regression refers to prediction of a numeric target.</p>
+<p>Linear regression attempts to establish a linear relationship between one or more independent variables and a numeric outcome, or dependent variable.</p>
+<p>You use this module to define a linear regression method, and then train a model using a labeled dataset. The trained model can then be used to make predictions.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/linear-regression">https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/linear-regression</a></p>
+</details>
+<h2 id="question-28"><strong>Question 28</strong></h2>
+<p>You have a dataset that contains information about taxi journeys that occurred during a given period.</p>
+<p>You need to train a model to predict the fare of a taxi journey.</p>
+<p>What should you use as a feature?</p>
+<p><strong>A.</strong> the number of taxi journeys in the dataset</p>
+<p><strong>B.</strong> the trip distance of individual taxi journeys</p>
+<p><strong>C.</strong> the fare of individual taxi journeys</p>
+<p><strong>D.</strong> the trip ID of individual taxi journeys</p>
+<details class="- example">
+<summary>Answer 28</summary>
+<p><strong>Correct Answer:</strong> B </p>
+<p>The label is the column you want to predict. The identified Features are the inputs you give the model to predict the Label.</p>
+<p><strong>Example:</strong></p>
+<p>The provided data set contains the following columns:</p>
+<p><strong>vendor_id:</strong> The ID of the taxi vendor is a feature.</p>
+<p><strong>rate_code:</strong> The rate type of the taxi trip is a feature.</p>
+<p><strong>passenger_count:</strong> The number of passengers on the trip is a feature. trip_time_in_secs: The amount of time the trip took. You want to predict the fare of the trip before the trip is completed. At that moment, you don't know how long the trip would take. Thus, the trip time is not a feature and you'll exclude this column from the model. trip_distance: The distance of the trip is a feature. payment_type: The payment method (cash or credit card) is a feature. fare_amount: The total taxi fare paid is the label.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/predict-prices">https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/predict-prices</a></p>
+</details>
+<h2 id="question-29"><strong>Question 29</strong></h2>
+<p>You need to predict the sea level in meters for the next 10 years.</p>
+<p>Which type of machine learning should you use?</p>
+<p>A. classification</p>
+<p>B. regression</p>
+<p>C. clustering</p>
+<details class="- example">
+<summary>Answer 29</summary>
+<p>Correct Answer: B 🗳️ </p>
+<p>In the most basic sense, regression refers to prediction of a numeric target.</p>
+<p>Linear regression attempts to establish a linear relationship between one or more independent variables and a numeric outcome, or dependent variable.</p>
+<p>You use this module to define a linear regression method, and then train a model using a labeled dataset. The trained model can then be used to make predictions.</p>
+<p>Reference:</p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/linear-regression">https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/linear-regression</a></p>
+</details>
+<h2 id="question-30"><strong>Question 30</strong></h2>
+<p>HOTSPOT:</p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
 <table>
 <thead>
 <tr>
 <th align="left">Statements</th>
-<th align="left">Yes   No</th>
+<th align="center">Yes No</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">A</td>
-<td align="left">[ ]  [ ]</td>
+<td align="left">Automated machine learning is the process of automating the time-consuming, iterative tasks of machine learning model development.</td>
+<td align="center">⚪️ ⚪️</td>
 </tr>
 <tr>
-<td align="left">A</td>
-<td align="left">[ ]  [ ]</td>
+<td align="left">Automated machine learning can automatically infer the training data from the use case provided. A graphical interface enabling no-code development of machine learning solutions</td>
+<td align="center">⚪️ ⚪️</td>
 </tr>
 <tr>
-<td align="left">A</td>
-<td align="left">[ ]  [ ]</td>
+<td align="left">Automated machine learning works by running multiple training iterations that are scored and ranked by the metrics you specify.</td>
+<td align="center">⚪️ ⚪️</td>
 </tr>
 <tr>
-<td align="left">A</td>
-<td align="left">[ ]  [ ]</td>
+<td align="left">Automated machine learning enables you to specify a dataset and will automatically understand which label to predict.</td>
+<td align="center">⚪️ ⚪️</td>
 </tr>
 </tbody>
 </table>
-<h4 id="question-3">Question 3</h4>
-<h4 id="question-4">Question 4</h4>
-<h4 id="question-5">Question 5</h4>
-<h4 id="question-6">Question 6</h4>
-<h4 id="question-7">Question 7</h4>
-<h4 id="question-8">Question 8</h4>
-<h4 id="question-9">Question 9</h4>
-<h4 id="question-10">Question 10</h4>
-<h4 id="question-11">Question 11</h4>
-<h4 id="question-12">Question 12</h4>
-<h4 id="question-13">Question 13</h4>
-<h4 id="question-14">Question 14</h4>
-<h4 id="question-15">Question 15</h4>
-<h4 id="question-16">Question 16</h4>
-<h4 id="question-17">Question 17</h4>
-<h4 id="question-18">Question 18</h4>
-<h4 id="question-19">Question 19</h4>
-<h4 id="question-20">Question 20</h4>
-<h4 id="question-21">Question 21</h4>
-<h4 id="question-22">Question 22</h4>
-<h4 id="question-23">Question 23</h4>
-<h4 id="question-24">Question 24</h4>
-<h4 id="question-25">Question 25</h4>
-<h4 id="question-26">Question 26</h4>
-<h4 id="question-27">Question 27</h4>
-<h4 id="question-28">Question 28</h4>
-<h4 id="question-29">Question 29</h4>
-<p>You need to predict the sea level in meters for the next 10 years.
-Which type of machine learning should you use?</p>
-<p>A. classification
-B. regression
-C. clustering</p>
-<details class="- example">
-<summary>Answer 29</summary>
-<p>Correct Answer: B 🗳️ 
-In the most basic sense, regression refers to prediction of a numeric target.
-Linear regression attempts to establish a linear relationship between one or more independent variables and a numeric outcome, or dependent variable.
-You use this module to define a linear regression method, and then train a model using a labeled dataset. The trained model can then be used to make predictions.
-Reference:
-https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/linear-regression</p>
-</details>
-<h4 id="question-30">Question 30</h4>
-<p>HOTSPOT:
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
-NOTE: Each correct selection is worth one point.</p>
-<p>Hot Area:
-| Statements                                                                                                                                                                            | Yes   No |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
-| Automated machine learning is the process of automating the time-consuming, iterative tasks of machine learning model development.                                                    | [ ]  [ ] |
-| Automated machine learning can automatically infer the training data from the use case provided.| a graphical interface enabling no-code development of machine learning solutions    | [ ]  [ ] |
-| Automated machine learning works by running multiple training iterations that are scored and ranked by the metrics you specify.                                                       | [ ]  [ ] |
-| Automated machine learning enables you to specify a dataset and will automatically understand which label to predict.                                                                 | [ ]  [ ] |</p>
 <details class="- example">
 <summary>Answer 30</summary>
 <table>
 <thead>
 <tr>
 <th align="left">Statements</th>
-<th align="left">Yes   No</th>
+<th align="center">Yes No</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">Automated machine learning is the process of automating the time-consuming, iterative tasks of machine learning model development.</td>
-<td align="left">[x]  [ ]</td>
+<td align="center">🟢 ⚪️</td>
 </tr>
 <tr>
-<td align="left">Automated machine learning can automatically infer the training data from the use case provided.</td>
-<td align="left">a graphical interface enabling no-code development of machine learning solutions</td>
+<td align="left">Automated machine learning can automatically infer the training data from the use case provided. A graphical interface enabling no-code development of machine learning solutions</td>
+<td align="center">⚪️ 🟢️</td>
 </tr>
 <tr>
 <td align="left">Automated machine learning works by running multiple training iterations that are scored and ranked by the metrics you specify.</td>
-<td align="left">[x]  [ ]</td>
+<td align="center">🟢 ⚪️</td>
 </tr>
 <tr>
 <td align="left">Automated machine learning enables you to specify a dataset and will automatically understand which label to predict.</td>
-<td align="left">[ ]  [x]</td>
+<td align="center">⚪️ 🟢️</td>
 </tr>
 </tbody>
 </table>
-<p>Box 1: Yes -
-Automated machine learning, also referred to as automated ML or AutoML, is the process of automating the time consuming, iterative tasks of machine learning model development. It allows data scientists, analysts, and developers to build ML models with high scale, efficiency, and productivity all while sustaining model quality.</p>
-<p>Box 2: No -</p>
-<p>Box 3: Yes -
-During training, Azure Machine Learning creates a number of pipelines in parallel that try different algorithms and parameters for you. The service iterates through
+<p><strong>Box 1: Yes -</strong></p>
+<p>Automated machine learning, also referred to as automated ML or AutoML, is the process of automating the time consuming, iterative tasks of machine learning model development. It allows data scientists, analysts, and developers to build ML models with high scale, efficiency, and productivity all while sustaining model quality.</p>
+<p><strong>Box 2: No -</strong></p>
+<p><strong>Box 3: Yes -</strong></p>
+<p>During training, Azure Machine Learning creates a number of pipelines in parallel that try different algorithms and parameters for you. The service iterates through
 ML algorithms paired with feature selections, where each iteration produces a model with a training score. The higher the score, the better the model is considered to "fit" your data. It will stop once it hits the exit criteria defined in the experiment.</p>
-<p>Box 4: No -
-Apply automated ML when you want Azure Machine Learning to train and tune a model for you using the target metric you specify.
-The label is the column you want to predict.
-Reference:
-https://azure.microsoft.com/en-us/services/machine-learning/automatedml/#features</p>
+<p><strong>Box 4: No -</strong></p>
+<p>Apply automated ML when you want Azure Machine Learning to train and tune a model for you using the target metric you specify.
+The label is the column you want to predict.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://azure.microsoft.com/en-us/services/machine-learning/automatedml/#features">https://azure.microsoft.com/en-us/services/machine-learning/automatedml/#features</a></p>
 </details>
-<h4 id="question-31">Question 31</h4>
-<p>HOTSPOT -
-To complete the sentence, select the appropriate option in the answer area.
-Hot Area:
-<img alt="q31" src="../ai-900-images/31.png" /></p>
+<h2 id="question-31"><strong>Question 31</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="q31" src="../ai-900-images/31.png" /></p>
 <details class="- example">
 <summary>Answer 1</summary>
 <p>Correct Answer: classification</p>
 <p>Two-class classification provides the answer to simple two-choice questions such as Yes/No or True/False.</p>
 </details>
-<h4 id="question-32">Question 32</h4>
-<p>HOTSPOT -
-For each of the following statements, select Yes if the statement is true. Otherwise, select No.
-NOTE: Each correct selection is worth one point.
-Hot Area:</p>
+<h2 id="question-32"><strong>Question 32</strong></h2>
+<p>HOTSPOT -</p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.
+NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
 <table>
 <thead>
 <tr>
 <th align="left">Statements</th>
-<th align="left">Yes   No</th>
+<th align="center">Yes No</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">Labelling is the process of tagging training data with known values</td>
-<td align="left">[ ]  [ ]</td>
+<td align="center">⚪️ ⚪️</td>
 </tr>
 <tr>
 <td align="left">You should evaluate a model by using the same data used to train the model</td>
-<td align="left">[ ]  [ ]</td>
+<td align="center">⚪️ ⚪️</td>
 </tr>
 <tr>
 <td align="left">Accuracy is always the primary metric used to measure a model's performance</td>
-<td align="left">[ ]  [ ]</td>
+<td align="center">⚪️ ⚪️</td>
 </tr>
 </tbody>
 </table>
@@ -2679,539 +3064,991 @@ Hot Area:</p>
 <thead>
 <tr>
 <th align="left">Statements</th>
-<th align="left">Yes   No</th>
+<th align="center">Yes No</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">Labelling is the process of tagging training data with known values</td>
-<td align="left">[ ]  [ ]</td>
+<td align="center">🟢 ⚪️</td>
 </tr>
 <tr>
 <td align="left">You should evaluate a model by using the same data used to train the model</td>
-<td align="left">[ ]  [ ]</td>
+<td align="center">⚪️ 🟢️</td>
 </tr>
 <tr>
 <td align="left">Accuracy is always the primary metric used to measure a model's performance</td>
-<td align="left">[ ]  [ ]</td>
-</tr>
-<tr>
-<td align="left">Box 1: Yes -</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">In machine learning, if you have labeled data, that means your data is marked up, or annotated, to show the target, which is the answer you want your machine learning model to predict.</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">In general, data labeling can refer to tasks that include data tagging, annotation, classification, moderation, transcription, or processing.</td>
-<td align="left"></td>
+<td align="center">⚪️ 🟢️</td>
 </tr>
 </tbody>
 </table>
-<p>Box 2: No -</p>
-<p>Box 3: No -
-Accuracy is simply the proportion of correctly classified instances. It is usually the first metric you look at when evaluating a classifier. However, when the test data is unbalanced (where most of the instances belong to one of the classes), or you are more interested in the performance on either one of the classes, accuracy doesn't really capture the effectiveness of a classifier.</p>
-<p>Reference:
-https://www.cloudfactory.com/data-labeling-guide
-https://docs.microsoft.com/en-us/azure/machine-learning/studio/evaluate-model-performance</p>
+<p><strong>Box 1: Yes -</strong></p>
+<p>In machine learning, if you have labeled data, that means your data is marked up, or annotated, to show the target, which is the answer you want your machine learning model to predict.
+In general, data labeling can refer to tasks that include data tagging, annotation, classification, moderation, transcription, or processing.</p>
+<p><strong>Box 2: No -</strong></p>
+<p><strong>Box 3: No -</strong></p>
+<p>Accuracy is simply the proportion of correctly classified instances. It is usually the first metric you look at when evaluating a classifier. However, when the test data is unbalanced (where most of the instances belong to one of the classes), or you are more interested in the performance on either one of the classes, accuracy doesn't really capture the effectiveness of a classifier.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://www.cloudfactory.com/data-labeling-guide">https://www.cloudfactory.com/data-labeling-guide</a>
+<a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio/evaluate-model-performance">https://docs.microsoft.com/en-us/azure/machine-learning/studio/evaluate-model-performance</a></p>
 </details>
-<h4 id="question-33">Question 33</h4>
+<h3 id="question-33"><strong>Question 33</strong></h3>
+<p>Which service should you use to extract text, key/value pairs, and table data automatically from scanned documents?</p>
+<p>A. Form Recognizer</p>
+<p>B. Text Analytics</p>
+<p>C. Language Understanding</p>
+<p>D. Custom Vision</p>
 <details class="- example">
 <summary>Answer 33</summary>
 <p>here</p>
 </details>
-<h4 id="question-34">Question 34</h4>
+<h2 id="question-34"><strong>Question 34</strong></h2>
+<p>HOTSPOT -</p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p>Hot Area:</p>
+<p><img alt="34q" src="../ai-900-images/34q.png" /></p>
 <details class="- example">
 <summary>Answer 34</summary>
-<p>here</p>
+<p><strong>Answer:</strong> Form Recognizer</p>
+<p>Accelerate your business processes by automating information extraction. Form Recognizer applies advanced machine learning to accurately extract text, key/ value pairs, and tables from documents. With just a few samples, Form Recognizer tailors its understanding to your documents, both on-premises and in the cloud. Turn forms into usable data at a fraction of the time and cost, so you can focus more time acting on the information rather than compiling it.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://azure.microsoft.com/en-us/services/cognitive-services/form-recognizer/">https://azure.microsoft.com/en-us/services/cognitive-services/form-recognizer/</a></p>
 </details>
-<h4 id="question-35">Question 35</h4>
+<h2 id="question-35"><strong>Question 35</strong></h2>
+<p>You use Azure Machine Learning designer to publish an inference pipeline.</p>
+<p>Which two parameters should you use to consume the pipeline? Each correct answer presents part of the solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>A. the model name</p>
+<p>B. the training endpoint</p>
+<p>C. the authentication key</p>
+<p>D. the REST endpoint</p>
 <details class="- example">
 <summary>Answer 35</summary>
-<p>here</p>
+<p>Correct Answer: C and D </p>
+<p>You can consume a published pipeline in the Published pipelines page. Select a published pipeline and find the REST endpoint of it.</p>
+<p>To consume the pipeline, you need:</p>
+<ul>
+<li>
+<p>The REST endpoint for your service</p>
+</li>
+<li>
+<p>The Primary Key for your service</p>
+</li>
+</ul>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-in/learn/modules/create-regression-model-azure-machine-learning-designer/deploy-service">https://docs.microsoft.com/en-in/learn/modules/create-regression-model-azure-machine-learning-designer/deploy-service</a></p>
 </details>
-<h4 id="question-36">Question 36</h4>
+<h2 id="question-36"><strong>Question 36</strong></h2>
+<p>HOTSPOT -</p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p>Hot Area:</p>
+<p><img alt="34q" src="../ai-900-images/36q.png" /></p>
 <details class="- example">
 <summary>Answer 36</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> Aure Kubernetes Service (AKS)</p>
+<p>To perform real-time inferencing, you must deploy a pipeline as a real-time endpoint.</p>
+<p>Real-time endpoints must be deployed to an Azure Kubernetes Service cluster.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer#deploy">https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer#deploy</a></p>
 </details>
-<h4 id="question-37">Question 37</h4>
+<h2 id="question-37"><strong>Question 37</strong></h2>
+<p>HOTSPOT -</p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p>Hot Area:</p>
+<p><img alt="37" src="../ai-900-images/37q.png" /></p>
 <details class="- example">
 <summary>Answer 37</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> Regression</p>
+<p>In the most basic sense, regression refers to prediction of a numeric target.</p>
+<p>Linear regression attempts to establish a linear relationship between one or more independent variables and a numeric outcome, or dependent variable.</p>
+<p>You use this module to define a linear regression method, and then train a model using a labeled dataset. The trained model can then be used to make predictions.</p>
+<p><strong>Incorrect Answers:</strong></p>
+<ul>
+<li>
+<p>Classification is a machine learning method that uses data to determine the category, type, or class of an item or row of data.</p>
+</li>
+<li>
+<p>Clustering, in machine learning, is a method of grouping data points into similar clusters. It is also called segmentation.</p>
+</li>
+</ul>
+<p>Over the years, many clustering algorithms have been developed. Almost all clustering algorithms use the features of individual items to find similar items. For example, you might apply clustering to find similar people by demographics. You might use clustering with text analysis to group sentences with similar topics or sentiment.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/linear-regression https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/machine-learning-initialize-model-clustering">https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/linear-regression https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/machine-learning-initialize-model-clustering</a></p>
 </details>
-<h4 id="question-38">Question 38</h4>
+<h2 id="question-38"><strong>Question 38</strong></h2>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
+<p><img alt="38q" src="../ai-900-images/38q.png" /></p>
 <details class="- example">
 <summary>Answer 38</summary>
-<p>here</p>
+<p><img alt="38a" src="../ai-900-images/38a.png" /></p>
+<p><strong>Box 1: Yes -</strong></p>
+<p>Azure Machine Learning designer lets you visually connect datasets and modules on an interactive canvas to create machine learning models.</p>
+<p><strong>Box 2: Yes -</strong></p>
+<p>With the designer you can connect the modules to create a pipeline draft.</p>
+<p>As you edit a pipeline in the designer, your progress is saved as a pipeline draft.</p>
+<p><strong>Box 3: No -</strong></p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer">https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer</a></p>
 </details>
-<h4 id="question-39">Question 39</h4>
+<h2 id="question-39"><strong>Question 39</strong></h2>
+<p>HOTSPOT -</p>
+<p>You have the following dataset.</p>
+<p><img alt="39-1q" src="../ai-900-images/39-1q.png" /></p>
+<p>You plan to use the dataset to train a model that will predict the house price categories of houses.</p>
+<p>What are Household Income and House Price Category? To answer, select the appropriate option in the answer area.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
+<p><img alt="39-2q" src="../ai-900-images/39-2q.png" /></p>
 <details class="- example">
 <summary>Answer 39</summary>
-<p>here</p>
+<p><strong>Correct Answers:</strong></p>
+<ul>
+<li>
+<p>A feature</p>
+</li>
+<li>
+<p>A label</p>
+</li>
+</ul>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio/interpret-model-results">https://docs.microsoft.com/en-us/azure/machine-learning/studio/interpret-model-results</a></p>
 </details>
-<h4 id="question-40">Question 40</h4>
+<h2 id="question-40"><strong>Question 40</strong></h2>
+<p>HOTSPOT -</p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p>Hot Area:</p>
+<p><img alt="40q" src="../ai-900-images/40q.png" /></p>
 <details class="- example">
 <summary>Answer 40</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> adding and connecting modules on a visual canvas.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer">https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer</a></p>
 </details>
-<h4 id="question-41">Question 41</h4>
+<h2 id="question-41"><strong>Question 41</strong></h2>
+<p>HOTSPOT -</p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
+<p><img alt="41q" src="../ai-900-images/41q.png" /></p>
 <details class="- example">
 <summary>Answer 41</summary>
-<p>here</p>
+<p><img alt="41a" src="../ai-900-images/41a.png" /></p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-designer-python https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml">https://docs.microsoft.com/en-us/azure/machine-learning/how-to-designer-python https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml</a></p>
 </details>
-<h4 id="question-42">Question 42</h4>
+<h2 id="question-42"><strong>Question 42</strong></h2>
+<p>A medical research project uses a large anonymized dataset of brain scan images that are categorized into predefined brain haemorrhage types.</p>
+<p>You need to use machine learning to support early detection of the different brain haemorrhage types in the images before the images are reviewed by a person.</p>
+<p>This is an example of which type of machine learning?</p>
+<p>A. clustering</p>
+<p>B. regression</p>
+<p>C. classification</p>
 <details class="- example">
 <summary>Answer 42</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> C</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/introduction">https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/introduction</a></p>
 </details>
-<h4 id="question-43">Question 43</h4>
+<h2 id="question-43"><strong>Question 43</strong></h2>
+<p>When training a model, why should you randomly split the rows into separate subsets?</p>
+<p>A. to train the model twice to attain better accuracy</p>
+<p>B. to train multiple models simultaneously to attain better performance</p>
+<p>C. to test the model by using data that was not used to train the model</p>
 <details class="- example">
 <summary>Answer 43</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> C</p>
 </details>
-<h4 id="question-44">Question 44</h4>
+<h2 id="question-44-obsolete"><strong>Question 44</strong> (Obsolete)</h2>
+<p>You are evaluating whether to use a basic workspace or an enterprise workspace in Azure Machine Learning.</p>
+<p>What are two tasks that require an enterprise workspace? Each correct answer presents a complete solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>A. Use a graphical user interface (GUI) to run automated machine learning experiments.</p>
+<p>B. Create a compute instance to use as a workstation.</p>
+<p>C. Use a graphical user interface (GUI) to define and run machine learning experiments from Azure Machine Learning designer.</p>
+<p>D. Create a dataset from a comma-separated value (CSV) file.</p>
 <details class="- example">
 <summary>Answer 44</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> A and C</p>
+<p>Note: Enterprise workspaces are no longer available as of September 2020. The basic workspace now has all the functionality of the enterprise workspace.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://www.azure.cn/en-us/pricing/details/machine-learning/">https://www.azure.cn/en-us/pricing/details/machine-learning/</a></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-workspace">https://docs.microsoft.com/en-us/azure/machine-learning/concept-workspace</a></p>
 </details>
-<h4 id="question-45">Question 45</h4>
+<h2 id="question-45"><strong>Question 45</strong></h2>
+<p>You need to predict the income range of a given customer by using the following dataset.</p>
+<p><img alt="45q" src="../ai-900-images/45q.png" /></p>
+<p>Which two fields should you use as features? Each correct answer presents a complete solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>A. Education Level</p>
+<p>B. Last Name</p>
+<p>C. Age</p>
+<p>D. Income Range</p>
+<p>E. First Name</p>
 <details class="- example">
 <summary>Answer 45</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> A and C </p>
+<p>First Name, Last Name, Age and Education Level are features. Income range is a label (what you want to predict). First Name and Last Name are irrelevant in that they have no bearing on income. Age and Education level are the features you should use.</p>
 </details>
-<h4 id="question-46">Question 46</h4>
+<h2 id="question-46"><strong>Question 46</strong></h2>
+<p>The solution will use a custom model.</p>
+<p>Which Azure Cognitive Services service should you use?</p>
+<p>A. Custom Vision</p>
+<p>B. Form Recognizer</p>
+<p>C. Face</p>
+<p>D. Computer Vision</p>
 <details class="- example">
 <summary>Answer 46</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> A </p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/overview">https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/overview</a></p>
 </details>
-<h4 id="question-47">Question 47</h4>
+<h2 id="question-47"><strong>Question 47</strong></h2>
+<p>HOTSPOT -</p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
+<p><img alt="47q" src="ai-900-images/47q.png" /></p>
 <details class="- example">
 <summary>Answer 47</summary>
-<p>here</p>
+<p><img alt="47a" src="ai-900-images/47a.png" /></p>
+<p>Clustering is a machine learning task that is used to group instances of data into clusters that contain similar characteristics. Clustering can also be used to identify relationships in a dataset</p>
+<p>Regression is a machine learning task that is used to predict the value of the label from a set of related features.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/tasks">https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/tasks</a></p>
 </details>
-<h4 id="question-48">Question 48</h4>
+<h2 id="question-48"><strong>Question 48</strong></h2>
+<p>HOTSPOT -</p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Hot Area:</p>
+<p><img alt="48q" src="ai-900-images/48q.png" /></p>
 <details class="- example">
 <summary>Answer 48</summary>
-<p>here</p>
+<p><img alt="48a" src="ai-900-images/48a.png" /></p>
+<p><strong>Box 1: No -</strong></p>
+<p>The validation dataset is different from the test dataset that is held back from the training of the model.</p>
+<p><strong>Box 2: Yes -</strong></p>
+<p>A validation dataset is a sample of data that is used to give an estimate of model skill while tuning modelג€™s hyperparameters.</p>
+<p><strong>Box 3: No -</strong></p>
+<p>The Test Dataset, not the validation set, used for this. The Test Dataset is a sample of data used to provide an unbiased evaluation of a final model fit on the training dataset.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://machinelearningmastery.com/difference-test-validation-datasets/">https://machinelearningmastery.com/difference-test-validation-datasets/</a></p>
 </details>
-<h4 id="question-49">Question 49</h4>
+<h2 id="question-49"><strong>Question 49</strong></h2>
+<p>What are two metrics that you can use to evaluate a regression model? Each correct answer presents a complete solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>A. coefficient of determination (R2)</p>
+<p>B. F1 score</p>
+<p>C. root mean squared error (RMSE)</p>
+<p>D. area under curve (AUC)</p>
+<p>E. balanced accuracy</p>
 <details class="- example">
 <summary>Answer 49</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> A and C</p>
+<p>A: R-squared (R2), or Coefficient of determination represents the predictive power of the model as a value between -inf and 1.00. 1.00 means there is a perfect fit, and the fit can be arbitrarily poor so the scores can be negative.</p>
+<p>C: RMS-loss or Root Mean Squared Error (RMSE) (also called Root Mean Square Deviation, RMSD), measures the difference between values predicted by a model and the values observed from the environment that is being modeled.</p>
+<p><strong>Incorrect Answers:</strong></p>
+<p>B: F1 score also known as balanced F-score or F-measure is used to evaluate a classification model.</p>
+<p>D: aucROC or area under the curve (AUC) is used to evaluate a classification model.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/metrics">https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/metrics</a></p>
 </details>
-<h4 id="question-50">Question 50</h4>
+<h2 id="question-50"><strong>Question 50</strong></h2>
+<p>HOTSPOT -</p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p>Hot Area:</p>
+<p><img alt="50q" src="ai-900-images/50q.png" /></p>
 <details class="- example">
 <summary>Answer 50</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> regression</p>
+<p>Regression is a machine learning task that is used to predict the value of the label from a set of related features.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/tasks">https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/tasks</a></p>
 </details>
-<h4 id="question-51">Question 51</h4>
+<h2 id="question-51"><strong>Question 51</strong></h2>
+<p>DRAG DROP -</p>
+<p>You need to use Azure Machine Learning designer to build a model that will predict automobile prices.</p>
+<p>Which type of modules should you use to complete the model? To answer, drag the appropriate modules to the correct locations. Each module may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>Select and Place:</p>
+<p><img alt="51q" src="ai-900-images/51q.png" /></p>
 <details class="- example">
 <summary>Answer 51</summary>
-<p>here</p>
 </details>
-<h4 id="question-52">Question 52</h4>
+<p><img alt="51-1a" src="../ai-900-images/51-1a.png" /></p>
+<p><strong>Box 1:</strong> Select Columns in Dataset</p>
+<p>For Columns to be cleaned, choose the columns that contain the missing values you want to change. You can choose multiple columns, but you must use the same replacement method in all selected columns.</p>
+<p>Example:</p>
+<p><img alt="51-2a" src="ai-900-images/51-2a.png" /></p>
+<p><strong>Box 2:</strong> Split data -</p>
+<p>Splitting data is a common task in machine learning. You will split your data into two separate datasets. One dataset will train the model and the other will test how well the model performed.</p>
+<p><strong>Box 3:</strong> Linear regression -</p>
+<p>Because you want to predict price, which is a number, you can use a regression algorithm. For this example, you use a linear regression model.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-train-score">https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-train-score</a></p>
+<h2 id="question-52"><strong>Question 52</strong></h2>
+<p>Which type of machine learning should you use to identify groups of people who have similar purchasing habits?</p>
+<p>A. classification</p>
+<p>B. regression</p>
+<p>C. clustering</p>
 <details class="- example">
 <summary>Answer 52</summary>
-<p>here</p>
 </details>
-<h4 id="question-53">Question 53</h4>
+<p><strong>Correct Answer:</strong> C</p>
+<div class="highlight"><pre><span></span><code>Clustering is a machine learning task that is used to group instances of data into clusters that contain similar characteristics. Clustering can also be used to identify relationships in a dataset
+
+**Reference:**
+
+[https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/tasks](https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/tasks)
+</code></pre></div>
+<h2 id="question-53"><strong>Question 53</strong></h2>
+<p>HOTSPOT -</p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p>Hot Area:</p>
+<p><img alt="53q" src="ai-900-images/53q.png" /></p>
 <details class="- example">
 <summary>Answer 53</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> Regression</p>
+<p>Regression is a machine learning task that is used to predict the value of the label from a set of related features.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/tasks">https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/tasks</a></p>
 </details>
-<h4 id="question-54">Question 54</h4>
+<h2 id="question-54"><strong>Question 54</strong></h2>
+<p>Which metric can you use to evaluate a classification model?</p>
+<p>A. true positive rate</p>
+<p>B. mean absolute error (MAE)</p>
+<p>C. coefficient of determination (R2)</p>
+<p>D. root mean squared error (RMSE)</p>
 <details class="- example">
 <summary>Answer 54</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> A </p>
+<p>What does a good model look like?</p>
+<p>An ROC curve that approaches the top left corner with 100% true positive rate and 0% false positive rate will be the best model. A random model would display as a flat line from the bottom left to the top right corner. Worse than random would dip below the y=x line.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#classification">https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#classification</a></p>
 </details>
-<h4 id="question-55">Question 55</h4>
+<h2 id="question-55"><strong>Question 55</strong></h2>
+<p>Which two components can you drag onto a canvas in Azure Machine Learning designer? Each correct answer presents a complete solution.</p>
+<p>NOTE: Each correct selection is worth one point.</p>
+<p>A. dataset</p>
+<p>B. compute</p>
+<p>C. pipeline</p>
+<p>D. module</p>
 <details class="- example">
 <summary>Answer 55</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> A and D </p>
+<p>You can drag-and-drop datasets and modules onto the canvas.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer">https://docs.microsoft.com/en-us/azure/machine-learning/concept-designer</a></p>
 </details>
-<h4 id="question-56">Question 56</h4>
+<h2 id="question-56"><strong>Question 56</strong></h2>
+<p>You need to create a training dataset and validation dataset from an existing dataset.</p>
+<p>Which module in the Azure Machine Learning designer should you use?</p>
+<p>A. Select Columns in Dataset</p>
+<p>B. Add Rows</p>
+<p>C. Split Data</p>
+<p>D. Join Data</p>
 <details class="- example">
 <summary>Answer 56</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> C </p>
+<p>A common way of evaluating a model is to divide the data into a training and test set by using Split Data, and then validate the model on the training data.</p>
+<p>Use the Split Data module to divide a dataset into two distinct sets.</p>
+<p>The studio currently supports training/validation data splits</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits">https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits</a></p>
 </details>
-<h4 id="question-57">Question 57</h4>
+<h2 id="question-57"><strong>Question 57</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the types of machine learning to the appropriate scenarios.</p>
+<p>To answer, drag the appropriate machine learning type from the column on the left to its scenario on the right. Each machine learning type may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="57q" src="ai-900-images/57q.png" /></p>
 <details class="- example">
 <summary>Answer 57</summary>
-<p>here</p>
+<p><img alt="57a" src="ai-900-images/57a.png" /></p>
+<p><strong>Box 1: Regression -</strong></p>
+<p>In the most basic sense, regression refers to prediction of a numeric target.</p>
+<p>Linear regression attempts to establish a linear relationship between one or more independent variables and a numeric outcome, or dependent variable.</p>
+<p>You use this module to define a linear regression method, and then train a model using a labeled dataset. The trained model can then be used to make predictions.</p>
+<p><strong>Box 2: Clustering -</strong></p>
+<p>Clustering, in machine learning, is a method of grouping data points into similar clusters. It is also called segmentation.</p>
+<p>Over the years, many clustering algorithms have been developed. Almost all clustering algorithms use the features of individual items to find similar items. For example, you might apply clustering to find similar people by demographics. You might use clustering with text analysis to group sentences with similar topics or sentiment.</p>
+<p><strong>Box 3: Classification -</strong></p>
+<p>Two-class classification provides the answer to simple two-choice questions such as Yes/No or True/False.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/linear-regression">https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/linear-regression</a></p>
 </details>
-<h4 id="question-58">Question 58</h4>
+<h2 id="question-58"><strong>Question 58</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="58q" src="../ai-900-images/58q.png" /></p>
 <details class="- example">
 <summary>Answer 58</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> Accuracy</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier">https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier</a></p>
 </details>
-<h4 id="question-59">Question 59</h4>
+<h2 id="question-59"><strong>Question 59</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="59q" src="../ai-900-images/59q.png" /></p>
 <details class="- example">
 <summary>Answer 59</summary>
-<p>here</p>
+<p>**Corrector Answer: a reliability and safety</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/innovate/best-practices/trusted-ai</a></p>
 </details>
-<h4 id="question-60">Question 60</h4>
+<h2 id="question-60"><strong>Question 60</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="60q" src="../ai-900-images/60q.png" /></p>
 <details class="- example">
 <summary>Answer 60</summary>
-<p>here</p>
+<p><strong>Corrector Answer:</strong> feature selection.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/architecture/data-science-process/create-features">https://docs.microsoft.com/en-us/azure/architecture/data-science-process/create-features</a></p>
 </details>
-<h4 id="question-61">Question 61</h4>
+<h2 id="question-61"><strong>Question 61</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="61q" src="../ai-900-images/61q.png" /></p>
 <details class="- example">
 <summary>Answer 61</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> labeling.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-label-data">https://docs.microsoft.com/en-us/azure/machine-learning/how-to-label-data</a></p>
 </details>
-<h4 id="question-62">Question 62</h4>
+<h2 id="question-62"><strong>Question 62</strong></h2>
+<p>Your company wants to build a recycling machine for bottles. The recycling machine must automatically identify bottles of the correct shape and reject all other items.</p>
+<p>Which type of AI workload should the company use?</p>
+<p>A. anomaly detection</p>
+<p>B. conversational AI</p>
+<p>C. computer vision</p>
+<p>D. natural language processing</p>
 <details class="- example">
 <summary>Answer 62</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> C </p>
+<p>Azure's Computer Vision service gives you access to advanced algorithms that process images and return information based on the visual features you're interested in. For example, Computer Vision can determine whether an image contains adult content, find specific brands or objects, or find human faces.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview">https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview</a></p>
 </details>
-<h4 id="question-63">Question 63</h4>
+<h2 id="question-63"><strong>Question 63</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="63q" src="../ai-900-images/63q.png" /></p>
 <details class="- example">
 <summary>Answer 63</summary>
-<p>here</p>
 </details>
-<h4 id="question-64">Question 64</h4>
+<p><img alt="63a" src="../ai-900-images/63a.png" /></p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/get-started-build-detector">https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/get-started-build-detector</a></p>
+<h2 id="question-64"><strong>Question 64</strong></h2>
+<p>In which two scenarios can you use the Form Recognizer service? Each correct answer presents a complete solution.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p>A. Extract the invoice number from an invoice.</p>
+<p>B. Translate a form from French to English.</p>
+<p>C. Find image of product in a catalog.</p>
+<p>D. Identify the retailer from a receipt.</p>
 <details class="- example">
 <summary>Answer 64</summary>
-<p>here</p>
 </details>
-<h4 id="question-65">Question 65</h4>
+<p><strong>Correct Answer:</strong> A and D </p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://azure.microsoft.com/en-gb/services/cognitive-services/form-recognizer/#features">https://azure.microsoft.com/en-gb/services/cognitive-services/form-recognizer/#features</a></p>
+<h2 id="question-65"><strong>Question 65</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>You have a database that contains a list of employees and their photos.</p>
+<p>You are tagging new photos of the employees.</p>
+<p>For each of the following statements select Yes if the statement is true. Otherwise, select No.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="65a" src="ai-900-images/65a.png" /></p>
 <details class="- example">
 <summary>Answer 65</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> Yes / Yes / No</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview">https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/face/concepts/face-detection">https://docs.microsoft.com/en-us/azure/cognitive-services/face/concepts/face-detection</a></p>
 </details>
-<h4 id="question-66">Question 66</h4>
+<h2 id="question-66"><strong>Question 66</strong></h2>
+<p>You need to develop a mobile app for employees to scan and store their expenses while travelling.</p>
+<p>Which type of computer vision should you use?</p>
+<p>A. semantic segmentation</p>
+<p>B. image classification</p>
+<p>C. object detection</p>
+<p>D. optical character recognition (OCR)</p>
 <details class="- example">
 <summary>Answer 66</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> D </p>
+<p>Azure's Computer Vision API includes Optical Character Recognition (OCR) capabilities that extract printed or handwritten text from images. You can extract text from images, such as photos of license plates or containers with serial numbers, as well as from documents - invoices, bills, financial reports, articles, and more.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text">https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-recognizing-text</a></p>
 </details>
-<h4 id="question-67">Question 67</h4>
+<h2 id="question-67"><strong>Question 67</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="67q" src="../ai-900-images/67q.png" /></p>
 <details class="- example">
 <summary>Answer 67</summary>
-<p>here</p>
 </details>
-<h4 id="question-68">Question 68</h4>
+<p><img alt="67a" src="../ai-900-images/67a.png" /></p>
+<div class="highlight"><pre><span></span><code>**Box 1: Yes -**
+
+Custom Vision functionality can be divided into two features. Image classification applies one or more labels to an image. Object detection is similar, but it also returns the coordinates in the image where the applied label(s) can be found.
+
+**Box 2: Yes -**
+
+The Custom Vision service uses a machine learning algorithm to analyze images. You, the developer, submit groups of images that feature and lack the characteristics in question. You label the images yourself at the time of submission. Then, the algorithm trains to this data and calculates its own accuracy by testing itself on those same images.
+
+**Box 3: No -**
+
+Custom Vision service can be used only on graphic files.
+
+**Reference:**
+
+[https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/overview](https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Vision-Service/overview)
+</code></pre></div>
+<h2 id="question-68"><strong>Question 68</strong></h2>
+<p>You are processing photos of runners in a race.</p>
+<p>You need to read the numbers on the runners' shirts to identity the runners in the photos.</p>
+<p>Which type of computer vision should you use?</p>
+<p>A. facial recognition</p>
+<p>B. optical character recognition (OCR)</p>
+<p>C. semantic segmentation</p>
+<p>D. object detection</p>
 <details class="- example">
 <summary>Answer 68</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> B </p>
+<p>Optical character recognition (OCR) allows you to extract printed or handwritten text from images and documents.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr">https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr</a></p>
 </details>
-<h4 id="question-69">Question 69</h4>
+<h2 id="question-69"><strong>Question 69</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the types of machine learning to the appropriate scenarios.</p>
+<p>To answer, drag the appropriate machine learning type from the column on the left to its scenario on the right. Each machine learning type may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="69q" src="../ai-900-images/69q.png" /></p>
 <details class="- example">
 <summary>Answer 69</summary>
-<p>here</p>
+<p><img alt="69a" src="../ai-900-images/69a.png" /></p>
+<p><strong>Box 1:</strong> Image classification -</p>
+<p>Image classification is a supervised learning problem: define a set of target classes (objects to identify in images), and train a model to recognize them using labeled example photos.</p>
+<p><strong>Box 2:</strong> Object detection -</p>
+<p>Object detection is a computer vision problem. While closely related to image classification, object detection performs image classification at a more granular scale. Object detection both locates and categorizes entities within images.</p>
+<p><strong>Box 3:</strong> Semantic Segmentation -</p>
+<p>Semantic segmentation achieves fine-grained inference by making dense predictions inferring labels for every pixel, so that each pixel is labeled with the class of its enclosing object ore region.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://developers.google.com/machine-learning/practica/image-classification">https://developers.google.com/machine-learning/practica/image-classification</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/object-detection-model-builder">https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/object-detection-model-builder</a> </p>
+<p><a href="https://nanonets.com/blog/how-to-do-semantic-segmentation-using-deep-learning/">https://nanonets.com/blog/how-to-do-semantic-segmentation-using-deep-learning/</a></p>
 </details>
-<h4 id="question-70">Question 70</h4>
+<h2 id="question-70"><strong>Question 70</strong></h2>
+<p>You use drones to identify where weeds grow between rows of crops to send an instruction for the removal of the weeds.</p>
+<p>This is an example of which type of computer vision?</p>
+<p>A. object detection</p>
+<p>B. optical character recognition (OCR)</p>
+<p>C. scene segmentation</p>
 <details class="- example">
 <summary>Answer 70</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> A </p>
+<p>Object detection is similar to tagging, but the API returns the bounding box coordinates for each tag applied. For example, if an image contains a dog, cat and person, the Detect operation will list those objects together with their coordinates in the image.</p>
+<p><strong>Incorrect Answers:</strong></p>
+<p>B: Optical character recognition (OCR) allows you to extract printed or handwritten text from images and documents.</p>
+<p>C: Scene segmentation determines when a scene changes in video based on visual cues. A scene depicts a single event and it's composed by a series of consecutive shots, which are semantically related.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/ai-builder/object-detection-overview">https://docs.microsoft.com/en-us/ai-builder/object-detection-overview</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr">https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-for-media-docs/video-indexer-overview">https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-for-media-docs/video-indexer-overview</a></p>
 </details>
-<h4 id="question-71">Question 71</h4>
+<h2 id="question-71"><strong>Question 71</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the facial recognition tasks to the appropriate questions.</p>
+<p>To answer, drag the appropriate task from the column on the left to its question on the right. Each task may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="71q" src="../ai-900-images/71q.png" /></p>
 <details class="- example">
 <summary>Answer 71</summary>
-<p>here</p>
+<p><img alt="71a" src="../ai-900-images/71a.png" /></p>
+<p><strong>Box 1:</strong> verification -</p>
+<p>Face verification: Check the likelihood that two faces belong to the same person and receive a confidence score.</p>
+<p><strong>Box 2:</strong> similarity -</p>
+<p><strong>Box 3:</strong> Grouping -</p>
+<p><strong>Box 4:</strong> identification -</p>
+<p>Face detection: Detect one or more human faces along with attributes such as: age, emotion, pose, smile, and facial hair, including 27 landmarks for each face in the image.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://azure.microsoft.com/en-us/services/cognitive-services/face/#features">https://azure.microsoft.com/en-us/services/cognitive-services/face/#features</a></p>
 </details>
-<h4 id="question-72">Question 72</h4>
+<h2 id="question-72"><strong>Question 72</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the types of computer vision workloads to the appropriate scenarios.</p>
+<p>To answer, drag the appropriate workload type from the column on the left to its scenario on the right. Each workload type may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="72q" src="ai-900-images/72q.png" /></p>
 <details class="- example">
 <summary>Answer 72</summary>
-<p>here</p>
+<p><img alt="72a" src="ai-900-images/72a.png" /></p>
+<p><strong>Box 1:</strong> Facial recognition -</p>
+<p>Face detection that perceives faces and attributes in an image; person identification that matches an individual in your private repository of up to 1 million people; perceived emotion recognition that detects a range of facial expressions like happiness, contempt, neutrality, and fear; and recognition and grouping of similar faces in images.</p>
+<p><strong>Box 2:</strong> OCR -</p>
+<p><strong>Box 3:</strong> Objection detection -</p>
+<p>Object detection is similar to tagging, but the API returns the bounding box coordinates (in pixels) for each object found. For example, if an image contains a dog, cat and person, the Detect operation will list those objects together with their coordinates in the image. You can use this functionality to process the relationships between the objects in an image. It also lets you determine whether there are multiple instances of the same tag in an image.</p>
+<p>The Detect API applies tags based on the objects or living things identified in the image. There is currently no formal relationship between the tagging taxonomy and the object detection taxonomy. At a conceptual level, the Detect API only finds objects and living things, while the Tag API can also include contextual terms like "indoor", which can't be localized with bounding boxes.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://azure.microsoft.com/en-us/services/cognitive-services/face/ https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-object-detection">https://azure.microsoft.com/en-us/services/cognitive-services/face/ https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-object-detection</a></p>
 </details>
-<h4 id="question-73">Question 73</h4>
+<h2 id="question-73"><strong>Question 73</strong></h2>
+<p>You need to determine the location of cars in an image so that you can estimate the distance between the cars.</p>
+<p>Which type of computer vision should you use?</p>
+<p>A. optical character recognition (OCR)</p>
+<p>B. object detection</p>
+<p>C. image classification</p>
+<p>D. face detection</p>
 <details class="- example">
 <summary>Answer 73</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> B </p>
+<p>Object detection is similar to tagging, but the API returns the bounding box coordinates (in pixels) for each object found. For example, if an image contains a dog, cat and person, the Detect operation will list those objects together with their coordinates in the image. You can use this functionality to process the relationships between the objects in an image. It also lets you determine whether there are multiple instances of the same tag in an image.</p>
+<p>The Detect API applies tags based on the objects or living things identified in the image. There is currently no formal relationship between the tagging taxonomy and the object detection taxonomy. At a conceptual level, the Detect API only finds objects and living things, while the Tag API can also include contextual terms like "indoor", which can't be localized with bounding boxes.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-object-detection">https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-object-detection</a></p>
 </details>
-<h4 id="question-74">Question 74</h4>
-<details class="- example">
-<summary>Answer 73</summary>
-<p>here</p>
-</details>
-<h4 id="question-75">Question 75</h4>
+<h2 id="question-74"><strong>Question 74</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="74q" src="../ai-900-images/74q.png" /></p>
 <details class="- example">
 <summary>Answer 74</summary>
-<p>here</p>
+<p>**Correct Answer: Custom Vision</p>
+<p>Azure Custom Vision is a cognitive service that lets you build, deploy, and improve your own image classifiers. An image classifier is an AI service that applies labels (which represent classes) to images, according to their visual characteristics. Unlike the Computer Vision service, Custom Vision allows you to specify the labels to apply.</p>
+<p><strong>Note:</strong> The Custom Vision service uses a machine learning algorithm to apply labels to images. You, the developer, must submit groups of images that feature and lack the characteristics in question. You label the images yourself at the time of submission. Then the algorithm trains to this data and calculates its own accuracy by testing itself on those same images. Once the algorithm is trained, you can test, retrain, and eventually use it to classify new images according to the needs of your app. You can also export the model itself for offline use.</p>
+<p>Incorrect Answers:</p>
+<p>Computer Vision:</p>
+<p>Azure's Computer Vision service provides developers with access to advanced algorithms that process images and return information based on the visual features you're interested in. For example, Computer Vision can determine whether an image contains adult content, find specific brands or objects, or find human faces.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/home">https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/home</a></p>
 </details>
-<h4 id="question-76">Question 76</h4>
+<h2 id="question-75"><strong>Question 75</strong></h2>
+<p>You send an image to a Computer Vision API and receive back the annotated image shown in the exhibit.</p>
+<p><img alt="75q" src="ai-900-images/75q.png" /></p>
+<p>Which type of computer vision was used?</p>
+<p>A. object detection</p>
+<p>B. semantic segmentation</p>
+<p>C. optical character recognition (OCR)</p>
+<p>D. image classification</p>
 <details class="- example">
 <summary>Answer 75</summary>
-<p>here</p>
+<p><strong>Correct Answer:</strong> A </p>
+<p>Object detection is similar to tagging, but the API returns the bounding box coordinates (in pixels) for each object found. For example, if an image contains a dog, cat and person, the Detect operation will list those objects together with their coordinates in the image. You can use this functionality to process the relationships between the objects in an image. It also lets you determine whether there are multiple instances of the same tag in an image.</p>
+<p>The Detect API applies tags based on the objects or living things identified in the image. There is currently no formal relationship between the tagging taxonomy and the object detection taxonomy. At a conceptual level, the Detect API only finds objects and living things, while the Tag API can also include contextual terms like "indoor", which can't be localized with bounding boxes.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-object-detection">https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/concept-object-detection</a></p>
 </details>
-<h4 id="question-76_1">Question 76</h4>
+<h2 id="question-76"><strong>Question 76</strong></h2>
+<p>What are two tasks that can be performed by using the Computer Vision service? Each correct answer presents a complete solution.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p>A. Train a custom image classification model.</p>
+<p>B. Detect faces in an image.</p>
+<p>C. Recognize handwritten text.</p>
+<p>D. Translate the text in an image between languages.</p>
+<details class="- example">
+<summary>Answer 76</summary>
+<p><strong>Correct Answer:</strong> B and C </p>
+<p><strong>B:</strong> Azure's Computer Vision service provides developers with access to advanced algorithms that process images and return information based on the visual features you're interested in. For example, Computer Vision can determine whether an image contains adult content, find specific brands or objects, or find human faces.</p>
+<p><strong>C:</strong> Computer Vision includes Optical Character Recognition (OCR) capabilities. You can use the new Read API to extract printed and handwritten text from images and documents.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/home">https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/home</a></p>
+</details>
+<h2 id="question-77"><strong>Question 77</strong></h2>
 <details class="- example">
 <summary>Answer 77</summary>
 <p>here</p>
 </details>
-<h4 id="question-78">Question 78</h4>
+<h2 id="question-78"><strong>Question 78</strong></h2>
 <details class="- example">
 <summary>Answer 78</summary>
 <p>here</p>
 </details>
-<h4 id="question-79">Question 79</h4>
+<h2 id="question-79"><strong>Question 79</strong></h2>
 <details class="- example">
 <summary>Answer 79</summary>
 <p>here</p>
 </details>
-<h4 id="question-80">Question 80</h4>
+<h2 id="question-80"><strong>Question 80</strong></h2>
 <details class="- example">
 <summary>Answer 80</summary>
 <p>here</p>
 </details>
-<h4 id="question-81">Question 81</h4>
+<h2 id="question-81"><strong>Question 81</strong></h2>
 <details class="- example">
 <summary>Answer 81</summary>
 <p>here</p>
 </details>
-<h4 id="question-82">Question 82</h4>
+<h2 id="question-82"><strong>Question 82</strong></h2>
 <details class="- example">
 <summary>Answer 82</summary>
 <p>here</p>
 </details>
-<h4 id="question-83">Question 83</h4>
+<h2 id="question-83"><strong>Question 83</strong></h2>
 <details class="- example">
 <summary>Answer 83</summary>
 <p>here</p>
 </details>
-<h4 id="question-84">Question 84</h4>
+<h2 id="question-84"><strong>Question 84</strong></h2>
 <details class="- example">
 <summary>Answer 84</summary>
 <p>here</p>
 </details>
-<h4 id="question-85">Question 85</h4>
+<h2 id="question-85"><strong>Question 85</strong></h2>
 <details class="- example">
 <summary>Answer 85</summary>
 <p>here</p>
 </details>
-<h4 id="question-86">Question 86</h4>
+<h2 id="question-86"><strong>Question 86</strong></h2>
 <details class="- example">
 <summary>Answer 86</summary>
 <p>here</p>
 </details>
-<h4 id="question-87">Question 87</h4>
+<h2 id="question-87"><strong>Question 87</strong></h2>
 <details class="- example">
 <summary>Answer 87</summary>
 <p>here</p>
 </details>
-<h4 id="question-88">Question 88</h4>
+<h2 id="question-88"><strong>Question 88</strong></h2>
 <details class="- example">
 <summary>Answer 88</summary>
 <p>here</p>
 </details>
-<h4 id="question-89">Question 89</h4>
+<h2 id="question-89"><strong>Question 89</strong></h2>
 <details class="- example">
 <summary>Answer 89</summary>
 <p>here</p>
 </details>
-<h4 id="question-90">Question 90</h4>
+<h2 id="question-90"><strong>Question 90</strong></h2>
 <details class="- example">
 <summary>Answer 90</summary>
 <p>here</p>
 </details>
-<h4 id="question-91">Question 91</h4>
+<h2 id="question-91"><strong>Question 91</strong></h2>
 <details class="- example">
 <summary>Answer 91</summary>
 <p>here</p>
 </details>
-<h4 id="question-92">Question 92</h4>
+<h2 id="question-92"><strong>Question 92</strong></h2>
 <details class="- example">
 <summary>Answer 92</summary>
 <p>here</p>
 </details>
-<h4 id="question-93">Question 93</h4>
+<h2 id="question-93"><strong>Question 93</strong></h2>
 <details class="- example">
 <summary>Answer 93</summary>
 <p>here</p>
 </details>
-<h4 id="question-94">Question 94</h4>
+<h2 id="question-94"><strong>Question 94</strong></h2>
 <details class="- example">
 <summary>Answer 94</summary>
 <p>here</p>
 </details>
-<h4 id="question-95">Question 95</h4>
+<h2 id="question-95"><strong>Question 95</strong></h2>
 <details class="- example">
 <summary>Answer 95</summary>
 <p>here</p>
 </details>
-<h4 id="question-96">Question 96</h4>
+<h2 id="question-96"><strong>Question 96</strong></h2>
 <details class="- example">
 <summary>Answer 96</summary>
 <p>here</p>
 </details>
-<h4 id="question-97">Question 97</h4>
+<h2 id="question-97"><strong>Question 97</strong></h2>
 <details class="- example">
 <summary>Answer 97</summary>
 <p>here</p>
 </details>
-<h4 id="question-98">Question 98</h4>
+<h2 id="question-98"><strong>Question 98</strong></h2>
 <details class="- example">
 <summary>Answer 98</summary>
 <p>here</p>
 </details>
-<h4 id="question-99">Question 99</h4>
+<h2 id="question-99"><strong>Question 99</strong></h2>
 <details class="- example">
 <summary>Answer 99</summary>
 <p>here</p>
 </details>
-<h4 id="question-100">Question 100</h4>
+<h2 id="question-100"><strong>Question 100</strong></h2>
 <details class="- example">
 <summary>Answer 100</summary>
 <p>here</p>
 </details>
-<h4 id="question-101">Question 101</h4>
+<h2 id="question-101"><strong>Question 101</strong></h2>
 <details class="- example">
 <summary>Answer 101</summary>
 <p>here</p>
 </details>
-<h4 id="question-102">Question 102</h4>
+<h2 id="question-102"><strong>Question 102</strong></h2>
 <details class="- example">
 <summary>Answer 102</summary>
 <p>here</p>
 </details>
-<h4 id="question-103">Question 103</h4>
+<h2 id="question-103"><strong>Question 103</strong></h2>
 <details class="- example">
 <summary>Answer 103</summary>
 <p>here</p>
 </details>
-<h4 id="question-104">Question 104</h4>
+<h2 id="question-104"><strong>Question 104</strong></h2>
 <details class="- example">
 <summary>Answer 104</summary>
 <p>here</p>
 </details>
-<h4 id="question-105">Question 105</h4>
+<h2 id="question-105"><strong>Question 105</strong></h2>
 <details class="- example">
 <summary>Answer 105</summary>
 <p>here</p>
 </details>
-<h4 id="question-106">Question 106</h4>
+<h2 id="question-106"><strong>Question 106</strong></h2>
 <details class="- example">
 <summary>Answer 106</summary>
 <p>here</p>
 </details>
-<h4 id="question-107">Question 107</h4>
+<h2 id="question-107"><strong>Question 107</strong></h2>
 <details class="- example">
 <summary>Answer 107</summary>
 <p>here</p>
 </details>
-<h4 id="question-108">Question 108</h4>
+<h2 id="question-108"><strong>Question 108</strong></h2>
 <details class="- example">
 <summary>Answer 108</summary>
 <p>here</p>
 </details>
-<h4 id="question-109">Question 109</h4>
+<h2 id="question-109"><strong>Question 109</strong></h2>
 <details class="- example">
 <summary>Answer 109</summary>
 <p>here</p>
 </details>
-<h4 id="question-110">Question 110</h4>
+<h2 id="question-110"><strong>Question 110</strong></h2>
 <details class="- example">
 <summary>Answer 110</summary>
 <p>here</p>
 </details>
-<h4 id="question-111">Question 111</h4>
+<h2 id="question-111"><strong>Question 111</strong></h2>
 <details class="- example">
 <summary>Answer 111</summary>
 <p>here</p>
 </details>
-<h4 id="question-112">Question 112</h4>
+<h2 id="question-112"><strong>Question 112</strong></h2>
 <details class="- example">
 <summary>Answer 112</summary>
 <p>here</p>
 </details>
-<h4 id="question-113">Question 113</h4>
+<h2 id="question-113"><strong>Question 113</strong></h2>
 <details class="- example">
 <summary>Answer 113</summary>
 <p>here</p>
 </details>
-<h4 id="question-114">Question 114</h4>
+<h2 id="question-114"><strong>Question 114</strong></h2>
 <details class="- example">
 <summary>Answer 114</summary>
 <p>here</p>
 </details>
-<h4 id="question-115">Question 115</h4>
+<h2 id="question-115"><strong>Question 115</strong></h2>
 <details class="- example">
 <summary>Answer 115</summary>
 <p>here</p>
 </details>
-<h4 id="question-116">Question 116</h4>
+<h2 id="question-116"><strong>Question 116</strong></h2>
 <details class="- example">
 <summary>Answer 116</summary>
 <p>here</p>
 </details>
-<h4 id="question-117">Question 117</h4>
+<h2 id="question-117"><strong>Question 117</strong></h2>
 <details class="- example">
 <summary>Answer 117</summary>
 <p>here</p>
 </details>
-<h4 id="question-118">Question 118</h4>
+<h2 id="question-118"><strong>Question 118</strong></h2>
 <details class="- example">
 <summary>Answer 118</summary>
 <p>here</p>
 </details>
-<h4 id="question-119">Question 119</h4>
+<h2 id="question-119"><strong>Question 119</strong></h2>
 <details class="- example">
 <summary>Answer 119</summary>
 <p>here</p>
 </details>
-<h4 id="question-120">Question 120</h4>
+<h2 id="question-120"><strong>Question 120</strong></h2>
 <details class="- example">
 <summary>Answer 120</summary>
 <p>here</p>
 </details>
-<h4 id="question-121">Question 121</h4>
+<h2 id="question-121"><strong>Question 121</strong></h2>
 <details class="- example">
 <summary>Answer 121</summary>
 <p>here</p>
 </details>
-<h4 id="question-122">Question 122</h4>
+<h2 id="question-122"><strong>Question 122</strong></h2>
 <details class="- example">
 <summary>Answer 122</summary>
 <p>here</p>
 </details>
-<h4 id="question-123">Question 123</h4>
+<h2 id="question-123"><strong>Question 123</strong></h2>
 <details class="- example">
 <summary>Answer 123</summary>
 <p>here</p>
 </details>
-<h4 id="question-124">Question 124</h4>
+<h2 id="question-124"><strong>Question 124</strong></h2>
 <details class="- example">
 <summary>Answer 124</summary>
 <p>here</p>
 </details>
-<h4 id="question-125">Question 125</h4>
+<h2 id="question-125"><strong>Question 125</strong></h2>
 <details class="- example">
 <summary>Answer 125</summary>
 <p>here</p>
 </details>
-<h4 id="question-126">Question 126</h4>
+<h2 id="question-126"><strong>Question 126</strong></h2>
 <details class="- example">
 <summary>Answer 126</summary>
 <p>here</p>
 </details>
-<h4 id="question-127">Question 127</h4>
+<h2 id="question-127"><strong>Question 127</strong></h2>
 <details class="- example">
 <summary>Answer 127</summary>
 <p>here</p>
 </details>
-<h4 id="question-128">Question 128</h4>
+<h2 id="question-128"><strong>Question 128</strong></h2>
 <details class="- example">
 <summary>Answer 128</summary>
 <p>here</p>
 </details>
-<h4 id="question-129">Question 129</h4>
+<h2 id="question-129"><strong>Question 129</strong></h2>
 <details class="- example">
 <summary>Answer 129</summary>
 <p>here</p>
 </details>
-<h4 id="question-130">Question 130</h4>
+<h2 id="question-130"><strong>Question 130</strong></h2>
 <details class="- example">
 <summary>Answer 130</summary>
 <p>here</p>
 </details>
-<h4 id="question-131">Question 131</h4>
+<h2 id="question-131"><strong>Question 131</strong></h2>
 <details class="- example">
 <summary>Answer 131</summary>
 <p>here</p>
 </details>
-<h4 id="question-132">Question 132</h4>
+<h2 id="question-132"><strong>Question 132</strong></h2>
 <details class="- example">
 <summary>Answer 132</summary>
 <p>here</p>
