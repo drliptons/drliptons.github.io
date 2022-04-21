@@ -3758,10 +3758,10 @@
 <summary>Answer 45</summary>
 <p><img alt="45-1a" src="../dp-900-images/45-1a.jpg" /></p>
 <p>Generally speaking, data analytics comes in four types:</p>
-<p><strong>1. Descriptive,</strong> to answer the question: What's happening?
-<strong>2. Diagnostic,</strong> to answer the question: Why's happening?
-<strong>3. Predictive,</strong> to answer the question: What will happen?
-<strong>4. Prescriptive,</strong> to answer the question: What actions should we take?</p>
+<p><strong>1.</strong> Descriptive,** to answer the question: What's happening?</p>
+<p><strong>2.</strong> Diagnostic,** to answer the question: Why's happening?</p>
+<p><strong>3.</strong> Predictive,** to answer the question: What will happen?</p>
+<p><strong>4.</strong> Prescriptive,** to answer the question: What actions should we take?</p>
 <p><img alt="45-2a" src="../dp-900-images/45-2a.png" /></p>
 <p>Reference:</p>
 <p><a href="https://azure.microsoft.com/en-us/blog/answering-whats-happening-whys-happening-and-what-will-happen-with-iot-analytics/">https://azure.microsoft.com/en-us/blog/answering-whats-happening-whys-happening-and-what-will-happen-with-iot-analytics/</a></p>
@@ -3848,6 +3848,8 @@
 <details class="- success">
 <summary>Answer 52</summary>
 <p><img alt="52a" src="../dp-900-images/52a.png" /></p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-in/azure/architecture/data-guide/big-data/non-relational-data">https://docs.microsoft.com/en-in/azure/architecture/data-guide/big-data/non-relational-data</a> </p>
 </details>
 <h2 id="question-53"><strong>Question 53</strong></h2>
 <p>Which Azure storage solution provides native support for POSIX-compliant access control lists (ACLs)?</p>
@@ -4698,22 +4700,24 @@
 </details>
 <h2 id="question-111"><strong>Question 111</strong></h2>
 <p>To complete the sentence, select the appropriate option in the answer area.</p>
-<p><img alt="111q" src="../dp-900-images/111q.png" /></p>
+<p><img alt="111q" src="../dp-900-images/111q.jpg" /></p>
 <details class="- success">
 <summary>Answer 111</summary>
-<p><img alt="111q" src="../dp-900-images/111a.png" /></p>
+<p><img alt="111q" src="../dp-900-images/111a.jpg" /></p>
+<p>Paginated Reports in Power BI now allows users to generate these fixed-layout documents optimized for printing and archiving, such as PDF and Word files.</p>
+<p>These document-style reports with visualizations that provide additional control, like which tables expand horizontally and vertically to display all their data and continue from page to page as needed.</p>
 <p><strong>Reference:</strong></p>
 <p><a href="https://powerbi.microsoft.com/en-us/blog/announcing-paginated-reports-in-power-bi-general-availability/">https://powerbi.microsoft.com/en-us/blog/announcing-paginated-reports-in-power-bi-general-availability/</a></p>
 </details>
 <h2 id="question-112"><strong>Question 112</strong></h2>
 <p>A bar chart showing year-to-date sales by region is an example of which type of analytics?</p>
-<p><strong>A.</strong> descriptive </p>
-<p><strong>B.</strong> diagnostic </p>
-<p><strong>C.</strong> predictive </p>
-<p><strong>D.</strong> prescriptive</p>
+<p><strong>A.</strong> predictive </p>
+<p><strong>B.</strong> prescriptive </p>
+<p><strong>C.</strong> descriptive </p>
+<p><strong>D.</strong> diagnostic</p>
 <details class="- success">
 <summary>Answer 112</summary>
-<p><strong>Correct Answer:</strong> B</p>
+<p><strong>Correct Answer:</strong> C</p>
 </details>
 <h2 id="question-113"><strong>Question 113</strong></h2>
 <p>When provisioning an Azure Cosmos DB account, which feature provides redundancy within an Azure region?</p>
@@ -4891,8 +4895,7 @@
 <p><strong>D.</strong> stream processing</p>
 <details class="- success">
 <summary>Answer 127</summary>
-<p><strong>Correct Answer:</strong> A</p>
-<p>OLTP is designed to serve as a persistent data store for business or front-end applications. OLTP administers day to day transaction of an organization.</p>
+<p><strong>Correct Answer:</strong> C</p>
 <p><strong>Reference:</strong></p>
 <p><a href="https://sqlwizard.blog/2020/03/15/sql-server-oltp-vs-olap/">https://sqlwizard.blog/2020/03/15/sql-server-oltp-vs-olap/</a></p>
 </details>
@@ -5079,10 +5082,16 @@
 <p>Match the types of activities to the appropriate Azure Data Factory activities.</p>
 <p>To answer, drag the appropriate activity type from the column on the left to its Data Factory activity on the right. Each activity type may be used once, more than once, or not at all. </p>
 <p><strong>NOTE:</strong> Each correct match is worth one point.</p>
-<p><img alt="144q" src="../dp-900-images/144q.png" /></p>
+<p><img alt="144q" src="../dp-900-images/144q.jpg" /></p>
 <details class="- success">
 <summary>Answer 144</summary>
-<p><img alt="144a" src="../dp-900-images/144a.png" /></p>
+<p><img alt="144a" src="../dp-900-images/144a.jpg" /></p>
+<p><strong>Box 1:</strong> Data movement -</p>
+<p><strong>Box 2:</strong> Data transformation -</p>
+<p>A pipeline could contain a set of activities that ingest and clean log data, and then kick off a mapping data flow to analyze the log data.</p>
+<p><strong>Box 3:</strong> Control -</p>
+<p>Lookup Activity is a control flow activity.</p>
+<p>Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.</p>
 <p><strong>Reference:</strong> </p>
 <p><a href="https://docs.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities#data-transformation-activities">https://docs.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities#data-transformation-activities</a></p>
 </details>
@@ -5126,26 +5135,36 @@
 <p>What are three characteristics of an Online Transaction Processing (OLTP) workload? Each correct answer presents a complete solution. </p>
 <p><strong>NOTE:</strong> Each correct selection is worth one point. (<strong>3 answers</strong>)</p>
 <p><strong>A.</strong> denormalized data</p>
-<p><strong>B.</strong> heavy writes and moderate reads C. light writes and heavy reads</p>
+<p><strong>B.</strong> heavy writes and moderate reads </p>
+<p><strong>C.</strong> light writes and heavy reads</p>
 <p><strong>D.</strong> schema on write</p>
 <p><strong>E.</strong> schema on read</p>
 <p><strong>F.</strong> normalized data</p>
 <details class="- success">
 <summary>Answer 148</summary>
-<p><strong>CorrectAnswer:</strong> B,D and F</p>
+<p><strong>CorrectAnswer:</strong> B, D and F</p>
+<p>B: Transactional data tends to be heavy writes, moderate reads.</p>
+<p>D: Typical traits of transactional data include: schema on write, strongly enforced</p>
+<p>F: Transactional data tends to be highly normalized.</p>
 <p><strong>Reference:</strong> </p>
 <p><a href="https://docs.microsoft.com/en-us/azure/architecture/data-guide/relational-data/online-transaction-processing">https://docs.microsoft.com/en-us/azure/architecture/data-guide/relational-data/online-transaction-processing</a></p>
 </details>
 <h2 id="question-149"><strong>Question 149</strong></h2>
-<p>Which two activities can be performed entirely by using the Microsoft Power BI service? Each correct answer presents a complete solution. </p>
+<p>Which two activities can be performed entirely by using the Microsoft Power BI service without relying on Power BI Desktop?</p>
+<p>Each correct answer presents a complete solution. </p>
 <p><strong>NOTE:</strong> Each correct selection is worth one point. (<strong>2 answers</strong>)</p>
-<p><strong>A.</strong> data acquisition and preparation</p>
-<p><strong>B.</strong> report sharing and distribution </p>
-<p><strong>C.</strong> report and dashboard creation </p>
-<p><strong>D.</strong> data modeling</p>
+<p><strong>A.</strong> report and dashboard creation</p>
+<p><strong>B.</strong> report sharing and distribution</p>
+<p><strong>C.</strong> data modeling </p>
+<p><strong>D.</strong> data acquisition and preparation</p>
 <details class="- success">
 <summary>Answer 149</summary>
-<p><strong>Correct Answer:</strong> A and C</p>
+<p><strong>Correct Answer:</strong> A and B</p>
+<p>With Power BI Desktop, you can connect to multiple different sources of data, and combine them (often called modeling) into a data model. </p>
+<p>Similarly, data acquisition (from a single source or multiple sources) and preparation (transformation and cleaning of data) are done using power bi desktop.  </p>
+<p>Without PowerBI Desktop, the only options left are A and B, which come under power bi service.  </p>
+<p><strong>Reference:</strong> </p>
+<p><a href="https://docs.microsoft.com/en-us/power-bi/fundamentals/desktop-what-is-desktop">https://docs.microsoft.com/en-us/power-bi/fundamentals/desktop-what-is-desktop</a></p>
 </details>
 <h2 id="question-150"><strong>Question 150</strong></h2>
 <p>What is a benefit of the Azure Cosmos DB Table API as compared to Azure Table storage? </p>
@@ -5216,6 +5235,9 @@
 <details class="- success">
 <summary>Answer 155</summary>
 <p><strong>Correct Answer:</strong> A, C and E</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/power-bi/consumer/end-user-dashboards">https://docs.microsoft.com/en-us/power-bi/consumer/end-user-dashboards</a></p>
+<p><a href="https://docs.microsoft.com/en-us/power-bi/create-reports/service-dashboard-add-widget">https://docs.microsoft.com/en-us/power-bi/create-reports/service-dashboard-add-widget</a></p>
 </details>
 <h2 id="question-156"><strong>Question 156</strong></h2>
 <p>Which scenario is an example of a streaming workload?</p>
@@ -5282,16 +5304,50 @@
 <p><a href="https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-management">https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-management</a></p>
 </details>
 <h2 id="question-160"><strong>Question 160</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="160q" src="../dp-900-images/160q.png" /></p>
 <details class="- success">
 <summary>Answer 160</summary>
+<p><img alt="160a" src="../dp-900-images/160a.png" /></p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-get-started-portal">https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-get-started-portal</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview">https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview</a> </p>
+<p><a href="https://azure.microsoft.com/en-us/pricing/details/bandwidth/">https://azure.microsoft.com/en-us/pricing/details/bandwidth/</a></p>
 </details>
 <h2 id="question-161"><strong>Question 161</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>For each of the following statements, select Yes if the statement is true. Otherwise, select No.</p>
+<p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="161q" src="../dp-900-images/161q.jpg" /></p>
 <details class="- success">
 <summary>Answer 161</summary>
+<p><img alt="161a" src="../dp-900-images/161a.jpg" /></p>
+<p><strong>Box 1:</strong> Yes -</p>
+<p>For read access to the secondary region, configure your storage account to use read-access geo-redundant storage (RA-GRS) or read-access geo-zone-redundant storage (RA-GZRS).</p>
+<p><strong>Box 2:</strong> No -</p>
+<p><strong>Box 3:</strong> Yes -</p>
+<p><strong>Box 4:</strong> Yes -</p>
+<p>Azure Cosmos DB supports multi-region writes.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy</a> </p>
+<p><a href="https://manojchoudhari.wordpress.com/2019/12/16/azure-cosmos-db-enable-multi-region-writes">https://manojchoudhari.wordpress.com/2019/12/16/azure-cosmos-db-enable-multi-region-writes</a></p>
 </details>
 <h2 id="question-164"><strong>Question 164</strong></h2>
+<p>Your company is designing an application that will write a high volume of JSON data and will have an application-defined schema.</p>
+<p>Which type of data store should you use?</p>
+<p>A. columnar</p>
+<p>B. key/value</p>
+<p>C. document</p>
+<p>D. graph</p>
 <details class="- success">
 <summary>Answer 162</summary>
+<p><strong>Correct Answer:</strong> C</p>
+<p>Reference:</p>
+<p><a href="https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/analytical-data-stores">https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/analytical-data-stores</a></p>
 </details>
 <h2 id="question-163"><strong>Question 163</strong></h2>
 <details class="- success">
