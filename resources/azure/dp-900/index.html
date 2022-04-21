@@ -3238,12 +3238,13 @@ Module 4 - Explore data analytics in Azure
 <p><img alt="graph" src="../dp-900-images/graph.png" /></p>
 <p><strong>Gremlin syntax</strong> includes functions to operate on vertices and edges, enabling you to insert, update, delete, and query data in the graph. </p>
 <p>For example, you could use the following code to add a new employee</p>
-<p>``` text "Add new employee"
-g.addV('employee').property('id', '3').property('firstName', 'Alice')
-g.V('3').addE('reports to').to(g.V('1'))
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>``` text &quot;returns all of the employee vertices&quot;
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>g.V().hasLabel(&#39;employee&#39;).order().by(&#39;id&#39;)
-</code></pre></div></p>
+<p><strong><em>Add new employee</em></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>g.addV(&#39;employee&#39;).property(&#39;id&#39;, &#39;3&#39;).property(&#39;firstName&#39;, &#39;Alice&#39;)
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>g.V(&#39;3&#39;).addE(&#39;reports to&#39;).to(g.V(&#39;1&#39;))
+</code></pre></div>
+<p><strong><em>returns all of the employee vertices</em></strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>g.V().hasLabel(&#39;employee&#39;).order().by(&#39;id&#39;)
+</code></pre></div>
 <p><br></p>
 <p><a name='module-4')></a></p>
 <h2 id="module-4-explore-data-analytics-in-azure"><strong>Module 4 - Explore data analytics in Azure</strong></h2>
