@@ -2770,14 +2770,22 @@ Module 4 - Explore data analytics in Azure
 <h5 id="non-relational-databases">Non-relational databases</h5>
 <p>Non-relational databases are data management systems that <strong>don’t apply a relational schema</strong> to the data. Non-relational databases are often referred to as <strong>NoSQL database</strong>, even though some support a variant of the SQL language.</p>
 <p>There are four common types of Non-relational database commonly in use;</p>
-<p><img alt="key-value-store" src="../dp-900-images/key-value-store.png" />
-* <strong>Key-value databases</strong> in which each record consists of <strong>a unique key and an associated value</strong>, which can be in any format.</p>
-<p><img alt="document-store" src="../dp-900-images/document-store.png" />
-* <strong>Document databases</strong>, which are a specific form of <strong>key-value database</strong> in which the value is a <strong>JSON document</strong> (which the system is optimized to parse and query)</p>
-<p><img alt="column-family-store" src="../dp-900-images/column-family-store.png" />
-* <strong>Column family databases</strong>, which store tabular data comprising rows and columns, but you can <strong>divide the columns into groups</strong> known as <strong>column-families</strong>. Each column family holds a set of columns that are logically related together.</p>
-<p><img alt="graph" src="../dp-900-images/graph.png" />
-* <strong>Graph databases</strong>, which <strong>store entities as nodes</strong> with links to define relationships between them.</p>
+<p><img alt="key-value-store" src="../dp-900-images/key-value-store.png" /></p>
+<ul>
+<li><strong>Key-value databases</strong> in which each record consists of <strong>a unique key and an associated value</strong>, which can be in any format.</li>
+</ul>
+<p><img alt="document-store" src="../dp-900-images/document-store.png" /></p>
+<ul>
+<li><strong>Document databases</strong>, which are a specific form of <strong>key-value database</strong> in which the value is a <strong>JSON document</strong> (which the system is optimized to parse and query)</li>
+</ul>
+<p><img alt="column-family-store" src="../dp-900-images/column-family-store.png" /></p>
+<ul>
+<li><strong>Column family databases</strong>, which store tabular data comprising rows and columns, but you can <strong>divide the columns into groups</strong> known as <strong>column-families</strong>. Each column family holds a set of columns that are logically related together.</li>
+</ul>
+<p><img alt="graph" src="../dp-900-images/graph.png" /></p>
+<ul>
+<li><strong>Graph databases</strong>, which <strong>store entities as nodes</strong> with links to define relationships between them.</li>
+</ul>
 <h4 id="explore-transactional-data-processing">Explore transactional data processing</h4>
 <p>A transactional system <strong>records transactions</strong> that encapsulate <strong>specific events</strong> that the organization wants to track. </p>
 <p>A transaction <strong>could be financial, such as the movement of money between accounts</strong> in a banking system.</p>
@@ -2877,7 +2885,7 @@ Module 4 - Explore data analytics in Azure
 <li>Use foreign key columns to link related entities.</li>
 </ol>
 <p><img alt="normalized-data" src="../dp-900-images/normalized-data.png" /></p>
-<p>Instances of each entity are uniquely identified by an ID or other key value, known as a <strong><em>primary key</em>*; and when one entity references another (for example, an order has an associated customer), the primary key of the related entity is stored as a </strong><em>foreign key</em>**. </p>
+<p>Instances of each entity are uniquely identified by an ID or other key value, known as a <strong>primary key</strong>; and when one entity references another (for example, an order has an associated customer), the primary key of the related entity is stored as a <strong>foreign key</strong>. </p>
 <h4 id="explore-sql">Explore SQL</h4>
 <p>SQL stands for <strong>Structured Query Language</strong>, and is <strong>used to communicate with a relational database</strong>. Some common relational database management systems that use SQL include Microsoft SQL Server, MySQL, PostgreSQL, MariaDB, and Oracle.</p>
 <p>You can use SQL statements such as <strong>SELECT, INSERT, UPDATE, DELETE, CREATE, and DROP</strong> to accomplish almost everything that you need to do with a database.</p>
@@ -3134,29 +3142,29 @@ Module 4 - Explore data analytics in Azure
 <h5 id="core-sql-api">Core (SQL) API</h5>
 <p>native API in Cosmos DB manages data in <strong>JSON</strong> document format</p>
 <p>``` json "Query in SQL"
-SELECT *
-FROM customers c
-WHERE c.id = "joe@litware.com"
+    SELECT *
+    FROM customers c
+    WHERE c.id = "joe@litware.com"
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>``` json &quot;Result&quot;
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>{
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>   &quot;id&quot;: &quot;joe@litware.com&quot;,
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>   &quot;name&quot;: &quot;Joe Jones&quot;,
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>   &quot;address&quot;: {
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>        &quot;street&quot;: &quot;1 Main St.&quot;,
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>        &quot;city&quot;: &quot;Seattle&quot;
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    }
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a>}
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    {
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>       &quot;id&quot;: &quot;joe@litware.com&quot;,
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>       &quot;name&quot;: &quot;Joe Jones&quot;,
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>       &quot;address&quot;: {
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>            &quot;street&quot;: &quot;1 Main St.&quot;,
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>            &quot;city&quot;: &quot;Seattle&quot;
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>        }
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>    }
 </code></pre></div></p>
 <h5 id="mongodb-api">MongoDB API</h5>
 <p>data is stored in Binary JSON (BSON) format</p>
 <p>``` json "Query in JavaScript"
-db.products.find({id: 123})
+    db.products.find({id: 123})
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>``` json &quot;Result&quot;
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>{
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>   &quot;id&quot;: 123,
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>   &quot;name&quot;: &quot;Hammer&quot;,
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>   &quot;price&quot;: 2.99}
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>}
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    {
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>       &quot;id&quot;: 123,
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>       &quot;name&quot;: &quot;Hammer&quot;,
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>       &quot;price&quot;: 2.99}
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>    }
 </code></pre></div></p>
 <h5 id="table-api">Table API</h5>
 <p>work with data in key-value tables, similar to Azure Table Storage</p>
@@ -3187,7 +3195,7 @@ db.products.find({id: 123})
 </table>
 <p>Request returns</p>
 <p>``` text "Result"
-https://endpoint/Customers(PartitionKey='1',RowKey='124')
+    https://endpoint/Customers(PartitionKey='1',RowKey='124')
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>##### Cassandra API
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a>The Cassandra API is compatible with Apache Cassandra, which is a popular open source database that uses a **column-family storage structure**.
@@ -3201,7 +3209,7 @@ https://endpoint/Customers(PartitionKey='1',RowKey='124')
 <a id="__codelineno-6-11" name="__codelineno-6-11"></a>
 <a id="__codelineno-6-12" name="__codelineno-6-12"></a>
 <a id="__codelineno-6-13" name="__codelineno-6-13"></a>``` json &quot;retrieve the record for Ben Chan&quot;
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a>SELECT * FROM Employees WHERE ID = 2
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>    SELECT * FROM Employees WHERE ID = 2
 </code></pre></div></p>
 <h5 id="gremlin-api">Gremlin API</h5>
 <p>data in a graph structure; in which entities are defined as <strong><em>vertices</em></strong> that form <strong><em>nodes</em></strong> in connected graph. Nodes are connected by <strong><em>edges</em></strong> that represent relationships, like this:</p>
