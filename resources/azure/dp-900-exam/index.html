@@ -2681,13 +2681,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#question-158_1" class="md-nav__link">
-    Question 158
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#question-159" class="md-nav__link">
     Question 159
   </a>
@@ -4641,14 +4634,35 @@
 <details class="- success">
 <summary>Answer 107</summary>
 <p><img alt="107a" src="../dp-900-images/107a.png" /></p>
+<p><strong>Box 1:</strong> Azure Data factory -</p>
+<p>Relevant Azure service for the three ETL phases are Azure Data Factory and SQL Server Integration Services (SSIS).</p>
+<p><strong>Box 2:</strong> Azure Synapse Analytics -</p>
+<p>You can copy and transform data in Azure Synapse Analytics by using Azure Data Factory</p>
+<p><strong>Note:</strong> Azure Synapse Analytics connector is supported for the following activities:</p>
+<ul>
+<li>Copy activity with supported source/sink matrix table</li>
+<li>Mapping data flow</li>
+<li>Lookup activity</li>
+<li>GetMetadata activity</li>
+</ul>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/architecture/data-guide/relational-data/etl">https://docs.microsoft.com/en-us/azure/architecture/data-guide/relational-data/etl </a>
+<a href="https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-sql-data-warehouse">https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-sql-data-warehouse</a></p>
 </details>
 <h2 id="question-108"><strong>Question 108</strong></h2>
 <p>For each of the following statements, select Yes if the statement is true. Otherwise, select No. </p>
 <p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
-<p><img alt="108q" src="../dp-900-images/108q.png" /></p>
+<p><img alt="108q" src="../dp-900-images/108q.jpg" /></p>
 <details class="- success">
 <summary>Answer 108</summary>
-<p><img alt="108a" src="../dp-900-images/108a.png" /></p>
+<p><img alt="108a" src="../dp-900-images/108a.jpg" /></p>
+<p><strong>Box 1:</strong> Yes -</p>
+<p>Compute is separate from storage, which enables you to scale compute independently of the data in your system.</p>
+<p><strong>Box 2:</strong> Yes -</p>
+<p>You can use the Azure portal to pause and resume the dedicated SQL pool compute resources.</p>
+<p>Pausing the data warehouse pauses compute. If your data warehouse was paused for the entire hour, you will not be charged compute during that hour.</p>
+<p><strong>Box 3:</strong> No -</p>
+<p>Storage is sold in 1 TB allocations. If you grow beyond 1 TB of storage, your storage account will automatically grow to 2 TBs.</p>
 <p><strong>Reference:</strong></p>
 <p><a href="https://azure.microsoft.com/en-us/pricing/details/synapse-analytics/">https://azure.microsoft.com/en-us/pricing/details/synapse-analytics/</a></p>
 </details>
@@ -4790,7 +4804,7 @@
 </details>
 <h2 id="question-120"><strong>Question 120</strong></h2>
 <p>What should you use to build a Microsoft Power BI paginated report?</p>
-<p><strong>A.</strong> Power BI report Builder </p>
+<p><strong>A.</strong> Power BI Report Builder </p>
 <p><strong>B.</strong> Power BI Desktop</p>
 <p><strong>C.</strong> Charticulator</p>
 <p><strong>D.</strong> the Power BI service</p>
@@ -5056,6 +5070,10 @@
 <details class="- success">
 <summary>Answer 143</summary>
 <p><img alt="143a" src="../dp-900-images/143a.png" /></p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/databricks/scenarios/what-is-azure-databricks">https://docs.microsoft.com/en-us/azure/databricks/scenarios/what-is-azure-databricks</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-overview">https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-overview</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/azure/data-factory/introduction">https://docs.microsoft.com/en-us/azure/data-factory/introduction</a></p>
 </details>
 <h2 id="question-144"><strong>Question 144</strong></h2>
 <p>Match the types of activities to the appropriate Azure Data Factory activities.</p>
@@ -5145,10 +5163,14 @@
 <p>Match the Azure services to the appropriate locations in the architecture.</p>
 <p>To answer, drag the appropriate service from the column on the left to its location on the right. Each service may be used once, more than once, or not at all.</p>
 <p><strong>NOTE:</strong> Each correct match is worth one point.</p>
-<p><img alt="151q" src="../dp-900-images/151q.png" /></p>
+<p><img alt="151q" src="dp-900-images/151q.png" /></p>
 <details class="- success">
 <summary>Answer 151</summary>
-<p><img alt="151a" src="../dp-900-images/151a.png" /></p>
+<p><img alt="151a" src="dp-900-images/151a.png" /></p>
+<p><strong>Box Ingest:</strong> Azure Data Factory</p>
+<p>You can build a data ingestion pipeline with Azure Data Factory (ADF).</p>
+<p><strong>Box Preprocess &amp; model:</strong> Azure Synapse Analytics</p>
+<p>Use Azure Synapse Analytics to preprocess data and deploy machine learning models.</p>
 <p><strong>Reference:</strong></p>
 <p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-data-ingest-adf">https://docs.microsoft.com/en-us/azure/machine-learning/how-to-data-ingest-adf</a> </p>
 <p><a href="https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/sqldw-walkthrough">https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/sqldw-walkthrough</a></p>
@@ -5223,16 +5245,41 @@
 <p><a href="https://docs.databricks.com/data/data-sources/azure/synapse-analytics.html">https://docs.databricks.com/data/data-sources/azure/synapse-analytics.html</a></p>
 </details>
 <h2 id="question-158"><strong>Question 158</strong></h2>
+<p><strong>DRAG DROP -</strong></p>
+<p>Match the types of workloads to the appropriate scenarios.</p>
+<p>To answer, drag the appropriate workload type from the column on the left to its scenario on the right. Each workload type may be used once, more than once, or not at all.</p>
+<p><strong>NOTE:</strong> Each correct match is worth one point.</p>
+<p><strong>Select and Place:</strong></p>
+<p><img alt="158q" src="../dp-900-images/158q.png" /></p>
 <details class="- success">
 <summary>Answer 158</summary>
-</details>
-<h2 id="question-158_1"><strong>Question 158</strong></h2>
-<details class="- success">
-<summary>Answer 158</summary>
+<p><img alt="158a" src="../dp-900-images/158a.png" /></p>
+<p><strong>Box 1:</strong> Batch -</p>
+<p>The batch processing model requires a set of data that is collected over time while the stream processing model requires data to be fed into an analytics tool, often in micro-batches, and in real-time.</p>
+<p>The batch Processing model handles a large batch of data while the Stream processing model handles individual records or micro-batches of few records.</p>
+<p>In Batch Processing, it processes over all or most of the data but in Stream Processing, it processes over data on a rolling window or most recent record.</p>
+<p><strong>Box 2:</strong> Batch -</p>
+<p><strong>Box 3:</strong> Streaming -</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://k21academy.com/microsoft-azure/dp-200/batch-processing-vs-stream-processing">https://k21academy.com/microsoft-azure/dp-200/batch-processing-vs-stream-processing</a></p>
 </details>
 <h2 id="question-159"><strong>Question 159</strong></h2>
+<p><strong>HOTSPOT -</strong></p>
+<p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><strong>Hot Area:</strong></p>
+<p><img alt="159q" src="../dp-900-images/159q.jpg" /></p>
 <details class="- success">
 <summary>Answer 159</summary>
+<p><img alt="159a" src="../dp-900-images/159a.jpg" /></p>
+<p><strong>Note:</strong> The data warehouse workload encompasses:</p>
+<ul>
+<li>The entire process of loading data into the warehouse</li>
+<li>Performing data warehouse analysis and reporting</li>
+<li>Managing data in the data warehouse</li>
+<li>Exporting data from the data warehouse</li>
+</ul>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-management">https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-management</a></p>
 </details>
 <h2 id="question-160"><strong>Question 160</strong></h2>
 <details class="- success">
