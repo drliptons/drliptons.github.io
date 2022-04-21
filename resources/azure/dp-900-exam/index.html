@@ -2702,8 +2702,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#question-164" class="md-nav__link">
-    Question 164
+  <a href="#question-162" class="md-nav__link">
+    Question 162
   </a>
   
 </li>
@@ -2716,7 +2716,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#question-164_1" class="md-nav__link">
+  <a href="#question-164" class="md-nav__link">
     Question 164
   </a>
   
@@ -4530,6 +4530,8 @@
 <details class="- success">
 <summary>Answer 99</summary>
 <p><img alt="99a" src="../dp-900-images/99a.png" /></p>
+<p>A key mechanism that allows Azure Data Lake Storage Gen2 to provide file system performance at object storage scale and prices is the addition of a hierarchical namespace.</p>
+<p>This allows the collection of objects/files within an account to be organized into a hierarchy of directories and nested subdirectories in the same way that the file system on your computer is organized. With a hierarchical namespace enabled, a storage account becomes capable of providing the scalability and cost-effectiveness of object storage, with file system semantics that are familiar to analytics engines and frameworks.</p>
 <p><strong>Reference:</strong></p>
 <p><a href="https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-namespace">https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-namespace</a></p>
 </details>
@@ -4671,10 +4673,16 @@
 <h2 id="question-109"><strong>Question 109</strong></h2>
 <p>For each of the following statements. select Yes if the statement is true. Otherwise, select No. </p>
 <p><strong>NOTE:</strong> Each correct selection is worth one point.</p>
-<p><img alt="109q" src="../dp-900-images/109q.png" /></p>
+<p><img alt="109q" src="../dp-900-images/109q.jpg" /></p>
 <details class="- success">
 <summary>Answer 109</summary>
-<p><img alt="109a" src="../dp-900-images/109a.png" /></p>
+<p><img alt="109a" src="../dp-900-images/109a.jpg" /></p>
+<p><strong>Box 1:</strong> No -</p>
+<p>The API determines the type of account to create. Azure Cosmos DB provides five APIs: Core (SQL) and MongoDB for document data, Gremlin for graph data, Azure Table, and Cassandra. Currently, you must create a separate account for each API.</p>
+<p><strong>Box 2:</strong> Yes -</p>
+<p>Azure Cosmos DB uses partitioning to scale individual containers in a database to meet the performance needs of your application. In partitioning, the items in a container are divided into distinct subsets called logical partitions. Logical partitions are formed based on the value of a partition key that is associated with each item in a container.</p>
+<p><strong>Box 3:</strong> No -</p>
+<p>Logical partitions are formed based on the value of a partition key that is associated with each item in a container.</p>
 <p><strong>Reference:</strong> </p>
 <p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/partitioning-overview">https://docs.microsoft.com/en-us/azure/cosmos-db/partitioning-overview</a></p>
 </details>
@@ -4731,13 +4739,17 @@
 </details>
 <h2 id="question-114"><strong>Question 114</strong></h2>
 <p>You have an application that runs on Windows and requires across to a mapped drive. Which Azure service should you use?</p>
-<p><strong>A.</strong> Azure Cosmos DB </p>
-<p><strong>B.</strong> Azure Table storage </p>
-<p><strong>C.</strong> Azure Files</p>
-<p><strong>D.</strong> Azure Blob Storage</p>
+<p><strong>A.</strong> Azure Files</p>
+<p><strong>B.</strong> Azure Blob storage</p>
+<p><strong>C.</strong> Azure Cosmos DB</p>
+<p><strong>D.</strong> Azure Table storage</p>
 <details class="- success">
 <summary>Answer 114</summary>
 <p><strong>Correct Answer:</strong> A</p>
+<p>Azure Files is Microsoft's easy-to-use cloud file system. Azure file shares can be seamlessly used in Windows and Windows Server.</p>
+<p>To use an Azure file share with Windows, you must either mount it, which means assigning it a drive letter or mount point path, or access it via its UNC path.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows">https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows</a></p>
 </details>
 <h2 id="question-115"><strong>Question 115</strong></h2>
 <p>You have a SQL pool in Azure Synapse Analytics that is only used actively every night for eight hours. You need to minimize the cost of the SQL pool during idle times. The solution must ensure that the data remains intact.</p>
@@ -4829,7 +4841,11 @@
 <p><strong>D.</strong> table</p>
 <details class="- success">
 <summary>Answer 121</summary>
-<p><strong>Correct Answer:</strong> B</p>
+<p><strong>Correct Answer:</strong> C</p>
+<p>Azure file shares can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS. Azure file shares can also be cached on Windows</p>
+<p>Servers with Azure File Sync for fast access near where the data is being used.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://azure.microsoft.com/en-us/services/storage/files/">https://azure.microsoft.com/en-us/services/storage/files/</a></p>
 </details>
 <h2 id="question-122"><strong>Question 122</strong></h2>
 <p>A team of developers has computers Thai run Windows 10 and Ubuntu Desktop.</p>
@@ -4933,7 +4949,11 @@
 <p><strong>Correct Answer:</strong> D</p>
 </details>
 <h2 id="question-131"><strong>Question 131</strong></h2>
-<p>You need to recommend a data store service that meets the following requirements: Native SQL API access Configurable indexes</p>
+<p>You need to recommend a data store service that meets the following requirements: </p>
+<ul>
+<li>Native SQL API access </li>
+<li>Configurable indexes</li>
+</ul>
 <p>What should you recommend?</p>
 <p><strong>A.</strong> Azure Files</p>
 <p><strong>B.</strong> Azure Blob storage</p>
@@ -4948,8 +4968,8 @@
 <p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/sql/how-to-manage-indexing-policy">https://docs.microsoft.com/en-us/azure/cosmos-db/sql/how-to-manage-indexing-policy</a></p>
 </details>
 <h2 id="question-132"><strong>Question 132</strong></h2>
-<p><img alt="132q" src="../dp-900-images/132q.png" /></p>
 <p>To complete the sentence, select the appropriate option in the answer area.</p>
+<p><img alt="132q" src="../dp-900-images/132q.png" /></p>
 <details class="- success">
 <summary>Answer 132</summary>
 <p><img alt="132a" src="../dp-900-images/132a.png" /></p>
@@ -5215,7 +5235,10 @@
 <p><strong>D.</strong> production or non-reduction account type</p>
 <details class="- success">
 <summary>Answer 153</summary>
-<p><strong>Correct Answer:</strong> D</p>
+<p><strong>Correct Answer:</strong> A </p>
+<p>You must create a separate account for each API.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account">https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account</a></p>
 </details>
 <h2 id="question-154"><strong>Question 154</strong></h2>
 <p>To complete the sentence, select the appropriate option in the answer area.</p>
@@ -5336,7 +5359,7 @@
 <p><a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy</a> </p>
 <p><a href="https://manojchoudhari.wordpress.com/2019/12/16/azure-cosmos-db-enable-multi-region-writes">https://manojchoudhari.wordpress.com/2019/12/16/azure-cosmos-db-enable-multi-region-writes</a></p>
 </details>
-<h2 id="question-164"><strong>Question 164</strong></h2>
+<h2 id="question-162"><strong>Question 162</strong></h2>
 <p>Your company is designing an application that will write a high volume of JSON data and will have an application-defined schema.</p>
 <p>Which type of data store should you use?</p>
 <p>A. columnar</p>
@@ -5350,16 +5373,48 @@
 <p><a href="https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/analytical-data-stores">https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/analytical-data-stores</a></p>
 </details>
 <h2 id="question-163"><strong>Question 163</strong></h2>
+<p>You need to gather real-time telemetry data from a mobile application.</p>
+<p>Which type of workload describes this scenario?</p>
+<p><strong>A.</strong> Online Transaction Processing (OLTP)</p>
+<p><strong>B.</strong> batch</p>
+<p><strong>C.</strong> massively parallel processing (MPP)</p>
+<p><strong>D.</strong> streaming</p>
 <details class="- success">
 <summary>Answer 163</summary>
+<p><strong>Correct Answer:</strong> D </p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-in/azure/azure-monitor/overview">https://docs.microsoft.com/en-in/azure/azure-monitor/overview</a></p>
 </details>
-<h2 id="question-164_1"><strong>Question 164</strong></h2>
+<h2 id="question-164"><strong>Question 164</strong></h2>
+<p>Your company needs to design a database that illustrates the relationships between utilization levels of individual network devices across a local area network.</p>
+<p>Which type of data store should you use?</p>
+<p><strong>A.</strong> graph</p>
+<p><strong>B.</strong> key/value</p>
+<p><strong>C.</strong> document</p>
+<p><strong>D.</strong> columnar</p>
 <details class="- success">
 <summary>Answer 164</summary>
+<p><strong>Correct Answer:</strong> A </p>
+<p>Data as it appears in the real world is naturally connected. Traditional data modeling focuses on defining entities separately and computing their relationships at runtime. While this model has its advantages, highly connected data can be challenging to manage under its constraints.</p>
+<p>A graph database approach relies on persisting relationships in the storage layer instead, which leads to highly efficient graph retrieval operations. Azure Cosmos DB's Gremlin API supports the property graph model.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction#introduction-to-graph-databases">https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction#introduction-to-graph-databases</a></p>
 </details>
 <h2 id="question-165"><strong>Question 165</strong></h2>
+<p>You need to store data by using Azure Table storage.</p>
+<p>What should you create first?</p>
+<p><strong>A.</strong> an Azure Cosmos DB instance</p>
+<p><strong>B.</strong> a storage account</p>
+<p><strong>C.</strong> a blob container</p>
+<p><strong>D.</strong> a table</p>
 <details class="- success">
 <summary>Answer 165</summary>
+<p><strong>Correct Answer:</strong> B </p>
+<p>First create an Azure storage account, then use Table service in the Azure portal to create a table.</p>
+<p>Note: An Azure storage account contains all of your Azure Storage data objects: blobs, files, queues, and tables.</p>
+<p><strong>Reference:</strong></p>
+<p><a href="https://docs.microsoft.com/en-us/azure/storage/tables/table-storage-quickstart-portal">https://docs.microsoft.com/en-us/azure/storage/tables/table-storage-quickstart-portal</a> </p>
+<p><a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create">https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create</a></p>
 </details>
 <h2 id="question-166"><strong>Question 166</strong></h2>
 <details class="- success">
