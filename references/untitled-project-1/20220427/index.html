@@ -716,7 +716,7 @@
   
     <li class="md-nav__item">
       <a href="../pt/" class="md-nav__link">
-        Untitled Project 1
+        Moblie Game 1
       </a>
     </li>
   
@@ -1716,8 +1716,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lobby-system" class="md-nav__link">
-    Lobby System
+  <a href="#main-menu" class="md-nav__link">
+    Main Menu
   </a>
   
 </li>
@@ -1738,7 +1738,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lobby-system_1" class="md-nav__link">
+  <a href="#lobby-system" class="md-nav__link">
     Lobby system
   </a>
   
@@ -1748,6 +1748,26 @@
   <a href="#in-game-scene" class="md-nav__link">
     In game scene
   </a>
+  
+    <nav class="md-nav" aria-label="In game scene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    Logic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ui" class="md-nav__link">
+    UI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1792,31 +1812,81 @@
 
 <h1 id="updates-april-28-2022">Updates April 28, 2022</h1>
 <h2 id="deployment-on-a-dedicated-server"><strong>Deployment on a Dedicated Server</strong></h2>
-<p>Running the game on a cloud server has been successful. The game has run on a server with a few players joining testing the game. The game is running without any problems at the current state, beside of several bugs that still need to be fixed.  </p>
+<p>Running the game on a cloud server has been successful. The game has run on a server with a few players joined for testing. The game is running without any problems at the current state, besides several bugs that still need to be fixed.  </p>
 <h2 id="register-and-login-system"><strong>Register and Login System</strong></h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> New user can register a new account can be performed without further bugs.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Login system is working as intended. Users that haven't an account or entering wrong usernames/password can't log in into the game.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> New users can register a new account can be performed without further bugs.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Login system is working as intended. Users that haven't an account or entering the wrong usernames/password can't log in to the game.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Add background graphics and animations</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> UI</li>
 </ul>
-<h2 id="lobby-system"><strong>Lobby System</strong></h2>
+<h2 id="main-menu"><strong>Main Menu</strong></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Loading scene when successfully logged in working correctly </li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Navigate through several parts of the lobby is working correctly</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> UI in the lobby working correctly</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Player profile menu is in progress</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Add player profile UI</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add player profile UI</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Add menu bar UI</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add graphics to the lobby UI</li>
 </ul>
 <h2 id="game-play-system"><strong>Game Play System</strong></h2>
 <h3 id="network-systems">Network Systems</h3>
-<p>After updating the latest network library, the game has encountered several bugs due to name changes and more. At the current state of the game no further (known) bugs are present. </p>
-<h3 id="lobby-system_1">Lobby system</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> After updating the latest network library, the game has encountered several bugs due to name changes and more. At the current state of the game no further (known) bugs are present. </li>
+</ul>
+<h3 id="lobby-system">Lobby system</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Create a new match</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Set the max amount of players</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Set public/private match</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Set password for a private match</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Restrict players from entering a private match</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Select color and tribe</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> All players must select a color and a tribe before starting a match</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Start match</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Lock the lobby when a match has started</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Kick player</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Restrict a kicked player to rejoin the lobby</li>
+</ul>
 <h3 id="in-game-scene">In game scene</h3>
+<h4 id="logic">Logic</h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Create a map</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Place players on a map</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Set player starting hp and resources</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Set unit color and tribe</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> gameplay logic</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Finished game logic</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Score calculation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Settings and Menu</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Optimizing units stats</li>
+</ul>
+<h4 id="ui">UI</h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Maps</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Towers</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Characters</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Users hp and resources</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Menus</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Scoreboard</li>
+</ul>
 <h2 id="message-system"><strong>Message System</strong></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Receiving system messages</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Display messages</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Delete messages</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> In-app unread messages notification</li>
+</ul>
 <h2 id="friend-system"><strong>Friend System</strong></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Friend system concepts are under develop</li>
+</ul>
 <h2 id="leaderboard-system"><strong>Leaderboard System</strong></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Leaderboard logic</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Start adding some UI graphics</li>
+</ul>
 
               
             </article>
