@@ -1826,19 +1826,60 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-first-app" class="md-nav__link">
-    Create First App
+  <a href="#create-window" class="md-nav__link">
+    Create Window
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#run-the-app" class="md-nav__link">
-    Run the app
+  <a href="#run-qt-creator" class="md-nav__link">
+    Run Qt Creator
   </a>
   
-    <nav class="md-nav" aria-label="Run the app">
+    <nav class="md-nav" aria-label="Run Qt Creator">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qlabel" class="md-nav__link">
+    QLabel
+  </a>
+  
+    <nav class="md-nav" aria-label="QLabel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qfont" class="md-nav__link">
+    QFont
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qpixmap" class="md-nav__link">
+    QPixmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qmovie" class="md-nav__link">
+    QMovie
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qpushbutton" class="md-nav__link">
+    QPushButton
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#qtoolbars" class="md-nav__link">
@@ -1942,8 +1983,26 @@
 <p><strong>QMainWindow:</strong> is the main application window for building an application with a user interface</p>
 <ul>
 <li><a href="#qtoolbar">QToolBars</a> - movable <strong>panel</strong> that controls a set of controls</li>
-<li><a href="#qdockwidgets">QDockWidgets</a> - a <strong>widget</strong> that can be docked inside a <code>QMainWindow</code> or floated as a top level window on the desktop </li>
-<li><a href="">QMenuBar</a> - </li>
+<li>
+<p><a href="#qdockwidgets">QDockWidgets</a> - a <strong>widget</strong> that can be docked inside a <code>QMainWindow</code> or floated as a top level window on the desktop</p>
+<ul>
+<li>QApplication</li>
+<li>QWidget</li>
+<li><a href="#qlabel">QLabel</a> - </li>
+<li><a href="qpushbutton">QPushButton</a> - </li>
+</ul>
+</li>
+<li>
+<p><a href="">QGui</a> -</p>
+<ul>
+<li><a href="#qfont">QFont</a> - texts</li>
+<li><a href="#qpixmap">QPixmap</a> - images</li>
+<li><a href="#qmovie">QMovie</a> - animated pictures, gif, etc.</li>
+</ul>
+</li>
+<li>
+<p><a href="">QMenuBar</a> - </p>
+</li>
 <li><a href="">QStatusBar</a> -</li>
 </ul>
 </li>
@@ -1952,92 +2011,162 @@
 </li>
 <li><strong>QWidget:</strong> a class for receiving mouse, keyboard and events from the window system</li>
 </ul>
-<h3 id="create-first-app"><strong>Create First App</strong></h3>
-<h3 id="run-the-app"><strong>Run the app</strong></h3>
+<h3 id="create-window"><strong>Create Window</strong></h3>
+<p>Let's start a simple window with the size of 800x600 and a title of "First Window".</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Import dependencies</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">PyQt6.QtWidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">PyQt6.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">class</span> <span class="nc">Window</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;First Window&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c1"># Initialize and loop the window</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">()</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">())</span>
+</code></pre></div>
+<p>As of the code above, when we run the code we will have a single window app running and will be closed only when we hit the close button or terminate the code.</p>
+<h3 id="run-qt-creator"><strong>Run Qt Creator</strong></h3>
 <p>To run the app with the created GUI from Qt Designer we need to import another module called <code>uic</code>.</p>
 <ul>
 <li>In the main script, add the line, <code>from PyQt6 import uic</code></li>
 </ul>
+<p><a name="qlabel"></a></p>
+<h4 id="qlabel">QLabel</h4>
+<p><a name="qfont"></a></p>
+<h5 id="qfont">QFont</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">label</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;Your Text Here&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>  <span class="c1"># initialize a label (str: &#39;Text&#39;, obj: parent)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">&quot;Update Text Here&quot;</span><span class="p">)</span>  <span class="c1"># set text</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">label</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># location of the text</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">label</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">QGui</span><span class="o">.</span><span class="n">QFont</span><span class="p">(</span><span class="s2">&quot;Sansarif&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>  <span class="c1"># set text font (str: &#39;Type&#39;, int: size)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">label</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s1">&#39;color:red&#39;</span><span class="p">)</span>  <span class="c1"># set font color</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">label</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># clear the text in the label</span>
+</code></pre></div>
+<p><a name="qpixmap"></a></p>
+<h5 id="qpixmap">QPixmap</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">label</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>  <span class="c1"># initialize a label (obj: parent)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">pixmap</span> <span class="o">=</span> <span class="n">QGui</span><span class="o">.</span><span class="n">QPixmap</span><span class="p">(</span><span class="s1">&#39;image_path.png&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">label</span><span class="o">.</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">pixmap</span><span class="p">)</span>
+</code></pre></div>
+<p><a name="qmovie"></a></p>
+<h5 id="qmovie">QMovie</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">label</span> <span class="o">=</span> <span class="n">QtWidgets</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>  <span class="c1"># initialize a label (obj: parent)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">movie</span> <span class="o">=</span> <span class="n">QMovie</span><span class="p">(</span><span class="s1">&#39;file_path.gif)  # intiate an animated file</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">movie</span><span class="o">.</span><span class="n">setSpeed</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1"># set speed</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">label</span><span class="o">.</span><span class="n">setMovie</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>  <span class="c1"># set the animated file to the label</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">movie</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c1"># start the animation</span>
+</code></pre></div>
+<p><a name="qpushbutton"></a></p>
+<h4 id="qpushbutton">QPushButton</h4>
+<p><a name="qfont"></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">PyQt6.QtWidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">PyQt6.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">class</span> <span class="nc">Window</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;First Window&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>    <span class="k">def</span> <span class="nf">create_button</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">()</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">())</span>
+</code></pre></div></p>
 <p><a name="qtoolbar"></a></p>
 <h4 id="qtoolbars">QToolBars</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">sys</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">PyQt6.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">PyQt6.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kn">from</span> <span class="nn">PyQt6.QtWidgets</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">class</span> <span class="nc">Demo</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Demo</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="n">layout</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">()</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>        <span class="n">tb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">addToolBar</span><span class="p">(</span><span class="s2">&quot;File&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="n">new</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="s2">&quot;images/new.png&quot;</span><span class="p">),</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="n">tb</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="n">o</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="s2">&quot;images/open.png&quot;</span><span class="p">),</span> <span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>        <span class="n">tb</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>        <span class="n">save</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="s2">&quot;images/save.png&quot;</span><span class="p">),</span> <span class="s2">&quot;save&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="n">tb</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">save</span><span class="p">)</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>        <span class="n">tb</span><span class="o">.</span><span class="n">actionTriggered</span><span class="p">[</span><span class="n">QAction</span><span class="p">]</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_click_button</span><span class="p">)</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;toolbar demo&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="k">def</span> <span class="nf">on_click_button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pressed tool button is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="n">window</span> <span class="o">=</span> <span class="n">Demo</span><span class="p">()</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">())</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="n">main</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">from</span> <span class="nn">PyQt6.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kn">from</span> <span class="nn">PyQt6.QtGui</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kn">from</span> <span class="nn">PyQt6.QtWidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">class</span> <span class="nc">Demo</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Demo</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>        <span class="n">layout</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">()</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>        <span class="n">tb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">addToolBar</span><span class="p">(</span><span class="s2">&quot;File&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>        <span class="n">new</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="s2">&quot;images/new.png&quot;</span><span class="p">),</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>        <span class="n">tb</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>        <span class="n">o</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="s2">&quot;images/open.png&quot;</span><span class="p">),</span> <span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>        <span class="n">tb</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>        <span class="n">save</span> <span class="o">=</span> <span class="n">QAction</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="s2">&quot;images/save.png&quot;</span><span class="p">),</span> <span class="s2">&quot;save&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>        <span class="n">tb</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">save</span><span class="p">)</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>        <span class="n">tb</span><span class="o">.</span><span class="n">actionTriggered</span><span class="p">[</span><span class="n">QAction</span><span class="p">]</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">on_click_button</span><span class="p">)</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;toolbar demo&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a>    <span class="k">def</span> <span class="nf">on_click_button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pressed tool button is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a>    <span class="n">window</span> <span class="o">=</span> <span class="n">Demo</span><span class="p">()</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a>    <span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">())</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34"></a>
+<a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36"></a>    <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
 <p><img alt="qtoolbar" src="../../images/pyqt-qtoolbar.png" /></p>
 <p><a name="qdockwidget"></a></p>
 <h4 id="qdockwidget">QDockWidget</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">sys</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">from</span> <span class="nn">PyQt6.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">from</span> <span class="nn">PyQt6.QtWidgets</span> <span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="k">class</span> <span class="nc">Demo</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Demo</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>        <span class="n">layout</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">()</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="n">bar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="n">file</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s1">&#39;File&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>        <span class="n">file</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="s1">&#39;New&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>        <span class="n">file</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="s1">&#39;Save&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>        <span class="n">file</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="s1">&#39;quit&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">QDockWidget</span><span class="p">(</span><span class="s1">&#39;Dockable&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span> <span class="o">=</span> <span class="n">QListWidget</span><span class="p">()</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s1">&#39;Item1&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s1">&#39;Item2&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s1">&#39;Item3&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s1">&#39;Item4&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">setWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="p">)</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">setFloating</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">QTextEdit</span><span class="p">())</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">addDockWidget</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">DockWidgetArea</span><span class="o">.</span><span class="n">BottomDockWidgetArea</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Dock&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-32" name="__codelineno-1-32"></a>
-<a id="__codelineno-1-33" name="__codelineno-1-33"></a>
-<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a id="__codelineno-1-35" name="__codelineno-1-35"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36"></a>    <span class="n">demo</span> <span class="o">=</span> <span class="n">Demo</span><span class="p">()</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37"></a>    <span class="n">demo</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kn">from</span> <span class="nn">PyQt6.QtCore</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kn">from</span> <span class="nn">PyQt6.QtWidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">class</span> <span class="nc">Demo</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Demo</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>        <span class="n">layout</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">()</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>        <span class="n">bar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>        <span class="n">file</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a>        <span class="n">file</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="s1">&#39;New&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>        <span class="n">file</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="s1">&#39;Save&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>        <span class="n">file</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="s1">&#39;quit&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">QDockWidget</span><span class="p">(</span><span class="s1">&#39;Dockable&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span> <span class="o">=</span> <span class="n">QListWidget</span><span class="p">()</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s1">&#39;Item1&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s1">&#39;Item2&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s1">&#39;Item3&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="s1">&#39;Item4&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">setWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">listWidget</span><span class="p">)</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">setFloating</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">QTextEdit</span><span class="p">())</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">addDockWidget</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">DockWidgetArea</span><span class="o">.</span><span class="n">BottomDockWidgetArea</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a>
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;Dock&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33"></a>
+<a id="__codelineno-6-34" name="__codelineno-6-34"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36"></a>    <span class="n">demo</span> <span class="o">=</span> <span class="n">Demo</span><span class="p">()</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37"></a>    <span class="n">demo</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38"></a>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">())</span>
 </code></pre></div>
 <p><img alt="qdockwidget" src="../../images/pyqt-qdockwidget.png" /></p>
 
