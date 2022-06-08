@@ -711,6 +711,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_4">
@@ -747,6 +749,20 @@
     <li class="md-nav__item">
       <a href="../../../references/application/ebook-reader/" class="md-nav__link">
         EBook Text2Speech
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/application/media-player/" class="md-nav__link">
+        Media Player
       </a>
     </li>
   
@@ -1763,6 +1779,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#convolutional-neural-network-cnn" class="md-nav__link">
+    Convolutional Neural Network (CNN)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keras-layers" class="md-nav__link">
     Keras layers
   </a>
@@ -1804,11 +1827,13 @@
                 
 
 <h1 id="machine-learning-basics"><b> Machine Learning Basics</b></h1>
+<h2 id="convolutional-neural-network-cnn"><strong>Convolutional Neural Network (CNN)</strong></h2>
 <h2 id="keras-layers"><b>Keras layers</b></h2>
-<p><strong><code>Conv2D</code></strong>:</p>
-<p><strong><code>MaxPooling2D</code></strong>:</p>
-<p><strong><code>Flatten</code></strong>:</p>
-<p><strong><code>Dense</code></strong>: </p>
+<p><strong><code>Conv2D</code></strong>: a filter (a set of multipliers) that use to (try) extract some feature of the image. The filter will go through every pixel of the image, one by one.</p>
+<p><strong><code>MaxPooling2D</code></strong>: is a filter with a specific size of x by x pixels and select the maximum value within the filter boundary.</p>
+<p><strong><code>Flatten</code></strong>: change a multiple dimension image (e.g. 3x3 pixels) into a flat dimension image (e.g. 1x9 pixels)</p>
+<p><img alt="image" src="" /> <a href="https://youtu.be/efEGD1wsCnI">res</a></p>
+<p><strong><code>Dense</code></strong>: is a fully connected layer (all nodes are connected to the next layer) which use to combine the number of input nodes and make calculation to produce a specific number of output nodes</p>
 <ul>
 <li>The word "Dense" comes from that all neural from the adjacent layers are connected to each other's see figure below.</li>
 <li>A Dense layer will return the same amount of output as the amount the input.</li>
