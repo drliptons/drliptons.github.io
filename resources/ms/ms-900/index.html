@@ -2059,6 +2059,33 @@
     Describe identity concepts
   </a>
   
+    <nav class="md-nav" aria-label="Describe identity concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-authentication-and-authorization" class="md-nav__link">
+    Define authentication and authorization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-the-concept-of-directory-services-and-active-directory" class="md-nav__link">
+    Describe the concept of directory services and Active Directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-the-concept-of-federation" class="md-nav__link">
+    Describe the concept of Federation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2066,12 +2093,87 @@
     Describe threat protection with Microsoft 365 Defender
   </a>
   
+    <nav class="md-nav" aria-label="Describe threat protection with Microsoft 365 Defender">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describe-the-microsoft-365-defender-service" class="md-nav__link">
+    Describe the Microsoft 365 Defender service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-the-microsoft-365-defender-for-office-365" class="md-nav__link">
+    Describe the Microsoft 365 Defender for Office 365
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-the-microsoft-365-defender-for-endpoint" class="md-nav__link">
+    Describe the Microsoft 365 Defender for Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-the-microsoft-365-defender-for-cloud-apps" class="md-nav__link">
+    Describe the Microsoft 365 Defender for Cloud Apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-the-microsoft-365-defender-for-identity" class="md-nav__link">
+    Describe the Microsoft 365 Defender for Identity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-microsoft-365-defender-portal" class="md-nav__link">
+    Describe Microsoft 365 Defender portal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#describe-the-service-trust-portal-and-privacy-at-microsoft" class="md-nav__link">
     Describe the Service Trust Portal and privacy at Microsoft
   </a>
+  
+    <nav class="md-nav" aria-label="Describe the Service Trust Portal and privacy at Microsoft">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describe-the-offerings-of-the-service-trust-portal" class="md-nav__link">
+    Describe the offerings of the Service Trust Portal.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-microsofts-privacy-principles" class="md-nav__link">
+    Describe Microsoft's Privacy principles.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#describe-microsoft-priva" class="md-nav__link">
+    Describe Microsoft Priva.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2633,8 +2735,195 @@ Organizational insights for business leaders provide broad visibility across the
 <li><strong>Data privacy:</strong> Providing <strong>notice and being transparent about the collection, processing, use, and sharing of personal data</strong> are fundamental principles of privacy laws and regulations</li>
 </ul>
 <h3 id="describe-identity-concepts">Describe identity concepts</h3>
+<h4 id="define-authentication-and-authorization">Define authentication and authorization</h4>
+<p><strong>Authentication</strong> is the process of proving that a person is who they say they are (<strong>Who are you?</strong>)</p>
+<p><strong>Authorization</strong> is to decide where they can go, and what they're allowed to see and touch (<strong>What can you do?</strong>)</p>
+<p>Enterprise security needs to adapt to this new reality. The security perimeter can no longer be viewed as the on-premises network.</p>
+<p><strong>Four pillars of an identity infrastructure</strong></p>
+<ul>
+<li><strong>Administration</strong> is about the <strong>creation and management/governance</strong> of identities for users, devices, and services</li>
+<li><strong>Authentication</strong> tells the story of <strong>how much an IT system needs to know about an identity</strong> to have sufficient proof that they really are who they say they are</li>
+<li><strong>Authorization</strong> is about processing the incoming identity data to <strong>determine the level of access</strong> an authenticated person or service has within the application or service that it wants to access.</li>
+<li><strong>Auditing</strong> is about <strong>tracking</strong> who does what, when, where, and how</li>
+</ul>
+<p><strong>Modern authentication</strong> is an umbrella <strong>term for authentication and authorization methods between a client</strong>, such as your laptop or phone, <strong>and a server</strong>, like a website or application. At the center of modern authentication is the role of the identity provider. An identity provider creates, maintains, and manages identity information while offering authentication, authorization, and auditing services.</p>
+<p>Microsoft Azure Active Directory is an example of a cloud-based identity provider. Other examples include Twitter, Google, Amazon, LinkedIn, and GitHub.</p>
+<p><strong>Single sign-on</strong></p>
+<p>Another fundamental capability of an identity provider and “modern authentication” is the support for single sign-on (SSO). With SSO, the <strong>user logs in once and that credential is used to access multiple applications</strong> or resources.</p>
+<h4 id="describe-the-concept-of-directory-services-and-active-directory">Describe the concept of directory services and Active Directory</h4>
+<p>A <strong>directory service</strong> stores directory data and makes it available to network users, administrators, services, and applications.</p>
+<p><strong>Active Directory (AD)</strong> is a set of directory services developed by Microsoft as part of Windows 2000 for on-premises domain-based networks. The best-known service of this kind is <strong>Active Directory Domain Services (AD DS)</strong>.</p>
+<p>It provides organizations with an <strong>Identity as a Service (IDaaS)</strong> solution for all their apps across cloud and on-premises. In this course, we'll focus on Azure AD, Microsoft’s cloud-based identity provider.</p>
+<h4 id="describe-the-concept-of-federation">Describe the concept of Federation</h4>
+<p><strong>Federation</strong> enables the <strong>access of services across organizational</strong> or domain boundaries by establishing <strong>trust relationships</strong> between the respective domain’s identity provider.</p>
+<p><img alt="Federation" src="../images/ms-365-fed.png" /></p>
 <h3 id="describe-threat-protection-with-microsoft-365-defender">Describe threat protection with Microsoft 365 Defender</h3>
+<h4 id="describe-the-microsoft-365-defender-service">Describe the Microsoft 365 Defender service</h4>
+<p><strong>Microsoft 365 Defender</strong> is an enterprise defense suite that <strong>protects against sophisticated cyberattacks</strong>.</p>
+<p>You can natively coordinate the detection, prevention, investigation, and response to threats across endpoints, identities, email, and applications.</p>
+<p><img alt="MS Defender" src="../images/ms-365-def.png" /></p>
+<p>Microsoft 365 Defender suite protects:</p>
+<ul>
+<li>Identities with Microsoft Defender for Identity and Azure AD Identity Protection</li>
+<li>Endpoints with Microsoft Defender for Endpoint</li>
+<li>Applications with Microsoft Defender for Cloud Apps</li>
+<li>Email and collaboration with Microsoft Defender for Office 365</li>
+<li></li>
+</ul>
+<h4 id="describe-the-microsoft-365-defender-for-office-365">Describe the Microsoft 365 Defender for Office 365</h4>
+<p>Microsoft Defender for Office 365 safeguards your organization against malicious <strong>threats posed by email messages, links (URLs), and collaboration tools, including Microsoft Teams, SharePoint Online, OneDrive for Business, and other Office clients</strong>.</p>
+<p>Microsoft Defender for Office 365 covers these key areas:</p>
+<ul>
+<li><strong>Threat protection policies:</strong> Define threat protection policies to set the appropriate level of protection for your organization.</li>
+<li><strong>Reports:</strong> View real-time reports to monitor Microsoft Defender for Office 365 performance in your organization.</li>
+<li><strong>Threat investigation and response capabilities:</strong> Use leading-edge tools to investigate, understand, simulate, and prevent threats.</li>
+<li><strong>Automated investigation and response capabilities:</strong> Save time and effort investigating and mitigating threats.</li>
+</ul>
+<p><strong>Microsoft Defender for Office 365 Plan 1</strong></p>
+<ul>
+<li><strong>Safe Attachments:</strong> Checks email attachments for malicious content.</li>
+<li><strong>Safe Links:</strong> Links are scanned for each click. A safe link remains accessible, but malicious links are blocked.</li>
+<li><strong>Safe Attachments for SharePoint, OneDrive, and Microsoft Teams:</strong> Protects your organization when users collaborate and share files by identifying and blocking malicious files in team sites and document libraries.</li>
+<li><strong>Anti-phishing protection:</strong> Detects attempts to impersonate your users and internal or custom domains.</li>
+<li><strong>Real-time detections:</strong> A real-time report that allows you to identify and analyze recent threats.</li>
+</ul>
+<p><strong>Microsoft Defender for Office 365 Plan 2</strong></p>
+<p>Includes all the core features of Plan 1, and provides automation, investigation, remediation, and simulation tools</p>
+<ul>
+<li><strong>Threat Trackers:</strong> Provide the latest intelligence on prevailing cybersecurity issues, and allow an organization to take countermeasures before there's an actual threat.</li>
+<li><strong>Threat Explorer:</strong> A real-time report that allows you to identify and analyze recent threats.</li>
+<li><strong>Automated investigation and response (AIR):</strong> Includes a set of security playbooks that can be launched automatically, such as when an alert is triggered, or manually. A security playbook can start an automated investigation, provide detailed results, and recommend actions that the security team can approve or reject.</li>
+<li><strong>Attack Simulator:</strong> Allows you to run realistic attack scenarios in your organization to identify vulnerabilities. These simulations test your security policies and practices, as well as train your employees to increase their awareness and decrease their susceptibility to attacks.</li>
+<li><strong>Proactively hunt for threats with advanced hunting in Microsoft 365 Defender:</strong> Advanced hunting is a query-based threat hunting tool that lets you explore up to 30 days of raw data. You can proactively inspect events in your network to locate threat indicators and entities.</li>
+<li><strong>Investigate alerts and incidents in Microsoft 365 Defender:</strong> Microsoft Defender for Office 365 P2 customers have access to Microsoft 365 Defender integration to efficiently detect, review, and respond to incidents and alerts.</li>
+</ul>
+<h4 id="describe-the-microsoft-365-defender-for-endpoint">Describe the Microsoft 365 Defender for Endpoint</h4>
+<p>Microsoft Defender for Endpoint is a platform designed to <strong>help enterprise networks protect endpoints</strong>. It does so by preventing, detecting, investigating, and responding to advanced threats.</p>
+<p>Microsoft Defender for Endpoint includes:</p>
+<ul>
+<li><strong>Threat and vulnerability management:</strong> A risk-based approach to the discovery, prioritization, and remediation of endpoint vulnerabilities and misconfigurations. It uses sensors on devices to avoid the need for agents or scans, and prioritizes vulnerabilities.</li>
+<li><strong>Attack surface reduction:</strong> The attack surface reduction set of capabilities provides the first line of defense in the stack. By ensuring configuration settings are properly set and exploit mitigation techniques are applied, the capabilities resist attacks and exploitation. This set of capabilities also includes network protection and web protection, which regulate access to malicious IP addresses, domains, and URLs; helping prevent apps from accessing dangerous locations</li>
+<li><strong>Next generation protection:</strong> Brings together machine learning, big data analysis, in-depth threat resistance research, and the Microsoft cloud infrastructure to protect devices in your enterprise organization.</li>
+<li><strong>Endpoint detection and response:</strong> Provides advanced attack detections that are near real time and actionable. Security analysts can prioritize alerts, see the full scope of a breach, and take response actions to remediate threats.</li>
+<li><strong>Automated investigation and remediation:</strong> The automated investigation feature uses inspection algorithms and processes used by analysts (such as playbooks) to examine alerts and take quick remediation action to resolve breaches. This process significantly reduces the volume of alerts that must be investigated individually.</li>
+<li><strong>Microsoft Threat Experts:</strong> A managed threat hunting service that provides Security Operation Centers (SOCs) with monitoring and analysis tools to ensure critical threats don’t get missed.</li>
+<li><strong>Management and APIs:</strong> Provides APIs to integrate with other solutions.</li>
+</ul>
+<p><img alt="Defender Endpoint" src="../images/ms-365-def-endpoint.png" /></p>
+<h4 id="describe-the-microsoft-365-defender-for-cloud-apps">Describe the Microsoft 365 Defender for Cloud Apps</h4>
+<p>Microsoft Defender for Cloud Apps is a <strong>Cloud Access Security Broker</strong> (<strong>CASB</strong>). It's a comprehensive cross-SaaS solution that operates as an intermediary between a cloud user and the cloud provider. Microsoft Defender for Cloud Apps provides rich visibility to your cloud services, control over data travel, and sophisticated analytics to identify and combat cyberthreats across all your Microsoft and third-party cloud services.</p>
+<p>A <strong>CASB</strong> acts as <strong>a gatekeeper to broker real-time access between your enterprise users and the cloud resources</strong> they use, wherever they're located, and regardless of the device they're using.</p>
+<ul>
+<li><strong>Visibility</strong> - Detect cloud services and app use and provide visibility into Shadow IT.</li>
+<li><strong>Threat protection</strong> - Monitor user activities for anomalous behaviors, control access to resources through access controls, and mitigate malware.</li>
+<li><strong>Data security</strong> - Identify, classify and control sensitive information, protecting against malicious actors.</li>
+<li><strong>Compliance</strong> - Assess the compliance of cloud services.</li>
+</ul>
+<p>Microsoft Defender for Cloud Apps is built on a <strong>framework</strong> that provides the following capabilities:</p>
+<ul>
+<li><strong>Discover and control the use of Shadow IT:</strong> Identify the cloud apps, and IaaS and PaaS services used by your organization.</li>
+<li><strong>Protect against cyber threats and anomalies:</strong> Detect unusual behavior across cloud apps to identify ransomware, compromised users, or rogue applications, analyze high-risk usage, and remediate automatically to limit risks.</li>
+<li><strong>Protect your sensitive information anywhere in the cloud:</strong> Understand, classify, and protect the exposure of sensitive information at rest.</li>
+<li><strong>Assess your cloud apps' compliance:</strong> Assess if your cloud apps meet relevant compliance requirements, including regulatory compliance and industry standards.</li>
+</ul>
+<p><strong>Office 365 Cloud App Security</strong></p>
+<p>Is a subset of Microsoft Defender for Cloud Apps that <strong>provides enhanced visibility and control for Office 365</strong>. Office 365 Cloud App Security includes threat detection based on user activity logs, discovery of Shadow IT for apps with similar functionality to Office 365 offerings, control app permissions to Office 365, and apply access and session controls.</p>
+<p><strong>Azure Active Directory Premium P1</strong> includes <strong>Azure Active Directory Cloud App Discovery</strong> at <strong>no extra cost</strong>. This feature is based on the Microsoft Defender for Cloud Apps Cloud Discovery capabilities that provide deeper visibility into cloud app usage in your organization.</p>
+<h4 id="describe-the-microsoft-365-defender-for-identity">Describe the Microsoft 365 Defender for Identity</h4>
+<p>Microsoft Defender for Identity is a <strong>cloud-based security solution</strong>. It uses your <strong>on-premises Active Directory data</strong> (called signals) to identify, detect, and investigate advanced threats, compromised identities, and malicious insider actions directed at your organization.</p>
+<ul>
+<li>Microsoft Defender for Identity provides security professionals managing hybrid environments functionality to:</li>
+<li>Monitor and profile user behavior and activities.</li>
+<li>Protect user identities and reduce the attack surface.</li>
+<li>Identify and investigate suspicious activities and advanced attacks across the cyberattack kill-chain.</li>
+<li>Provide clear incident information on a simple timeline for fast triage</li>
+</ul>
+<h4 id="describe-microsoft-365-defender-portal">Describe Microsoft 365 Defender portal</h4>
+<p>The Microsoft 365 Defender portal home page <strong>shows many of the common cards that security teams need</strong>. The composition of cards and data depends on the user role.</p>
+<p>The cards fall into these categories:</p>
+<p><strong>Identities</strong> - <strong>Monitor the identities</strong> in your organization and keep track of suspicious or risky behaviors.
+<strong>Data</strong> - Help <strong>track user activity</strong> that could lead to unauthorized data disclosure.
+<strong>Devices</strong> - Get up-to-date information on alerts, breach activity, and other <strong>threats on your devices</strong>.
+<strong>Apps</strong> - Gain insight into <strong>how cloud apps are being used</strong> in your organization.</p>
+<p><strong>Incidents and alerts</strong>: </p>
+<p>Microsoft 365 services and apps <strong>create alerts when they detect a suspicious or malicious event or activity</strong>. The incidents queue is a central location lists each incident by severity. Selecting an incident name displays a summary of the incident and provides access to tabs with additional information.</p>
+<p><strong>Hunting</strong></p>
+<p>Advanced hunting is a <strong>query-based threat-hunting tool that lets security professionals explore up to 30 days of raw data</strong>. Advanced hunting queries enable security professionals to proactively search for threats, malware, and malicious activity across your endpoints, Office 365 mailboxes, and more.</p>
+<p><strong>Threat analytics</strong></p>
+<p>It's designed to assist security teams track and respond to emerging threats. It includes the latest threats, high impact threats (threats with the most active alerts affecting your organization), and high exposure threats.</p>
+<p><strong>Secure Score</strong></p>
+<p>is a representation of a company's security posture. The higher the score, the better your protection.</p>
+<p>Secure Score helps organizations:</p>
+<ul>
+<li>Report on the current state of their security posture.</li>
+<li>Improve their security posture by providing discoverability, visibility, guidance, and control.</li>
+<li>Compare benchmarks and establish key performance indicators (KPIs).</li>
+</ul>
+<p>Microsoft Secure Score supports recommendations for Microsoft 365 (including Exchange Online), Azure Active Directory, Microsoft Defender for Endpoint, Microsoft Defender for Identity, Microsoft Defender Cloud Apps, and Microsoft Teams. New recommendations are being added to Secure Score all the time.</p>
+<p><strong>Differences between secure score in Microsoft 365 Defender and Microsoft Defender for Cloud:</strong> Secure score in Microsoft Defender for Cloud is a measure of the security posture of your Azure subscriptions. Secure score in the Microsoft 365 Defender portal is a measure of the security posture of the organization across your apps, devices, and identities.</p>
+<p><strong>Learning hub</strong></p>
+<p>The Microsoft 365 Defender portal includes a learning hub that bubbles up official guidance from resources such as the Microsoft security blog, the Microsoft security community on YouTube, and the official documentation at <a href="https://docs.microsoft.com">docs.microsoft.com</a>.</p>
+<p><strong>Reports</strong></p>
+<p>Reports are unified in Microsoft 365 Defender. Admins can start with a general security report, and branch into specific reports about endpoints, email &amp; collaboration.</p>
+<p><strong>Permissions &amp; roles</strong></p>
+<p>Access to Microsoft 365 Defender is configured with Azure Active Directory global roles or by using custom roles.</p>
 <h3 id="describe-the-service-trust-portal-and-privacy-at-microsoft">Describe the Service Trust Portal and privacy at Microsoft</h3>
+<p>The Service Trust Portal provides information, tools, and other resources about Microsoft security, privacy, and compliance practices</p>
+<h4 id="describe-the-offerings-of-the-service-trust-portal">Describe the offerings of the Service Trust Portal.</h4>
+<p>From the main menu, you access:</p>
+<p><img alt="Service Trust Portal" src="../images/ms-365-trust-portal.png" /></p>
+<ul>
+<li><strong>Service Trust Portal</strong> – provides a quick way to get back to the <strong>home</strong> page</li>
+<li><strong>Compliance Manager</strong> – directs users to <strong>Compliance Manager</strong> in the Microsoft Purview compliance portal</li>
+<li><strong>Trust Documents</strong> – Trust Documents provides a wealth of <strong>security implementation and design information</strong> with the goal of making it easier for organizations to meet regulatory compliance objectives, by understanding how Microsoft Cloud services keep customer data secure</li>
+<li><strong>Audit Reports</strong> provides a list of <strong>independent audit and assessment reports</strong> on Microsoft's Cloud services</li>
+<li><strong>Data Protection</strong> contains a wealth of resources such as <strong>audited controls, white papers, FAQs, penetration tests, risk assessment tools</strong>, and compliance guides.</li>
+<li><strong>Azure Stack</strong> contains documents that provide <strong>security and compliance solutions and support</strong></li>
+<li><strong>Industries &amp; Regions</strong> – provides access to compliance information about Microsoft Cloud <strong>services organized by industry and region</strong>.</li>
+<li><strong>Industry Solutions</strong> directs users to the landing page for the <strong>Financial Services industry</strong></li>
+<li><strong>Regional Solutions</strong> provides documents on Microsoft Cloud <strong>services compliance with the laws of various countries/regions</strong>. </li>
+<li><strong>Trust Center</strong> -  links to the Microsoft Trust Center, which provides more information about <strong>privacy, security, and compliance</strong> in the Microsoft Cloud.</li>
+<li><strong>Resources</strong> – links to <strong>Security &amp; Compliance</strong> for Office 365, the Microsoft Global Datacenters, and <strong>Frequently Asked Questions</strong>.</li>
+<li><strong>My Library</strong> – let you <strong>save documents</strong> so that you can quickly access them on your My Library page</li>
+<li><strong>More</strong> - provides a selection for <strong>settings and user privacy settings</strong> that are <strong>available only to Global Administrators</strong> and relate to options associated with Compliance Manager.</li>
+</ul>
+<h4 id="describe-microsofts-privacy-principles">Describe Microsoft's Privacy principles.</h4>
+<p>Microsoft's approach to privacy is built on the following six principles:</p>
+<ul>
+<li><strong>Control:</strong> you are in control of <strong>your data and your privacy</strong></li>
+<li><strong>Transparency:</strong> Being transparent about <strong>data collection</strong> and use so that everyone can make informed decisions</li>
+<li><strong>Security:</strong> <strong>Protecting the data</strong> that's entrusted to <strong>Microsoft</strong> by using strong security and encryption</li>
+<li><strong>Strong legal protections</strong>: Respecting <strong>local privacy laws</strong> and fighting for legal protection of privacy as a fundamental human right</li>
+<li><strong>No content-based targeting:</strong> Not using email, chat, files, or other personal content to target advertising</li>
+<li>
+<p><strong>Benefits to you:</strong> When Microsoft does <strong>collect data, it's used to benefit you</strong></p>
+<ul>
+<li><strong>Troubleshooting</strong> for preventing, detecting, and repairing problems affecting operations of services.</li>
+<li><strong>Feature improvement:</strong> Ongoing improvement of features including increasing reliability and protection of services and data.</li>
+<li><strong>Personalized customer experience:</strong> Data is used to provide personalized improvements and better customer experiences</li>
+</ul>
+</li>
+</ul>
+<h4 id="describe-microsoft-priva">Describe Microsoft Priva.</h4>
+<p>To meet regulatory requirements and build customer trust, organizations need to take a "<strong>privacy by default</strong>" stance. </p>
+<p>Priva's capabilities are available through two solutions: </p>
+<p><strong>Priva Privacy Risk Management</strong> </p>
+<p>provides <strong>visibility</strong> into your organization's data and policy templates for reducing risks</p>
+<p>Priva evaluates your organization's data stored in the following Microsoft 365 services within your Microsoft 365 tenant:</p>
+<ul>
+<li>Exchange Online</li>
+<li>SharePoint Online</li>
+<li>OneDrive for Business</li>
+<li>Microsoft Teams</li>
+</ul>
+<p>can help you:</p>
+<ul>
+<li><strong>Detect overexposed personal data</strong> so that users can secure it.</li>
+<li><strong>Spot and limit transfers of personal data</strong> across departments or regional borders.</li>
+<li>Help users <strong>identify and reduce the amount of unused personal data</strong> that you store.</li>
+</ul>
+<p><strong>Priva Subject Rights Requests</strong> </p>
+<p>provides <strong>automation and workflow</strong> tools for fulfilling data requests.</p>
 <p><a name="module-3"></a></p>
 <h2 id="module-3-demonstrate-knowledge-of-microsoft-365-licensing-service-and-support"><strong>Module 3 - Demonstrate knowledge of Microsoft 365 licensing, service and support</strong></h2>
 <h3 id="identify-licensing-options-available-in-microsoft-365">Identify licensing options available in Microsoft 365</h3>
